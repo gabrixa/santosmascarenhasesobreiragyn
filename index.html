@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Página Inicial - SMS</title>
+
+  <!-- Obrigatório para responsivo -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Ícones sociais (Font Awesome) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- JS -->
+  <script defer src="script.js"></script>
+
+  <style>
+    /* ===== BIOGRAFIA DOS SÓCIOS ===== */
+    .bio-socios {
+      width: 100%;
+      padding: 90px 24px;
+      background: linear-gradient(180deg, #f4f1eb 0%, #e8e2d8 100%);
+      color: #3f3c35;
+      font-family: Arial, sans-serif;
+    }
+
+    .bio-socios-container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .bio-socios-cabecalho {
+      max-width: 760px;
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+
+    .bio-socios-etiqueta {
+      display: block;
+      margin-bottom: 10px;
+      font-size: .78rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #777166;
+    }
+
+    .bio-socios-cabecalho h2 {
+      margin: 0 0 14px;
+      font-family: Arial, sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -.5px;
+      color: #3f3c35;
+    }
+
+    .bio-socios-cabecalho p {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #625f58;
+    }
+
+    .bio-socio {
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+      align-items: center;
+      gap: clamp(38px, 6vw, 78px);
+      margin-bottom: 90px;
+    }
+
+    .bio-socio:last-child {
+      margin-bottom: 0;
+    }
+
+    .bio-socio-invertido .bio-socio-foto {
+      order: 2;
+    }
+
+    .bio-socio-invertido .bio-socio-texto {
+      order: 1;
+    }
+
+    .bio-socio-foto {
+      position: relative;
+    }
+
+    .bio-socio-foto::before {
+      content: "";
+      position: absolute;
+      inset: 18px -18px -18px 18px;
+      border: 1px solid rgba(145, 142, 125, .45);
+      border-radius: 18px;
+      z-index: 0;
+    }
+
+    .bio-socio-foto img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 18px;
+      box-shadow: 0 16px 38px rgba(49, 45, 38, .16);
+    }
+
+    .bio-socio-numero {
+      display: block;
+      margin-bottom: 8px;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: #8a8377;
+    }
+
+    .bio-socio-texto h3 {
+      margin: 0 0 7px;
+      font-family: Arial, sans-serif;
+      font-size: clamp(1.65rem, 3vw, 2.25rem);
+      line-height: 1.2;
+      font-weight: 700;
+      color: #3f3c35;
+    }
+
+    .bio-socio-cargo {
+      display: block;
+      margin-bottom: 24px;
+      font-size: .92rem;
+      font-weight: 400;
+      letter-spacing: .4px;
+      color: #777166;
+    }
+
+    .bio-socio-texto p {
+      margin: 0 0 15px;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.72;
+      color: #55534d;
+    }
+
+    .bio-socio-texto .destaque-bio {
+      display: inline;
+      padding: 2px 5px;
+      border-radius: 4px;
+      background: rgba(145, 142, 125, .24);
+      color: #3f3c35;
+      font-weight: 600;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .bio-socio-frase {
+      margin-top: 24px !important;
+      padding: 18px 20px;
+      border-left: 3px solid #918e7d;
+      background: rgba(255, 255, 255, .34);
+      font-weight: 400 !important;
+      line-height: 1.65 !important;
+      color: #45423d !important;
+    }
+
+    @media (max-width: 820px) {
+      .bio-socios {
+        padding: 65px 18px;
+      }
+
+      .bio-socios-cabecalho {
+        margin-bottom: 45px;
+      }
+
+      .bio-socio,
+      .bio-socio-invertido {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        margin-bottom: 70px;
+      }
+
+      .bio-socio-invertido .bio-socio-foto,
+      .bio-socio-invertido .bio-socio-texto {
+        order: initial;
+      }
+
+      .bio-socio-foto {
+        max-width: 560px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .bio-socio-foto img {
+        height: min(118vw, 580px);
+      }
+
+      .bio-socio-foto::before {
+        inset: 12px -10px -12px 10px;
+      }
+
+      .bio-socio-texto h3 {
+        font-size: 1.65rem;
+      }
+
+      .bio-socio-texto p {
+        font-size: .96rem;
+        line-height: 1.65;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+
+
+  <!-- VÍDEO LOGO NO TOPO -->
+  <section class="video-topo">
+    <video autoplay muted loop playsinline>
+      <source src="VIDEO LOGO FINALL.mp4" type="video/mp4" />
+      Seu navegador não suporta vídeos HTML5.
+    </video>
+  </section>
+
+
+<!-- SEÇÃO DE DESTAQUES -->
+<!-- SEÇÃO DE DESTAQUES -->
+<section class="destaques" id="destaques">
+  <div class="container-destaques">
+    <div class="destaque">
+      <h2 data-numero="10">0</h2>
+      <p><span>Anos de atuação</span></p>
+    </div>
+    <div class="destaque">
+      <h2 data-numero="5000">0</h2>
+      <p><span>Clientes atendidos</span></p>
+    </div>
+    <div class="destaque">
+      <h2 data-numero="1500">0</h2>
+      <p><span>Divórcios realizados</span></p>
+    </div>
+    <div class="destaque">
+      <h2 data-numero="1000">0</h2>
+      <p><span>Liminares obtidas</span></p>
+    </div>
+    <div class="destaque">
+      <h2 data-numero="500">0</h2>
+      <p><span>Medidas revogadas</span></p>
+    </div>
+     <div class="destaque">
+      <h2 data-numero="2000">0</h2>
+      <p><span>Plantão criminal 24H</span></p>
+    </div>
+      
+  </div>
+</section>
+
+
+
+  <!-- SEÇÃO CONTATO -->
+<!-- SEÇÃO SOBRE O JURÍDICO -->
+<section class="contato">
+  <h2>Atuação Jurídica</h2>
+  <p class="subtitulo-contato">
+    Conheça mais sobre nossa atuação no Direito.
+  </p>
+
+  <div class="contato-grid">
+    <!-- Nossa Equipe -->
+    <div class="contato-card">
+      <a href="equipe.html">
+        <img src="EQUIPE.jpg" alt="Nossa Equipe" class="contato-foto">
+        <h3>Nossa Equipe</h3>
+        <span class="cargo"></span>
+        <p>Clique e conheça os advogados do nosso escritório.</p>
+      </a>
+    </div>
+
+    <!-- Áreas de Atuação -->
+    <div class="contato-card">
+      <a href="areas.html">
+        <img src="equipekelsto.jpg" alt="Áreas de Atuação" class="contato-foto">
+        <h3>Áreas que Atuamos</h3>
+        <span class="cargo"></span>
+        <p>Veja em quais áreas jurídicas podemos ajudar você.</p>
+      </a>
+    </div>
+
+    <!-- Casos de Sucesso -->
+    <div class="contato-card">
+      <a href="casos.html">
+        <img src="CAUSAS.jpg" alt="Causas Ganhas" class="contato-foto">
+        <h3>Blog jurídico</h3>
+        <span class="cargo"></span>
+        <p>Acompanhe casos reais onde atuamos.</p>
+      </a>
+    </div>
+
+    <!-- Artigos e Conteúdos -->
+    <div class="contato-card">
+      <a href="artigos.html">
+        <img src="ARTIGOS.jpg" alt="Artigos e Conteúdos" class="contato-foto">
+        <h3>História</h3>
+        <span class="cargo"></span>
+        <p>Acesse nossos artigos e conteúdos sobre seus direitos.</p>
+      </a>
+    </div>
+
+    <!-- Fale Conosco -->
+    <div class="contato-card">
+      <a href="https://wa.me/556282125318" target="_blank">
+        <img src="CONTATO.jpg" alt="Fale Conosco" class="contato-foto">
+        <h3>Fale Conosco</h3>
+        <span class="cargo"></span>
+        <p>Tire suas dúvidas e receba orientação da nossa equipe.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- SEÇÃO "VOCÊ SABIA?" -->
+<section class="vc-sabia-fundo" aria-label="Você Sabia?">
+  <div class="vc-sabia-inner">
+
+    <div class="vc-card" role="group" aria-labelledby="vc-titulo">
+
+      <h2 id="vc-titulo">VOCÊ SABIA?</h2>
+
+      <div class="vc-sabia-carousel" role="region" aria-live="polite">
+
+        <div class="vc-item active">
+          <strong>Você não precisa da autorização do ex-cônjuge para se divorciar.</strong>
+          <p>
+            O divórcio é um <span class="destaque">direito potestativo</span> e pode ser decretado judicialmente
+            mesmo sem a concordância da outra parte, inclusive antes da discussão
+            sobre outros pedidos.
+          </p>
+        </div>
+
+        <div class="vc-item">
+          <strong>Você pode se divorciar antes de concluir a partilha dos bens.</strong>
+          <p>
+            A existência de patrimônio a ser dividido <span class="destaque">não impede a decretação do divórcio</span>.
+            A partilha dos bens pode prosseguir posteriormente.
+          </p>
+        </div>
+
+        <div class="vc-item">
+          <strong>Uma medida protetiva pode ser revista ou revogada judicialmente.</strong>
+          <p>
+            Quando os fundamentos que justificaram sua concessão deixam de existir
+            ou se modificam, é possível requerer sua
+            <span class="destaque">revisão ou revogação</span>,
+            conforme as circunstâncias do caso.
+          </p>
+        </div>
+
+        <div class="vc-item">
+          <strong>A defesa criminal começa antes do processo.</strong>
+          <p>
+            O <span class="destaque">acompanhamento de um advogado ainda na delegacia e durante o inquérito</span>
+            pode ser fundamental para a definição da estratégia defensiva e para
+            a proteção dos direitos do investigado.
+          </p>
+        </div>
+
+        <div class="vc-item">
+          <strong>A audiência de custódia não é mera formalidade.</strong>
+          <p>
+            Nesse momento são analisadas a
+            <span class="destaque">legalidade da prisão e a necessidade de sua manutenção</span>.
+            Uma defesa técnica pode ser essencial desde as primeiras horas.
+          </p>
+        </div>
+
+        <div class="vc-item">
+          <strong>A falta de pagamento da pensão não autoriza impedir a convivência com os filhos.</strong>
+          <p>
+            <span class="destaque">Alimentos e convivência são questões juridicamente distintas</span>.
+            O inadimplemento da pensão deve ser tratado pelos meios legais adequados.
+          </p>
+        </div>
+
+        <div class="vc-item">
+          <strong>Uma cirurgia urgente não deve esperar quando a demora coloca a saúde em risco.</strong>
+          <p>
+            Diante de <span class="destaque">indicação médica e urgência comprovada</span>,
+            é possível buscar judicialmente a realização do procedimento,
+            inclusive por meio de <span class="destaque">pedido de liminar</span>.
+          </p>
+        </div>
+
+        <div class="vc-item">
+          <strong>Medicamento de alto custo foi negado ou está em falta no SUS?</strong>
+          <p>
+            Em determinadas situações, é possível buscar judicialmente o
+            <span class="destaque">fornecimento do medicamento</span>, inclusive por meio de
+            <span class="destaque">liminar</span>, quando demonstradas a necessidade
+            e a urgência do tratamento.
+          </p>
+        </div>
+
+        <div class="vc-item">
+          <strong>A falta de leito de UTI não encerra o direito ao tratamento.</strong>
+          <p>
+            Em situações de urgência, é possível buscar judicialmente a
+            <span class="destaque">disponibilização de leito adequado</span>
+            para assegurar a continuidade do tratamento médico prescrito.
+          </p>
+        </div>
+
+        <div class="vc-item">
+          <strong>Paciente aguardando internação em CAIS ou UPA?</strong>
+          <p>
+            A demora injustificada na transferência para uma unidade hospitalar
+            adequada pode justificar <span class="destaque">medida judicial urgente</span>
+            para garantir a continuidade do tratamento.
+          </p>
+        </div>
+
+        <div class="vc-item">
+          <strong>Distrato de imóvel exige atenção.</strong>
+          <p>
+            <span class="destaque">Percentuais de retenção, forma de devolução e prazos para restituição</span>
+            devem observar a legislação aplicável e as condições do contrato.
+            Retenções excessivas podem ser discutidas judicialmente conforme o caso.
+          </p>
+        </div>
+
+        <div class="vc-item">
+          <strong>Foi vítima de fraude bancária?</strong>
+          <p>
+            Dependendo das circunstâncias e da existência de
+            <span class="destaque">falha na prestação do serviço</span>,
+            pode haver direito à <span class="destaque">restituição dos valores e à indenização</span>
+            pelos danos sofridos.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="vc-controls">
+        <button class="vc-prev" aria-label="Informação anterior">‹</button>
+        <button class="vc-next" aria-label="Próxima informação">›</button>
+      </div>
+
+      <div class="vc-dots" aria-label="Navegação do carrossel"></div>
+
+    </div>
+  </div>
+</section>
+ 
+
+
+<!-- BIOGRAFIA DOS SÓCIOS -->
+<section class="bio-socios" aria-labelledby="bio-socios-titulo">
+  <div class="bio-socios-container">
+
+    <header class="bio-socios-cabecalho">
+      <span class="bio-socios-etiqueta">Nossa história</span>
+      <h2 id="bio-socios-titulo">Quem está à frente do SMS</h2>
+      <p>
+        Experiência, estratégia e compromisso reunidos em uma advocacia
+        construída para compreender cada história e conduzir cada demanda
+        com responsabilidade.
+      </p>
+    </header>
+
+  <!-- JÉSSICA: FOTO + TEXTO -->
+<article class="bio-socio">
+
+  <!-- FOTOS DA JÉSSICA - SLIDESHOW AUTOMÁTICO -->
+  <div class="bio-socio-foto bio-slideshow">
+
+    <img
+      src="jessica historia 1.png"
+      class="bio-slide active"
+      alt="Dra. Jéssica Sobreira Souza dos Santos"
+    >
+
+    <img
+      src="jessica historia.png"
+      class="bio-slide"
+      alt="Dra. Jéssica Sobreira Souza dos Santos"
+    >
+
+    <img
+      src="jessica historia 2.png"
+      class="bio-slide"
+      alt="Dra. Jéssica Sobreira Souza dos Santos"
+    >
+
+  </div>
+
+      <div class="bio-socio-texto">
+        <span class="bio-socio-numero">Sócia-fundadora • CEO</span>
+        <h3>Dra. Jéssica Sobreira Souza dos Santos</h3>
+        <span class="bio-socio-cargo">Trajetória jurídica iniciada em 2012</span>
+
+        <p>
+          A Dra. Jéssica atua no ramo jurídico desde 2012, quando ainda cursava
+          o 2º período da graduação em Direito. Antes mesmo de concluir sua formação,
+          já havia construído sólida experiência profissional em escritório de
+          grande renome em Goiânia, com atuação no
+          <span class="destaque-bio">contencioso cível</span>.
+        </p>
+
+        <p>
+          Ao longo dessa trajetória, adquiriu ampla experiência em diferentes áreas
+          do Direito Civil e também atuou como
+          <span class="destaque-bio">correspondente jurídica de grandes empresas</span>,
+          entre elas Grupo Casas Bahia, Fiat e Lojas Avenida.
+        </p>
+
+        <p>
+          Foram <span class="destaque-bio">12 anos de experiência profissional</span>,
+          com atuação preventiva e contenciosa, formando a base prática que hoje
+          orienta sua atuação jurídica e sua visão de gestão.
+        </p>
+
+        <p>
+          Atualmente, é sócia-fundadora da
+          <span class="destaque-bio">Santos, Mascarenhas e Sobreira Advogados</span>,
+          fundada em 2021, atuando diretamente na gestão estratégica do escritório
+          e na condução de demandas jurídicas de maior complexidade.
+        </p>
+
+        <p>
+          Como CEO, lidera a
+          <span class="destaque-bio">gestão estratégica, o desenvolvimento da equipe,
+          a estruturação de processos internos e o posicionamento do escritório</span>,
+          conciliando a administração com uma atuação jurídica ativa.
+        </p>
+
+        <p class="bio-socio-frase">
+          Acredita que um escritório é feito de pessoas e que, por trás de cada
+          processo, existe uma história que merece ser compreendida e defendida.
+        </p>
+      </div>
+    </article>
+
+   <!-- PABLLO: TEXTO + FOTO -->
+<article class="bio-socio bio-socio-invertido">
+
+  <!-- FOTOS DO PABLLO - SLIDESHOW AUTOMÁTICO -->
+  <div class="bio-socio-foto bio-slideshow">
+
+    <img
+      src="pabllo historia.png"
+      class="bio-slide active"
+      alt="Dr. Pabllo de Sá Mascarenhas"
+    >
+
+    <img
+      src="pabllo historia 2.png"
+      class="bio-slide"
+      alt="Dr. Pabllo de Sá Mascarenhas"
+    >
+
+    <img
+      src="pabllo historia 1.png"
+      class="bio-slide"
+      alt="Dr. Pabllo de Sá Mascarenhas"
+    >
+
+  </div>
+
+      <div class="bio-socio-texto">
+        <span class="bio-socio-numero">Fundador • Sócio-Sênior</span>
+        <h3>Dr. Pabllo de Sá Mascarenhas</h3>
+        <span class="bio-socio-cargo">Atuação estratégica em Direito Criminal</span>
+
+        <p>
+          O Dr. Pabllo iniciou sua trajetória no meio jurídico ainda durante a
+          graduação em Direito. Atuou em escritório de grande renome em Goiânia e,
+          ao concluir sua formação, já possuía sólida experiência na advocacia
+          <span class="destaque-bio">contenciosa e preventiva</span>.
+        </p>
+
+        <p>
+          Com ampla experiência na área cível, encontrou no
+          <span class="destaque-bio">Direito Criminal</span> sua principal área de
+          atuação e especialização. Atua em todas as fases da defesa criminal,
+          <span class="destaque-bio">desde delegacias e inquéritos policiais até
+          ações penais e recursos</span>, inclusive em casos complexos e de grande
+          repercussão.
+        </p>
+
+        <p>
+          Sua atuação é marcada por uma abordagem
+          <span class="destaque-bio">técnica, estratégica e contundente</span>,
+          inclusive perante o
+          <span class="destaque-bio">Superior Tribunal de Justiça (STJ) e o
+          Supremo Tribunal Federal (STF)</span>.
+        </p>
+
+        <p>
+          Atualmente, é fundador e Sócio-Sênior da
+          <span class="destaque-bio">Santos, Mascarenhas e Sobreira Advogados</span>,
+          participando ativamente da construção e consolidação do escritório e
+          dedicando-se especialmente às demandas estratégicas e de maior complexidade.
+        </p>
+
+        <p>
+          Também atua no
+          <span class="destaque-bio">desenvolvimento técnico da equipe e na supervisão
+          das demandas do escritório</span>, contribuindo para a definição de teses,
+          estratégias processuais e decisões jurídicas.
+        </p>
+
+        <p class="bio-socio-frase">
+          Para o Dr. Pabllo, a advocacia criminal vai além da defesa em um processo:
+          significa defender direitos, garantias e, sobretudo, pessoas,
+          compreendendo cada história para além da acusação.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- SEÇÃO AJUDA LEGAL -->
+<section class="ajuda-legal">
+  <div class="ajuda-conteudo">
+    <h2>Você não está sozinho. Podemos te ajudar!</h2>
+    <p>Fale agora com nossa equipe e tire suas dúvidas com rapidez e sigilo. Atendimento direto pelo WhatsApp.</p>
+    <a href="https://wa.me/556282125318" target="_blank" class="btn-whatsapp">
+      💬 Fale conosco no WhatsApp
+    </a>
+  </div>
+</section>
+</section>
+  
+  
+<!-- RODAPÉ PRINCIPAL -->
+  <footer>
+    <div class="container-footer">
+      <!-- Logo e selo -->
+      <div class="logo-section">
+        <img src="sms fundo equipe.png" alt="Logo do Escritório" class="logo">
+              </div>
+
+      <!-- Navegação -->
+      <div class="info-section">
+        <h3>INFORMAÇÕES</h3>
+        <ul>
+          <li><a href="index.html"> - Início</a></li>
+          <li><a href="equipe.html">- Equipe</a></li>
+          <li><a href="areas.html">- Conheca nossas áreas</a></li>
+          <li><a href="casos.html">- Blog de casos</a></li>
+        </ul>
+      </div>
+
+      <!-- Contato e redes sociais -->
+      <div class="contato-section">
+        <h3>CONTATOS</h3>
+        <p><strong>Sede</strong><br>
+       Escola de Aviação Aeródromo Brigadeiro Eppinghaus - GO-070, Km 3 - Lt. 192/193 - Fazenda - Aeroporto, Goiânia - GO<br>
+        CEP: 74470-440</p>
+        <p><strong>(62) 8212-5318 | (62) 82809879</strong></p>
+        <p><a href="mailto:santosmacarenhasesobreiro@gmail.com">E-mail: santosmacarenhasesobreiro@gmail.com</a></p>
+
+        <!-- Ícones sociais -->
+        <div class="social-icons">
+          <div class="social-icons">
+  <a href="https://www.facebook.com/seuperfil" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <a href="https://www.linkedin.com/company/suaempresa" target="_blank">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+
+  <a href="https://www.youtube.com/@seucanal" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+
+  <a href="https://www.instagram.com/smsadvocaciaoficial" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="https://www.tiktok.com/@smsadvocaciaoficial" target="_blank">
+    <i class="fab fa-tiktok"></i>
+  </a>
+  
+  <a href="https://share.google/FMevaXivilNY40emQ" target="_blank">
+    <i class="fab fa-google"></i></a>
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Rodapé inferior -->
+  <div class="rodape-inferior">
+    SANTOS MASCARENHAS E SOBREIRA ADVOCACIA -- CNPJ: 52.846.343/0001-75 -- © 2025
+  </div>
+
+  
+
+</body>
+</html>
