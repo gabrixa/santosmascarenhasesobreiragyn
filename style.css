@@ -2221,3 +2221,210 @@ max-width: 700px;
     max-width: 360px;
   }
 }
+
+
+/* =====================================================
+   FECHAMENTO INSTITUCIONAL - PADRÃO VISUAL SMS
+   Padroniza tipografia e cores da seção .ajuda-legal
+   ===================================================== */
+
+.ajuda-legal {
+  font-family: Arial, sans-serif !important;
+  color: #f4f1eb;
+  letter-spacing: 0;
+}
+
+.ajuda-legal .ajuda-conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 24px;
+  text-align: center;
+}
+
+.ajuda-legal h2,
+.ajuda-legal .ajuda-conteudo h2 {
+  margin: 0 0 18px;
+  font-family: Arial, sans-serif !important;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  color: #f4f1eb;
+  text-shadow: 0 2px 8px rgba(0,0,0,.35);
+}
+
+.ajuda-legal p,
+.ajuda-legal .frase-institucional {
+  max-width: 820px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif !important;
+  font-size: 1.08rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(244,241,235,.92);
+  text-shadow: 0 1px 5px rgba(0,0,0,.32);
+}
+
+.ajuda-legal .assinatura-institucional {
+  display: block;
+  margin-top: 28px;
+  font-family: Arial, sans-serif !important;
+  font-size: .72rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+  color: #d8cbb7;
+  text-shadow: 0 1px 4px rgba(0,0,0,.30);
+}
+
+@media (max-width: 600px) {
+  .ajuda-legal {
+    padding: 55px 18px;
+  }
+
+  .ajuda-legal .ajuda-conteudo {
+    padding: 0;
+  }
+
+  .ajuda-legal h2,
+  .ajuda-legal .ajuda-conteudo h2 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    letter-spacing: -.2px;
+  }
+
+  .ajuda-legal p,
+  .ajuda-legal .frase-institucional {
+    font-size: .96rem;
+    line-height: 1.65;
+  }
+
+  .ajuda-legal .assinatura-institucional {
+    margin-top: 22px;
+    font-size: .65rem;
+    letter-spacing: 1.8px;
+  }
+}
+
+
+/* ===== FECHAMENTO INSTITUCIONAL - VERSÃO FINAL SMS ===== */
+
+.ajuda-legal{
+  position: relative;
+  overflow: hidden;
+  font-family: Arial, sans-serif !important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(43, 39, 33, .28) 0%,
+      rgba(36, 33, 29, .46) 52%,
+      rgba(31, 29, 26, .58) 100%
+    ),
+    url('LOGO DO ZAP INICIAL.jpg') center/cover no-repeat !important;
+  color: #f5f1ea;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* linhas finas decorativas */
+.ajuda-legal::before,
+.ajuda-legal::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(199, 176, 137, .72);
+  z-index: 1;
+}
+
+.ajuda-legal::before{ top: 0; }
+.ajuda-legal::after{ bottom: 0; }
+
+.ajuda-legal .ajuda-conteudo{
+  position: relative;
+  z-index: 2;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 72px 24px 68px;
+  text-align: center;
+}
+
+/* primeira parte da mensagem */
+.ajuda-legal .ajuda-conteudo h2{
+  margin: 0 0 8px !important;
+  font-family: Arial, sans-serif !important;
+  font-size: clamp(1.75rem, 3vw, 2.75rem) !important;
+  font-weight: 300 !important;
+  line-height: 1.22 !important;
+  letter-spacing: -.3px !important;
+  text-transform: none !important;
+  color: #f5f1ea !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,.34) !important;
+}
+
+/* palavra final em destaque */
+.ajuda-legal .ajuda-conteudo h2 .historia-destaque{
+  font-weight: 600;
+  color: #cbb18b;
+}
+
+/* segunda parte, propositalmente com o mesmo peso visual */
+.ajuda-legal .frase-institucional{
+  max-width: 980px !important;
+  margin: 0 auto !important;
+  font-family: Arial, sans-serif !important;
+  font-size: clamp(1.35rem, 2.2vw, 2rem) !important;
+  font-weight: 300 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -.15px !important;
+  color: #f5f1ea !important;
+  text-shadow: 0 2px 7px rgba(0,0,0,.34) !important;
+}
+
+/* pequeno traço antes da assinatura */
+.ajuda-legal .assinatura-institucional::before{
+  content: "";
+  display: block;
+  width: 42px;
+  height: 1px;
+  margin: 25px auto 18px;
+  background: #cbb18b;
+}
+
+.ajuda-legal .assinatura-institucional{
+  display: block;
+  margin-top: 0;
+  font-family: Arial, sans-serif !important;
+  font-size: .72rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #d4bea0;
+  text-shadow: 0 1px 4px rgba(0,0,0,.32);
+}
+
+@media (max-width: 600px){
+  .ajuda-legal .ajuda-conteudo{
+    padding: 54px 18px 50px;
+  }
+
+  .ajuda-legal .ajuda-conteudo h2{
+    font-size: 1.55rem !important;
+    line-height: 1.28 !important;
+  }
+
+  .ajuda-legal .frase-institucional{
+    font-size: 1.12rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .ajuda-legal .assinatura-institucional{
+    font-size: .62rem;
+    letter-spacing: 2px;
+  }
+}
