@@ -218,6 +218,267 @@
     }
   </style>
 
+
+<style>
+  /* ===== FECHAMENTO INSTITUCIONAL ===== */
+  .ajuda-legal .ajuda-conteudo{
+    text-align:center;
+  }
+
+  .ajuda-legal .ajuda-conteudo h2{
+    margin-bottom:14px;
+  }
+
+  .ajuda-legal .frase-institucional{
+    max-width:900px;
+    margin:0 auto;
+    line-height:1.65;
+  }
+
+  .ajuda-legal .assinatura-institucional{
+    display:block;
+    margin-top:24px;
+    font-family:Arial, sans-serif;
+    font-size:.76rem;
+    font-weight:500;
+    letter-spacing:2.4px;
+    text-transform:uppercase;
+    opacity:.82;
+  }
+
+  @media (max-width:600px){
+    .ajuda-legal .frase-institucional{
+      padding:0 14px;
+    }
+
+    .ajuda-legal .assinatura-institucional{
+      padding:0 18px;
+      font-size:.68rem;
+      letter-spacing:1.7px;
+      line-height:1.6;
+    }
+  }
+</style>
+
+
+<style>
+/* =====================================================
+   DESTAQUES INSTITUCIONAIS - PADRÃO VISUAL SMS
+   O vídeo acima permanece inalterado.
+   ===================================================== */
+.destaques{
+  width:100%;
+  margin:0;
+  padding:0;
+  background:linear-gradient(180deg,#4b4a47 0%,#403f3c 100%);
+  border-top:1px solid rgba(216,203,183,.55);
+  border-bottom:1px solid rgba(216,203,183,.28);
+  box-shadow:0 8px 24px rgba(0,0,0,.12);
+}
+
+.container-destaques{
+  max-width:1240px;
+  margin:0 auto;
+  padding:30px 24px 28px;
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  align-items:stretch;
+}
+
+.destaques .destaque{
+  min-width:0;
+  padding:4px 22px;
+  text-align:center;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.destaques .destaque:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  top:12%;
+  right:0;
+  width:1px;
+  height:76%;
+  background:rgba(216,203,183,.18);
+}
+
+.destaques .destaque h2{
+  margin:0 0 8px;
+  font-family:Arial,sans-serif;
+  font-size:clamp(1.8rem,2.6vw,2.55rem);
+  font-weight:500;
+  line-height:1;
+  letter-spacing:-.4px;
+  color:#d8cbb7;
+  text-shadow:none;
+}
+
+.destaques .destaque h2::before{
+  content:"+";
+}
+
+.destaques .destaque:first-child h2::before{
+  content:"";
+}
+
+.destaques .destaque p{
+  margin:0;
+  font-family:Arial,sans-serif;
+  font-size:.82rem;
+  font-weight:300;
+  line-height:1.45;
+  color:#f1eee8;
+}
+
+.destaques .destaque p span{
+  font:inherit;
+  color:inherit;
+}
+
+/* O plantão é um serviço, não uma quantidade. */
+.destaques .destaque-plantao h2{
+  display:none;
+}
+
+.destaques .destaque-plantao p{
+  max-width:150px;
+  font-size:.86rem;
+  font-weight:500;
+  line-height:1.45;
+  color:#d8cbb7;
+}
+
+.destaques .destaque-plantao p::before{
+  content:"Atendimento";
+  display:block;
+  margin-bottom:5px;
+  font-size:.68rem;
+  font-weight:300;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:rgba(241,238,232,.66);
+}
+
+@media(max-width:900px){
+  .container-destaques{
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    padding:24px 18px;
+  }
+
+  .destaques .destaque{
+    padding:18px 12px;
+  }
+
+  .destaques .destaque::after{
+    display:none;
+  }
+
+  .destaques .destaque:nth-child(-n+3){
+    border-bottom:1px solid rgba(216,203,183,.14);
+  }
+}
+
+@media(max-width:600px){
+  .container-destaques{
+    grid-template-columns:repeat(2,1fr);
+    padding:18px 12px;
+  }
+
+  .destaques .destaque{
+    padding:18px 8px;
+    border-bottom:1px solid rgba(216,203,183,.12);
+  }
+
+  .destaques .destaque:nth-last-child(-n+2){
+    border-bottom:0;
+  }
+
+  .destaques .destaque h2{
+    font-size:1.65rem;
+  }
+
+  .destaques .destaque p{
+    font-size:.76rem;
+  }
+}
+</style>
+
+
+<style>
+/* ===== DESTAQUES: CORREÇÃO DEFINITIVA ===== */
+
+.container-destaques{
+  max-width:1400px !important;
+  grid-template-columns:repeat(6,minmax(0,1fr)) !important;
+  padding:30px 28px 28px !important;
+}
+
+.destaques .destaque{
+  padding:4px 16px !important;
+}
+
+/* Remove o + automático do CSS dos demais números.
+   O script.js já formata os contadores maiores com +. */
+.destaques .destaque h2::before{
+  content:none !important;
+}
+
+/* +10: o contador original exibe 10, então acrescentamos somente aqui */
+.destaques .destaque:first-child h2::before{
+  content:"+" !important;
+}
+
+/* 24H não participa da animação dos contadores */
+.destaques .destaque-plantao h2{
+  display:none !important;
+}
+
+.destaques .plantao-24h{
+  margin:0 0 8px;
+  font-family:Arial,sans-serif;
+  font-size:clamp(1.8rem,2.6vw,2.55rem);
+  font-weight:500;
+  line-height:1;
+  letter-spacing:-.4px;
+  color:#d8cbb7;
+}
+
+.destaques .destaque-plantao p{
+  max-width:none !important;
+  margin:0 !important;
+  font-family:Arial,sans-serif !important;
+  font-size:.82rem !important;
+  font-weight:300 !important;
+  line-height:1.45 !important;
+  color:#f1eee8 !important;
+}
+
+.destaques .destaque-plantao p::before{
+  content:none !important;
+}
+
+@media(max-width:1050px){
+  .container-destaques{
+    grid-template-columns:repeat(3,1fr) !important;
+  }
+}
+
+@media(max-width:600px){
+  .container-destaques{
+    grid-template-columns:repeat(2,1fr) !important;
+  }
+
+  .destaques .plantao-24h{
+    font-size:1.65rem;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -226,7 +487,7 @@
   <!-- VÍDEO LOGO NO TOPO -->
   <section class="video-topo">
     <video autoplay muted loop playsinline>
-      <source src="VIDEO LOGO FINALL.mp4" type="video/mp4" />
+      <source src="VIDEO_LOGO_FINAL_MELHORADO_1080p.mp4" type="video/mp4" />
       Seu navegador não suporta vídeos HTML5.
     </video>
   </section>
@@ -236,31 +497,37 @@
 <!-- SEÇÃO DE DESTAQUES -->
 <section class="destaques" id="destaques">
   <div class="container-destaques">
+
     <div class="destaque">
       <h2 data-numero="10">0</h2>
-      <p><span>Anos de atuação</span></p>
+      <p><span>Anos de experiência jurídica</span></p>
     </div>
+
     <div class="destaque">
       <h2 data-numero="5000">0</h2>
       <p><span>Clientes atendidos</span></p>
     </div>
+
     <div class="destaque">
       <h2 data-numero="1500">0</h2>
       <p><span>Divórcios realizados</span></p>
     </div>
+
     <div class="destaque">
       <h2 data-numero="1000">0</h2>
       <p><span>Liminares obtidas</span></p>
     </div>
+
     <div class="destaque">
       <h2 data-numero="500">0</h2>
       <p><span>Medidas revogadas</span></p>
     </div>
-     <div class="destaque">
-      <h2 data-numero="2000">0</h2>
-      <p><span>Plantão criminal 24H</span></p>
+
+    <div class="destaque destaque-plantao">
+      <div class="plantao-24h">24H</div>
+      <p><span>Plantão criminal</span></p>
     </div>
-      
+
   </div>
 </section>
 
@@ -308,20 +575,20 @@
     <!-- Artigos e Conteúdos -->
     <div class="contato-card">
       <a href="artigos.html">
-        <img src="ARTIGOS.jpg" alt="Artigos e Conteúdos" class="contato-foto">
+        <img src="Design sem nome (8).png" alt="Artigos e Conteúdos" class="contato-foto">
         <h3>História</h3>
         <span class="cargo"></span>
         <p>Acesse nossos artigos e conteúdos sobre seus direitos.</p>
       </a>
     </div>
 
-    <!-- Fale Conosco -->
+     <!-- Fale Conosco -->
     <div class="contato-card">
-      <a href="https://wa.me/556282125318" target="_blank">
-        <img src="CONTATO.jpg" alt="Fale Conosco" class="contato-foto">
+      <a href="contato.html">
+        <img src="contato logo s.png" alt="Fale Conosco" class="contato-foto">
         <h3>Fale Conosco</h3>
         <span class="cargo"></span>
-        <p>Tire suas dúvidas e receba orientação da nossa equipe.</p>
+        <p>WhatsApp, telefone, e-mail, endereço e nossas redes sociais.</p>
       </a>
     </div>
   </div>
@@ -633,16 +900,22 @@
 </section>
 
 
-<!-- SEÇÃO AJUDA LEGAL -->
+<!-- SEÇÃO INSTITUCIONAL -->
 <section class="ajuda-legal">
   <div class="ajuda-conteudo">
-    <h2>Você não está sozinho. Podemos te ajudar!</h2>
-    <p>Fale agora com nossa equipe e tire suas dúvidas com rapidez e sigilo. Atendimento direto pelo WhatsApp.</p>
-    <a href="https://wa.me/556282125318" target="_blank" class="btn-whatsapp">
-      💬 Fale conosco no WhatsApp
-    </a>
+    <h2>
+      Por trás de cada processo existe uma
+      <span class="historia-destaque">história.</span>
+    </h2>
+
+    <p class="frase-institucional">
+      E toda história merece ser defendida com técnica, estratégia e humanidade.
+    </p>
+
+    <span class="assinatura-institucional">
+      SANTOS, MASCARENHAS E SOBREIRA ADVOGADOS
+    </span>
   </div>
-</section>
 </section>
   
   
