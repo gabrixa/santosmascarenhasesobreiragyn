@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nossa História - SMS Advocacia</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      color:#3f3c35;
+      background:linear-gradient(
+        to bottom,
+        #f4f1eb 0%,
+        #eee9e2 45%,
+        #e7e0d7 75%,
+        #ddd5ca 100%
+      );
+    }
+
+    .pagina{
+      max-width:1180px;
+      margin:0 auto;
+      padding:28px 24px 70px;
+    }
+
+    /* =====================================================
+       NAVEGAÇÃO
+       ===================================================== */
+    .voltar-inicio{
+      display:inline-flex;
+      align-items:center;
+      width:fit-content;
+      color:#55534d;
+      font-size:.9rem;
+      font-weight:400;
+      text-decoration:none;
+      transition:color .25s ease, transform .25s ease;
+    }
+
+    .voltar-inicio:hover{
+      color:#24231f;
+      transform:translateX(-3px);
+    }
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+    .historia-hero{
+      display:grid;
+      grid-template-columns:.72fr 1.28fr;
+      gap:52px;
+      align-items:center;
+      padding:58px 0 55px;
+    }
+
+    .historia-etiqueta{
+      display:block;
+      margin-bottom:16px;
+      font-size:.76rem;
+      font-weight:400;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      color:#80796d;
+    }
+
+    .historia-hero h1{
+      margin:0;
+      max-width:470px;
+      font-size:clamp(2.7rem,5vw,4.7rem);
+      line-height:1.03;
+      letter-spacing:-2px;
+      color:#3f3c35;
+    }
+
+    .historia-linha{
+      width:44px;
+      height:2px;
+      margin:28px 0;
+      background:#918e7d;
+    }
+
+    .historia-subtitulo{
+      max-width:390px;
+      margin:0;
+      font-size:1.16rem;
+      font-weight:300;
+      line-height:1.6;
+      color:#646057;
+    }
+
+    /* =====================================================
+       SLIDESHOW
+       ===================================================== */
+    .historia-slideshow{
+      position:relative;
+      min-height:430px;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 18px 38px rgba(54,49,42,.16);
+      background:#d7d0c6;
+    }
+
+    .historia-slide{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:0;
+      transition:opacity 1s ease;
+    }
+
+    .historia-slide.ativo{
+      opacity:1;
+      z-index:1;
+    }
+
+    .historia-slideshow::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:2;
+      background:linear-gradient(
+        to top,
+        rgba(31,29,26,.22),
+        transparent 45%
+      );
+      pointer-events:none;
+    }
+
+    .historia-controles{
+      position:absolute;
+      left:50%;
+      bottom:18px;
+      transform:translateX(-50%);
+      z-index:4;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(63,60,53,.5);
+      backdrop-filter:blur(8px);
+    }
+
+    .historia-seta{
+      width:30px;
+      height:30px;
+      border:0;
+      border-radius:50%;
+      background:rgba(255,255,255,.14);
+      color:#fff;
+      font-size:1rem;
+      cursor:pointer;
+    }
+
+    .historia-dots{
+      display:flex;
+      gap:7px;
+    }
+
+    .historia-dot{
+      width:7px;
+      height:7px;
+      border:0;
+      padding:0;
+      border-radius:50%;
+      background:rgba(255,255,255,.45);
+      cursor:pointer;
+    }
+
+    .historia-dot.ativo{
+      background:#fff;
+    }
+
+    /* =====================================================
+       LINHA DO TEMPO
+       ===================================================== */
+    .linha-tempo{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:22px;
+      margin:6px 0 70px;
+      padding:28px 0;
+      border-top:1px solid rgba(85,83,77,.16);
+      border-bottom:1px solid rgba(85,83,77,.16);
+    }
+
+    .tempo-item{
+      text-align:center;
+      padding:0 10px;
+    }
+
+    .tempo-icone{
+      display:block;
+      margin-bottom:10px;
+      font-size:1.35rem;
+      color:#918e7d;
+    }
+
+    .tempo-item strong{
+      display:block;
+      margin-bottom:4px;
+      font-size:1.2rem;
+      color:#4a473f;
+    }
+
+    .tempo-item span{
+      display:block;
+      font-size:.92rem;
+      font-weight:300;
+      line-height:1.45;
+      color:#6a665f;
+    }
+
+    /* =====================================================
+       CONTEÚDO PRINCIPAL
+       ===================================================== */
+    .historia-conteudo{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:56px;
+      align-items:start;
+      margin-bottom:70px;
+    }
+
+    .historia-foto-grande{
+      position:sticky;
+      top:25px;
+    }
+
+    .historia-foto-grande img{
+      width:100%;
+      min-height:690px;
+      object-fit:cover;
+      border-radius:18px;
+      box-shadow:0 14px 30px rgba(54,49,42,.13);
+      display:block;
+    }
+
+    .historia-frase{
+      position:relative;
+      width:86%;
+      margin:-150px auto 0;
+      z-index:2;
+      padding:28px 28px 24px;
+      border-radius:14px;
+      background:rgba(244,241,235,.92);
+      box-shadow:0 10px 24px rgba(54,49,42,.12);
+      backdrop-filter:blur(8px);
+    }
+
+    .historia-frase p{
+      margin:0 0 14px;
+      font-family:Georgia, serif;
+      font-size:1.08rem;
+      font-style:italic;
+      line-height:1.5;
+      color:#4e4a43;
+    }
+
+    .historia-frase span{
+      font-size:.66rem;
+      letter-spacing:2.5px;
+      text-transform:uppercase;
+      color:#8a8378;
+    }
+
+    .historia-texto{
+      padding-top:8px;
+    }
+
+    .historia-bloco{
+      margin-bottom:30px;
+      padding-bottom:28px;
+      border-bottom:1px solid rgba(85,83,77,.12);
+    }
+
+    .historia-bloco:last-child{
+      border-bottom:0;
+      margin-bottom:0;
+      padding-bottom:0;
+    }
+
+    .historia-bloco p{
+      margin:0;
+      font-size:1rem;
+      font-weight:300;
+      line-height:1.78;
+      color:#5d5952;
+    }
+
+    .historia-bloco strong{
+      font-weight:600;
+      color:#3f3c35;
+    }
+
+    .destaque{
+      display:inline;
+      font-weight:600;
+      color:#3f3c35;
+      background:rgba(145,142,125,.28);
+      padding:2px 5px;
+      border-radius:4px;
+      box-decoration-break:clone;
+      -webkit-box-decoration-break:clone;
+    }
+
+    /* =====================================================
+       FECHAMENTO
+       ===================================================== */
+    .historia-fechamento{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      gap:28px;
+      align-items:center;
+      padding:34px 38px;
+      margin-top:20px;
+      border-radius:18px;
+      background:rgba(255,255,255,.45);
+      border:1px solid rgba(100,96,87,.11);
+      box-shadow:0 10px 26px rgba(54,49,42,.06);
+    }
+
+    .historia-fechamento-icone{
+      font-size:3rem;
+      color:#918e7d;
+    }
+
+    .historia-fechamento-texto small{
+      display:block;
+      margin-bottom:11px;
+      font-size:.72rem;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      color:#8a8377;
+    }
+
+    .historia-fechamento-texto h2{
+      margin:0 0 12px;
+      font-size:1.65rem;
+      line-height:1.2;
+      color:#3f3c35;
+    }
+
+    .historia-fechamento-texto p{
+      margin:0;
+      font-size:.98rem;
+      font-weight:300;
+      line-height:1.65;
+      color:#646057;
+    }
+
+    .historia-sms{
+      padding-left:28px;
+      border-left:1px solid rgba(85,83,77,.15);
+      font-family:Georgia,serif;
+      font-size:4.2rem;
+      color:rgba(145,142,125,.18);
+    }
+
+    .historia-quote-final{
+      max-width:920px;
+      margin:46px auto 0;
+      text-align:center;
+    }
+
+    .historia-quote-final p{
+      margin:0 0 16px;
+      font-family:Georgia,serif;
+      font-size:clamp(1.2rem,2vw,1.6rem);
+      font-style:italic;
+      line-height:1.5;
+      color:#555149;
+    }
+
+    .historia-quote-final span{
+      font-size:.68rem;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      color:#8a8377;
+    }
+
+    /* =====================================================
+       RESPONSIVIDADE
+       ===================================================== */
+    @media(max-width:900px){
+      .historia-hero{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
+
+      .historia-hero h1,
+      .historia-subtitulo{
+        max-width:none;
+      }
+
+      .linha-tempo{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .historia-conteudo{
+        grid-template-columns:1fr;
+      }
+
+      .historia-foto-grande{
+        position:static;
+      }
+
+      .historia-foto-grande img{
+        min-height:520px;
+      }
+
+      .historia-fechamento{
+        grid-template-columns:auto 1fr;
+      }
+
+      .historia-sms{
+        display:none;
+      }
+    }
+
+    @media(max-width:600px){
+      .pagina{
+        padding:22px 14px 50px;
+      }
+
+      .historia-hero{
+        padding:48px 0 38px;
+      }
+
+      .historia-slideshow{
+        min-height:330px;
+        border-radius:14px;
+      }
+
+      .linha-tempo{
+        grid-template-columns:1fr 1fr;
+        gap:26px 12px;
+      }
+
+      .historia-conteudo{
+        gap:34px;
+      }
+
+      .historia-foto-grande img{
+        min-height:460px;
+        border-radius:14px;
+      }
+
+      .historia-frase{
+        width:90%;
+        margin:-120px auto 0;
+        padding:22px;
+      }
+
+      .historia-bloco p{
+        font-size:.95rem;
+      }
+
+      .historia-fechamento{
+        grid-template-columns:1fr;
+        padding:27px 24px;
+      }
+
+      .historia-fechamento-icone{
+        font-size:2.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="pagina">
+
+    <a href="index.html" class="voltar-inicio">← Voltar ao início</a>
+
+    <!-- =====================================================
+         HERO + FOTOS DOS FUNDADORES
+         Troque apenas os nomes das imagens, se necessário.
+         ===================================================== -->
+    <section class="historia-hero">
+
+      <div>
+        <span class="historia-etiqueta">Nossa História</span>
+
+        <h1>Mais do que processos, defendemos pessoas.</h1>
+
+        <div class="historia-linha"></div>
+
+        <p class="historia-subtitulo">
+          Uma trajetória construída com propósito, técnica e humanidade.
+        </p>
+      </div>
+
+      <div class="historia-slideshow" id="historiaSlideshow">
+
+        <img src="historia juntos 1.jpg"
+             alt="Dra. Jéssica Souza e Dr. Pabllo Mascarenhas"
+             class="historia-slide ativo">
+
+        <img src="historia juntos 2.jpg"
+             alt="Dra. Jéssica Souza e Dr. Pabllo Mascarenhas"
+             class="historia-slide">
+
+        <img src="historia juntos 3.jpg"
+             alt="Dra. Jéssica Souza e Dr. Pabllo Mascarenhas"
+             class="historia-slide">
+
+        <div class="historia-controles">
+          <button class="historia-seta" type="button" onclick="mudarSlide(-1)" aria-label="Foto anterior">‹</button>
+
+          <div class="historia-dots">
+            <button class="historia-dot ativo" type="button" onclick="irParaSlide(0)" aria-label="Foto 1"></button>
+            <button class="historia-dot" type="button" onclick="irParaSlide(1)" aria-label="Foto 2"></button>
+            <button class="historia-dot" type="button" onclick="irParaSlide(2)" aria-label="Foto 3"></button>
+          </div>
+
+          <button class="historia-seta" type="button" onclick="mudarSlide(1)" aria-label="Próxima foto">›</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         LINHA DO TEMPO
+         ===================================================== -->
+    <section class="linha-tempo">
+
+      <div class="tempo-item">
+        <span class="tempo-icone">◇</span>
+        <strong>2011</strong>
+        <span>O início na faculdade de Direito</span>
+      </div>
+
+      <div class="tempo-item">
+        <span class="tempo-icone">◇</span>
+        <strong>Experiência</strong>
+        <span>Atuação em escritório de grande porte</span>
+      </div>
+
+      <div class="tempo-item">
+        <span class="tempo-icone">◇</span>
+        <strong>2021</strong>
+        <span>Fundação da SMS Advocacia</span>
+      </div>
+
+      <div class="tempo-item">
+        <span class="tempo-icone">◇</span>
+        <strong>Hoje</strong>
+        <span>Crescimento com propósito</span>
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         HISTÓRIA
+         ===================================================== -->
+    <section class="historia-conteudo">
+
+      <div class="historia-foto-grande">
+
+        <img src="historia escritorio.jpg"
+             alt="Dra. Jéssica Souza e Dr. Pabllo Mascarenhas">
+
+        <div class="historia-frase">
+          <p>
+            “Nossa fé em Deus orienta nossos princípios. A técnica direciona
+            nossa atuação. E a humanidade define a forma como exercemos a advocacia.”
+          </p>
+
+          <span>SMS Advocacia</span>
+        </div>
+
+      </div>
+
+      <div class="historia-texto">
+
+        <div class="historia-bloco">
+          <p>
+            A <strong>Dra. Jéssica Souza</strong> e o
+            <strong>Dr. Pabllo Mascarenhas</strong> se conheceram na faculdade de Direito,
+            em <span class="destaque">2011</span>. Cursaram juntos toda a graduação e,
+            posteriormente, trabalharam no mesmo escritório de advocacia de grande porte,
+            onde desenvolveram sólida experiência profissional e construíram uma visão
+            em comum sobre a advocacia.
+          </p>
+        </div>
+
+        <div class="historia-bloco">
+          <p>
+            Foi nessa trajetória que compreenderam que
+            <span class="destaque">advogar vai muito além da técnica, dos honorários ou de um processo</span>.
+            É dar voz a quem precisa ser ouvido e compreender que, por trás de cada demanda,
+            existem pessoas, famílias, crianças, patrimônios e histórias que podem ser
+            profundamente impactadas por uma decisão judicial.
+          </p>
+        </div>
+
+        <div class="historia-bloco">
+          <p>
+            Com essa essência, em <span class="destaque">2021, em meio à pandemia</span>,
+            fundaram a <strong>Santos, Mascarenhas e Sobreira Advogados</strong>,
+            com o propósito de construir uma advocacia que unisse
+            <span class="destaque">excelência técnica, estratégia e humanidade</span>.
+          </p>
+        </div>
+
+        <div class="historia-bloco">
+          <p>
+            Desde então, o escritório vem crescendo e formando um corpo jurídico que
+            compartilha dos mesmos princípios:
+            <span class="destaque">compromisso com o cliente, atuação firme e estratégica,
+            respeito às pessoas e responsabilidade com cada história confiada ao escritório</span>.
+          </p>
+        </div>
+
+        <div class="historia-bloco">
+          <p>
+            <strong>Mais do que processos, defendemos pessoas.</strong>
+            Mais do que exercer uma profissão, acreditamos em um propósito.
+          </p>
+        </div>
+
+        <div class="historia-bloco">
+          <p>
+            <strong>Nossa fé em Deus orienta nossos princípios.</strong>
+            A técnica direciona nossa atuação.
+            E a humanidade define a forma como exercemos a advocacia.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         EXPERIÊNCIA
+         ===================================================== -->
+    <section class="historia-fechamento">
+
+      <div class="historia-fechamento-icone">◉</div>
+
+      <div class="historia-fechamento-texto">
+        <small>Uma história que começou antes de 2021</small>
+
+        <h2>O escritório tem poucos anos. A nossa experiência, não.</h2>
+
+        <p>
+          A SMS nasceu em 2021, mas carrega uma trajetória jurídica construída
+          muito antes de sua fundação, com anos de atuação, experiência prática
+          e conhecimento acumulado por seus fundadores.
+        </p>
+      </div>
+
+      <div class="historia-sms" aria-hidden="true">SMS</div>
+
+    </section>
+
+    <div class="historia-quote-final">
+      <p>
+        “Mais do que exercer uma profissão, acreditamos em um propósito.”
+      </p>
+
+      <span>Santos, Mascarenhas e Sobreira Advogados</span>
+    </div>
+
+  </main>
+
+  <script>
+    const slides = document.querySelectorAll('.historia-slide');
+    const dots = document.querySelectorAll('.historia-dot');
+
+    let slideAtual = 0;
+    let intervaloHistoria;
+
+    function mostrarSlide(indice){
+      if(!slides.length) return;
+
+      slides.forEach(slide => slide.classList.remove('ativo'));
+      dots.forEach(dot => dot.classList.remove('ativo'));
+
+      slideAtual = (indice + slides.length) % slides.length;
+
+      slides[slideAtual].classList.add('ativo');
+
+      if(dots[slideAtual]){
+        dots[slideAtual].classList.add('ativo');
+      }
+    }
+
+    function mudarSlide(direcao){
+      mostrarSlide(slideAtual + direcao);
+      reiniciarSlideshow();
+    }
+
+    function irParaSlide(indice){
+      mostrarSlide(indice);
+      reiniciarSlideshow();
+    }
+
+    function iniciarSlideshow(){
+      if(slides.length < 2) return;
+
+      intervaloHistoria = setInterval(() => {
+        mostrarSlide(slideAtual + 1);
+      }, 4500);
+    }
+
+    function reiniciarSlideshow(){
+      clearInterval(intervaloHistoria);
+      iniciarSlideshow();
+    }
+
+    iniciarSlideshow();
+  </script>
+
+</body>
+</html>

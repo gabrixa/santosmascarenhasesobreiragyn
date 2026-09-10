@@ -3,280 +3,600 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sentenças deferidas - SMS</title>
+  <title>Vlog Jurídico - SMS</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: 
-        linear-gradient(rgba(249, 249, 249, 0.0), rgba(249, 249, 249, 0.0)),
-        url('logo site todo.jpg') no-repeat center center fixed;
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-      color: #5b5950;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      color:#3f3c35;
+      background:linear-gradient(to bottom,#f4f1eb 0%,#eee8df 55%,#ddd5ca 100%);
     }
 
-    .casos {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+    .navegacao-topo{max-width:1180px;margin:0 auto;padding:28px 24px 0}
+    .voltar-inicio{display:inline-flex;color:#55534d;font-size:.9rem;font-weight:400;text-decoration:none;transition:.25s ease}
+    .voltar-inicio:hover{color:#24231f;transform:translateX(-3px)}
+
+    .vlog-hero{
+      max-width:1180px;margin:0 auto;padding:72px 24px 52px;
+      display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:end;
+    }
+    .vlog-etiqueta{display:flex;align-items:center;gap:14px;margin-bottom:16px;font-size:.76rem;letter-spacing:2.8px;text-transform:uppercase;color:#777166}
+    .vlog-etiqueta::after{content:"";width:120px;height:1px;background:rgba(85,83,77,.28)}
+    .vlog-hero h1{margin:0 0 12px;font-size:clamp(2.6rem,6vw,4.8rem);line-height:.98;letter-spacing:-2px}
+    .vlog-subtitulo{margin:0 0 14px;font-size:clamp(1.15rem,2vw,1.45rem);font-weight:300;color:#6c675f}
+    .vlog-descricao{max-width:720px;margin:0;font-size:1rem;font-weight:300;line-height:1.7;color:#646057}
+    .vlog-marca{min-height:150px;display:flex;justify-content:flex-end;align-items:center;font-family:Georgia,serif;font-size:8rem;color:rgba(145,142,125,.11);user-select:none}
+
+    .portais{max-width:1180px;margin:0 auto;padding:0 24px 72px}
+    .portal-card{
+      display:grid;grid-template-columns:1fr 1fr;min-height:340px;margin-bottom:18px;
+      overflow:hidden;border-radius:18px;background:rgba(255,255,255,.58);
+      border:1px solid rgba(100,96,87,.12);box-shadow:0 12px 32px rgba(54,49,42,.08);
+    }
+    .portal-card.invertido .portal-imagem{order:2}
+    .portal-card.invertido .portal-conteudo{order:1}
+    .portal-imagem{min-height:340px;overflow:hidden}
+    .portal-imagem img{width:100%;height:100%;object-fit:cover;display:block}
+    .portal-conteudo{padding:54px 58px;display:flex;flex-direction:column;justify-content:center}
+    .portal-tag{margin-bottom:14px;font-size:.76rem;letter-spacing:2.6px;text-transform:uppercase;color:#8a8377}
+    .portal-conteudo h2{margin:0 0 18px;font-size:clamp(2rem,3vw,2.8rem)}
+    .portal-conteudo p{max-width:490px;margin:0 0 28px;font-size:1rem;font-weight:300;line-height:1.7;color:#5e5a53}
+    .portal-link{display:inline-flex;width:fit-content;padding:12px 18px;border-radius:8px;background:#918e7d;color:#fff;text-decoration:none;font-size:.95rem;transition:.25s ease}
+    .portal-link:hover{transform:translateY(-2px);background:#7f7b69}
+
+    .blog{max-width:1180px;margin:0 auto;padding:0 24px 78px}
+    .secao-cabecalho{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(85,83,77,.14)}
+    .secao-cabecalho h2{margin:0;font-size:1rem;letter-spacing:2.1px;text-transform:uppercase}
+    .secao-cabecalho a{color:#55534d;text-decoration:none;font-size:.92rem}
+
+    .artigo-destaque{
+      display:grid;grid-template-columns:1fr 1.08fr;overflow:hidden;border-radius:16px;
+      background:rgba(255,255,255,.56);border:1px solid rgba(100,96,87,.11);
+      box-shadow:0 10px 26px rgba(54,49,42,.07);
+    }
+    .artigo-destaque-imagem{min-height:330px}
+    .artigo-destaque-imagem img{width:100%;height:100%;object-fit:cover;display:block}
+    .artigo-destaque-texto{padding:42px 44px;display:flex;flex-direction:column;justify-content:center}
+    .artigo-meta{margin-bottom:14px;font-size:.86rem;color:#858076}
+    .artigo-destaque h3{margin:0 0 14px;font-size:clamp(1.55rem,2.7vw,2.25rem);line-height:1.12}
+    .artigo-destaque p{margin:0 0 16px;font-weight:300;line-height:1.65;color:#5e5a53}
+
+    .destaque{display:inline;font-weight:600;color:#3f3c35;background:rgba(145,142,125,.28);padding:2px 5px;border-radius:4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+    .abrir-artigo{border:0;background:none;padding:0;color:#3f3c35;font:inherit;font-weight:600;cursor:pointer;text-align:left}
+    .abrir-artigo:hover{text-decoration:underline}
+
+    .filtros-artigos{display:flex;flex-wrap:wrap;gap:9px;margin:26px 0 20px}
+    .filtro-btn{border:1px solid rgba(85,83,77,.18);background:rgba(255,255,255,.46);color:#55534d;padding:9px 13px;border-radius:999px;cursor:pointer;font-size:.86rem;transition:.2s ease}
+    .filtro-btn:hover,.filtro-btn.ativo{background:#918e7d;color:#fff;border-color:#918e7d}
+
+    .artigos-recentes{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .artigo-card{
+      display:grid;grid-template-columns:150px 1fr;min-height:190px;overflow:hidden;
+      border-radius:14px;background:rgba(255,255,255,.52);
+      border:1px solid rgba(100,96,87,.10);box-shadow:0 5px 16px rgba(54,49,42,.04);
+    }
+    .artigo-card img{width:100%;height:100%;object-fit:cover}
+    .artigo-card-conteudo{padding:20px}
+    .artigo-card small{display:block;margin-bottom:8px;color:#8a857b;font-size:.75rem}
+    .artigo-card h3{margin:0 0 10px;font-size:1.05rem;line-height:1.35}
+    .artigo-card p{margin:0 0 15px;font-size:.9rem;font-weight:300;line-height:1.5;color:#67635b}
+
+    .artigo-completo{
+      display:none;position:fixed;inset:0;z-index:10000;padding:35px 20px;
+      background:rgba(38,36,32,.66);overflow:auto;
+    }
+    .artigo-completo.aberto{display:block}
+    .artigo-completo-caixa{
+      position:relative;max-width:850px;margin:0 auto;padding:50px 56px;
+      border-radius:18px;background:#f4f1eb;box-shadow:0 24px 60px rgba(0,0,0,.28);
+    }
+    .fechar-artigo{position:absolute;right:20px;top:14px;border:0;background:none;font-size:2rem;font-weight:300;color:#6b675f;cursor:pointer}
+    .artigo-categoria{display:block;margin-bottom:12px;font-size:.72rem;letter-spacing:2.2px;text-transform:uppercase;color:#8a8377}
+    .artigo-completo h2{margin:0 0 28px;font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.1}
+    .artigo-corpo p{font-size:1rem;font-weight:300;line-height:1.75;color:#55534d}
+    .artigo-corpo h4{margin:30px 0 10px;font-size:1.14rem;color:#3f3c35}
+    .artigo-corpo em{display:block;margin-top:24px;color:#777166;font-size:.9rem}
+
+    .casos{max-width:1180px;margin:0 auto;padding:0 24px 78px}
+    .casos-intro{max-width:760px;margin:0 0 28px;font-size:1rem;font-weight:300;line-height:1.7;color:#646057}
+    #filtroCasos{width:100%;padding:13px 16px;margin-bottom:20px;font-size:15px;color:#55534d;border-radius:10px;border:1px solid rgba(91,89,80,.22);background:rgba(255,255,255,.64);outline:none}
+    .caso{background:rgba(255,255,255,.58);border:1px solid rgba(100,96,87,.11);padding:20px 22px;border-radius:12px;box-shadow:0 4px 14px rgba(54,49,42,.05);margin-bottom:12px;cursor:pointer;position:relative}
+    .caso::after{content:"+";position:absolute;top:18px;right:20px;font-size:1.35rem;color:#918e7d}
+    .caso.selecionado::after{content:"−"}
+    .caso h3{margin:0;padding-right:38px;font-size:1.05rem}
+    .descricao-caso{max-height:0;overflow:hidden;opacity:0;transition:.4s ease;color:#55534d;line-height:1.65;font-size:.95rem;border-left:3px solid #918e7d;padding-left:12px;margin-top:0}
+    .descricao-caso.aberto{max-height:500px;opacity:1;margin-top:16px}
+
+    .podcasts{max-width:1000px;margin:0 auto;padding:0 20px 80px}
+    .podcasts h2{text-align:center;font-size:28px;margin:0 0 30px}
+    .episodio{background:rgba(255,255,255,.68);padding:20px;border-radius:12px;border:1px solid rgba(100,96,87,.11);box-shadow:0 4px 14px rgba(54,49,42,.06);margin-bottom:25px}
+    .episodio h4{margin:0 0 10px;font-size:18px;color:#6e6b5c}
+    .episodio video{width:100%;margin-top:10px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+
+    @media(max-width:900px){
+      .vlog-hero{grid-template-columns:1fr;gap:12px;padding-top:54px}
+      .vlog-marca{display:none}
+      .portal-card,.portal-card.invertido{grid-template-columns:1fr}
+      .portal-card.invertido .portal-imagem,.portal-card.invertido .portal-conteudo{order:initial}
+      .artigo-destaque{grid-template-columns:1fr}
+      .artigos-recentes{grid-template-columns:1fr}
     }
 
-    .casos h2,
-    .podcasts h2 {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 30px;
-    }
-
-    /* Input filtro */
-    #filtroCasos {
-      width: 100%;
-      padding: 10px 15px;
-      margin-bottom: 25px;
-      font-size: 16px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-      outline-offset: 2px;
-      transition: border-color 0.3s ease;
-    }
-    #filtroCasos:focus {
-      border-color: #918e7d;
-    }
-
-    .caso {
-      background-color: #ffffff;
-      border-left: 5px solid #5b5950;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
-      margin-bottom: 25px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      user-select: none;
-      position: relative;
-    }
-
-    .caso:hover {
-      transform: translateY(-3px);
-      background-color: #f0f0e8;
-    }
-
-    .caso.selecionado {
-      background-color: #dcd9c9;
-      border-left-color: #918e7d;
-      box-shadow: 0 5px 15px rgba(145, 142, 125, 0.4);
-    }
-
-    .caso h3 {
-      margin-top: 0;
-      font-size: 20px;
-      color: #5b5950;
-    }
-
-    /* Colapsar descrição */
-    .descricao-caso {
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: max-height 0.4s ease, opacity 0.4s ease;
-      color: #333;
-      margin-top: 12px;
-      line-height: 1.6;
-      font-size: 15px;
-      padding-left: 10px;
-      border-left: 3px solid #918e7d;
-    }
-
-    .descricao-caso.aberto {
-      max-height: 500px;
-      opacity: 1;
-    }
-
-    .podcasts {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .episodio {
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 10px;
-      border-left: 5px solid #6e6b5c;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      margin-bottom: 25px;
-    }
-
-    .episodio h4 {
-      margin: 0 0 10px;
-      font-size: 18px;
-      color: #6e6b5c;
-    }
-
-    .episodio video {
-      width: 100%;
-      margin-top: 10px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-
-    /* Botão flutuante */
-    .menu-fab {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 999;
-    }
-
-    .fab-button {
-      background-color: #918e7d;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 24px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-
-    .fab-button:hover {
-      transform: scale(1.1);
-      background-color: #6e6b5c;
-    }
-
-    .fab-menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      bottom: 70px;
-      right: 0;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      padding: 10px 0;
-      min-width: 160px;
-      text-align: right;
-      z-index: 9999;
-    }
-
-    .fab-menu a {
-      text-decoration: none;
-      color: #333;
-      padding: 10px 20px;
-      transition: background-color 0.3s ease;
-      font-weight: bold;
-      white-space: nowrap;
-      display: block;
-    }
-
-    .fab-menu a:hover {
-      background-color: #f0f0f0;
-    }
-
-    .fab-open .fab-menu {
-      display: flex;
-    }
-
-    /* ==========================
-       RESPONSIVIDADE CELULAR
-       ========================== */
-    @media (max-width: 600px) {
-      body {
-        background-attachment: scroll;
-        background-size: cover;
-      }
-
-      .casos, .podcasts {
-        margin: 20px auto;
-        padding: 0 12px;
-      }
-
-      .casos h2,
-      .podcasts h2 {
-        font-size: 22px;
-        margin-bottom: 20px;
-      }
-
-      #filtroCasos {
-        font-size: 14px;
-        padding: 8px 12px;
-      }
-
-      .caso {
-        padding: 15px;
-      }
-
-      .caso h3 {
-        font-size: 18px;
-      }
-
-      .descricao-caso {
-        font-size: 14px;
-        line-height: 1.5;
-      }
-
-      .episodio h4 {
-        font-size: 16px;
-      }
-
-      .fab-button {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-      }
-
-      .fab-menu a {
-        padding: 8px 14px;
-        font-size: 14px;
-      }
+    @media(max-width:600px){
+      .navegacao-topo{padding:22px 14px 0}
+      .vlog-hero{padding:46px 14px 36px}
+      .portais,.blog,.casos{padding-left:14px;padding-right:14px}
+      .portal-conteudo{padding:30px 24px}
+      .portal-imagem{min-height:235px}
+      .artigo-destaque-texto{padding:28px 24px}
+      .artigo-destaque-imagem{min-height:230px}
+      .artigos-recentes{grid-template-columns:1fr}
+      .artigo-card{grid-template-columns:105px 1fr}
+      .artigo-card-conteudo{padding:15px}
+      .artigo-card p{display:none}
+      .artigo-completo{padding:16px 10px}
+      .artigo-completo-caixa{padding:44px 22px 30px}
+      .podcasts{padding:0 14px 60px}
+      .podcasts h2{font-size:22px}
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Botão flutuante -->
-  <div class="menu-fab" id="fab">
-    <button class="fab-button" onclick="toggleFab()">☰</button>
-    <div class="fab-menu">
-      <a href="index.html">Início</a>
-      <a href="https://wa.me/5562982809879" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
-    </div>
+  <div class="navegacao-topo">
+    <a href="index.html" class="voltar-inicio">← Voltar ao início</a>
   </div>
 
-  <!-- Casos -->
-  <section class="casos">
-    <h2>Sentenças deferidas</h2>
+  <header class="vlog-hero">
+    <div>
+      <div class="vlog-etiqueta">Conhecimento que gera confiança</div>
+      <h1>VLOG JURÍDICO</h1>
+      <p class="vlog-subtitulo">Informação jurídica de forma clara e acessível.</p>
+      <p class="vlog-descricao">
+        Conteúdos, decisões e temas relevantes explicados pela equipe do
+        Santos Mascarenhas &amp; Sobreira Advocacia.
+      </p>
+    </div>
+    <div class="vlog-marca" aria-hidden="true">SMS</div>
+  </header>
 
-    <input type="text" id="filtroCasos" placeholder="Buscar sentenças..." aria-label="Buscar sentenças">
+  <section class="portais">
+    <article class="portal-card">
+      <div class="portal-imagem">
+        <img src="blog juridico.jpg" alt="Blog Jurídico SMS">
+      </div>
+      <div class="portal-conteudo">
+        <span class="portal-tag">Artigos e conteúdos</span>
+        <h2>Blog Jurídico</h2>
+        <p>
+          Conteúdos organizados por área para facilitar a leitura: Família,
+          Saúde, Criminal, Consumidor e Imobiliário.
+        </p>
+        <a href="#blog" class="portal-link">Explorar artigos →</a>
+      </div>
+    </article>
 
-    <div class="caso" tabindex="0" role="button" aria-expanded="false" aria-controls="desc1" onclick="toggleDescricao(this)" onkeydown="keyToggleDescricao(event, this)">
-      <h3>♦️ Ação de Divórcio com Guarda Compartilhada</h3>
-      <div class="descricao-caso" id="desc1">
+    <article class="portal-card invertido">
+      <div class="portal-imagem">
+        <img src="sentencas.jpg" alt="Decisões e Sentenças">
+      </div>
+      <div class="portal-conteudo">
+        <span class="portal-tag">Resultados relevantes</span>
+        <h2>Decisões &amp; Sentenças</h2>
+        <p>
+          Conheça decisões e resultados relevantes da atuação do escritório,
+          apresentados de forma objetiva e informativa.
+        </p>
+        <a href="#sentencas" class="portal-link">Ver decisões →</a>
+      </div>
+    </article>
+  </section>
+
+  <section class="blog" id="blog">
+    <div class="secao-cabecalho">
+      <h2>Em destaque</h2>
+      <a href="#todos-artigos">Todos os artigos ↓</a>
+    </div>
+
+    <article class="artigo-destaque">
+      <div class="artigo-destaque-imagem">
+        <img src="artigo divorcio.jpg" alt="Divórcio sem autorização do outro cônjuge">
+      </div>
+      <div class="artigo-destaque-texto">
+        <div class="artigo-meta">Direito de Família • Conteúdo jurídico</div>
+        <h3>Meu cônjuge não aceita o divórcio. Posso me divorciar mesmo assim?</h3>
+        <p>Sim. Ninguém é obrigado a permanecer casado contra a própria vontade. O divórcio é considerado um direito potestativo, ou seja, não depende da concordância do outro cônjuge para...</p>
+        <button class="abrir-artigo" type="button" onclick="abrirArtigo('artigo-1')">Ler artigo completo →</button>
+      </div>
+    </article>
+
+    <div class="artigo-completo" id="artigo-1" aria-hidden="true">
+      <div class="artigo-completo-caixa">
+        <button class="fechar-artigo" type="button" onclick="fecharArtigo('artigo-1')" aria-label="Fechar artigo">×</button>
+        <span class="artigo-categoria">Direito de Família</span>
+        <h2>Meu cônjuge não aceita o divórcio. Posso me divorciar mesmo assim?</h2>
+        <div class="artigo-corpo">
+          <p><span class="destaque">Sim. Ninguém é obrigado a permanecer casado contra a própria vontade.</span></p>
+<p>O divórcio é considerado um <span class="destaque">direito potestativo</span>, ou seja, não depende da concordância do outro cônjuge para ser decretado.</p>
+<p>Isso significa que discussões envolvendo partilha de bens, guarda dos filhos, pensão alimentícia ou outras questões decorrentes do casamento não precisam, necessariamente, impedir a dissolução do vínculo matrimonial.</p>
+<p>O Superior Tribunal de Justiça já reconheceu a possibilidade de <span class="destaque">decretação liminar do divórcio</span>, mediante julgamento parcial do mérito, quando presentes os requisitos jurídicos.</p>
+<p>As demais questões discutidas entre o casal podem continuar sendo analisadas no processo.</p>
+<h4>E se existirem bens a partilhar?</h4>
+<p>A existência de patrimônio também não impede o divórcio. É possível dissolver o casamento e prosseguir posteriormente com a discussão acerca da partilha.</p>
+<p>Por isso, a resistência de um dos cônjuges não significa que o outro permanecerá indefinidamente casado.</p>
+<p>Cada situação, contudo, deve ser analisada individualmente, principalmente quando existem filhos menores, patrimônio relevante, empresas, investimentos ou outras questões familiares envolvidas.</p>
+<p><em>Conteúdo de caráter exclusivamente informativo. A análise jurídica depende das particularidades de cada caso.</em></p>
+<p><em>2. </em>partilha de bens no divórcio</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="filtros-artigos" id="todos-artigos">
+      <button class="filtro-btn ativo" data-filtro="Todos">Todos</button>
+      <button class="filtro-btn" data-filtro="Direito de Família">Família</button>
+      <button class="filtro-btn" data-filtro="Direito da Saúde">Saúde</button>
+      <button class="filtro-btn" data-filtro="Direito Criminal">Criminal</button>
+      <button class="filtro-btn" data-filtro="Direito do Consumidor">Consumidor</button>
+      <button class="filtro-btn" data-filtro="Direito Imobiliário">Imobiliário</button>
+    </div>
+
+    <div class="artigos-recentes">
+      
+<article class="artigo-card" data-categoria="Direito de Família">
+  <img src="artigo partilha.jpg" alt="Partilha de bens no divórcio">
+  <div class="artigo-card-conteudo">
+    <small>Direito de Família</small>
+    <h3>Partilha de bens no divórcio</h3>
+    <p>A partilha de bens costuma ser um dos pontos mais sensíveis de um divórcio, especialmente quando o casal construiu patrimônio ao longo de muitos anos. Imóveis e veículos são...</p>
+    <button class="abrir-artigo" type="button" onclick="abrirArtigo('artigo-2')">Ler artigo →</button>
+  </div>
+</article>
+
+<div class="artigo-completo" id="artigo-2" aria-hidden="true">
+  <div class="artigo-completo-caixa">
+    <button class="fechar-artigo" type="button" onclick="fecharArtigo('artigo-2')" aria-label="Fechar artigo">×</button>
+    <span class="artigo-categoria">Direito de Família</span>
+    <h2>Divórcio e partilha de bens: o que pode entrar na divisão do patrimônio?</h2>
+    <div class="artigo-corpo">
+      <p>A partilha de bens costuma ser um dos pontos mais sensíveis de um divórcio, especialmente quando o casal construiu patrimônio ao longo de muitos anos.</p>
+<p>Imóveis e veículos são apenas parte dessa discussão.</p>
+<p>Dependendo do regime de bens e das circunstâncias do caso, a análise patrimonial pode envolver <span class="destaque">saldos bancários, investimentos, aplicações financeiras, quotas empresariais, bens adquiridos durante o casamento, direitos contratuais e outros ativos de conteúdo econômico</span>.</p>
+<p>Também é importante verificar a origem e a data de aquisição de cada bem.</p>
+<h4>Nem sempre o patrimônio está evidente</h4>
+<p>Em divórcios de maior complexidade, a apuração patrimonial exige análise documental cuidadosa. Extratos, contratos, declarações fiscais, documentos empresariais, matrículas de imóveis e outras informações podem ser relevantes para identificar corretamente o patrimônio sujeito à partilha.</p>
+<p>Por isso, antes de concluir um acordo patrimonial, é importante compreender <span class="destaque">quais bens existem, quando foram adquiridos e qual regime de bens disciplina aquela relação</span>.</p>
+<p>Uma partilha realizada sem a adequada análise patrimonial pode gerar consequências financeiras significativas.</p>
+<p><em>Conteúdo de caráter exclusivamente informativo. O regime de bens e as particularidades de cada relação devem ser analisados individualmente.</em></p>
+<p><span class="destaque">3. Medicamento de alto custo pelo SUS</span></p>
+    </div>
+  </div>
+</div>
+
+
+<article class="artigo-card" data-categoria="Direito da Saúde">
+  <img src="artigo medicamento.jpg" alt="Medicamento de alto custo pelo SUS">
+  <div class="artigo-card-conteudo">
+    <small>Direito da Saúde</small>
+    <h3>Medicamento de alto custo pelo SUS</h3>
+    <p>A negativa ou a indisponibilidade de um medicamento pode comprometer seriamente a continuidade de um tratamento. Quando existe indicação médica fundamentada e o paciente não...</p>
+    <button class="abrir-artigo" type="button" onclick="abrirArtigo('artigo-3')">Ler artigo →</button>
+  </div>
+</article>
+
+<div class="artigo-completo" id="artigo-3" aria-hidden="true">
+  <div class="artigo-completo-caixa">
+    <button class="fechar-artigo" type="button" onclick="fecharArtigo('artigo-3')" aria-label="Fechar artigo">×</button>
+    <span class="artigo-categoria">Direito da Saúde</span>
+    <h2>Medicamento de alto custo negado ou em falta no SUS: o que fazer?</h2>
+    <div class="artigo-corpo">
+      <p>A negativa ou a indisponibilidade de um medicamento pode comprometer seriamente a continuidade de um tratamento.</p>
+<p>Quando existe <span class="destaque">indicação médica fundamentada</span> e o paciente não consegue obter o medicamento pela via administrativa, pode ser necessário avaliar a possibilidade de buscar seu fornecimento judicialmente.</p>
+<p>Entretanto, o simples fato de o medicamento possuir alto custo não significa que seu fornecimento será automaticamente determinado pela Justiça.</p>
+<p>Atualmente existem critérios específicos estabelecidos pelos Tribunais Superiores, especialmente para medicamentos que <span class="destaque">não foram incorporados às políticas públicas do SUS</span>.</p>
+<h4>Quais documentos são importantes?</h4>
+<p>A documentação médica é fundamental. Relatórios e prescrições devem demonstrar, de maneira clara, o diagnóstico, o tratamento indicado, a necessidade do medicamento e as circunstâncias clínicas do paciente.</p>
+<p>Também é importante documentar a tentativa de obtenção do medicamento pela rede pública e eventual negativa ou indisponibilidade.</p>
+<p>Quando a interrupção ou ausência do tratamento representar risco à saúde, poderá ser analisada a necessidade de uma <span class="destaque">medida judicial de urgência</span>.</p>
+<p>Por isso, cada situação deve ser avaliada individualmente, considerando o medicamento solicitado, seu registro sanitário, sua incorporação ou não ao SUS, a documentação médica e os critérios estabelecidos pela legislação e jurisprudência.</p>
+<p><em>Conteúdo de caráter exclusivamente informativo. O fornecimento judicial de medicamentos depende do preenchimento dos requisitos aplicáveis ao caso concreto.</em></p>
+<p><span class="destaque">4. Falta de leito de UTI</span></p>
+    </div>
+  </div>
+</div>
+
+
+<article class="artigo-card" data-categoria="Direito da Saúde">
+  <img src="artigo uti.jpg" alt="Falta de leito de UTI">
+  <div class="artigo-card-conteudo">
+    <small>Direito da Saúde</small>
+    <h3>Falta de leito de UTI</h3>
+    <p>Quando existe indicação médica de internação em UTI, a demora na disponibilização do leito pode representar risco significativo à saúde e à vida do paciente. Nessas situações,...</p>
+    <button class="abrir-artigo" type="button" onclick="abrirArtigo('artigo-4')">Ler artigo →</button>
+  </div>
+</article>
+
+<div class="artigo-completo" id="artigo-4" aria-hidden="true">
+  <div class="artigo-completo-caixa">
+    <button class="fechar-artigo" type="button" onclick="fecharArtigo('artigo-4')" aria-label="Fechar artigo">×</button>
+    <span class="artigo-categoria">Direito da Saúde</span>
+    <h2>Paciente precisa de UTI, mas não há leito disponível: é possível recorrer à Justiça?</h2>
+    <div class="artigo-corpo">
+      <p>Quando existe <span class="destaque">indicação médica de internação em UTI</span>, a demora na disponibilização do leito pode representar risco significativo à saúde e à vida do paciente.</p>
+<p>Nessas situações, além das providências administrativas, pode ser necessária a análise de uma <span class="destaque">medida judicial de urgência</span> para assegurar o acesso ao tratamento adequado.</p>
+<h4>O relatório médico é essencial</h4>
+<p>Para uma demanda dessa natureza, é especialmente importante que a documentação médica demonstre a condição clínica do paciente, a indicação da internação, o grau de urgência e os riscos decorrentes da demora.</p>
+<p>Também devem ser preservados documentos relacionados à tentativa de internação e à indisponibilidade de leito.</p>
+<p>Em situações urgentes, o Poder Judiciário pode analisar pedidos de tutela de urgência em curto espaço de tempo. Isso, contudo, não significa que toda solicitação será automaticamente deferida.</p>
+<p>Cada caso deve ser analisado individualmente, considerando a situação clínica, a documentação disponível e a responsabilidade dos entes envolvidos.</p>
+<p><span class="destaque">Em questões de saúde, documentação e tempo podem ser determinantes.</span></p>
+<p><em>Conteúdo de caráter exclusivamente informativo e que não representa promessa de resultado.</em></p>
+<p><span class="destaque"><em>5. Paciente aguardando internação em UPA ou unidade de pronto atendimento</span></em></p>
+    </div>
+  </div>
+</div>
+
+
+<article class="artigo-card" data-categoria="Direito da Saúde">
+  <img src="artigo upa.jpg" alt="Internação aguardando em UPA">
+  <div class="artigo-card-conteudo">
+    <small>Direito da Saúde</small>
+    <h3>Internação aguardando em UPA</h3>
+    <p>UPAs e unidades de pronto atendimento possuem importante função no atendimento inicial e estabilização dos pacientes. Entretanto, determinados quadros clínicos exigem internação...</p>
+    <button class="abrir-artigo" type="button" onclick="abrirArtigo('artigo-5')">Ler artigo →</button>
+  </div>
+</article>
+
+<div class="artigo-completo" id="artigo-5" aria-hidden="true">
+  <div class="artigo-completo-caixa">
+    <button class="fechar-artigo" type="button" onclick="fecharArtigo('artigo-5')" aria-label="Fechar artigo">×</button>
+    <span class="artigo-categoria">Direito da Saúde</span>
+    <h2>Paciente aguardando internação em UPA: quando buscar uma medida judicial?</h2>
+    <div class="artigo-corpo">
+      <p>UPAs e unidades de pronto atendimento possuem importante função no atendimento inicial e estabilização dos pacientes. Entretanto, determinados quadros clínicos exigem <span class="destaque">internação hospitalar, cirurgia, UTI ou acompanhamento especializado</span>.</p>
+<p>Quando existe indicação médica de transferência ou internação e o paciente permanece aguardando por período incompatível com sua condição clínica, a situação merece atenção.</p>
+<p>Dependendo da urgência e da documentação médica disponível, pode ser possível buscar judicialmente providências destinadas a garantir a continuidade adequada do tratamento.</p>
+<p>Nessas situações, é importante reunir <span class="destaque">relatórios médicos, exames, prescrições, indicação de internação ou transferência e documentos que demonstrem o período de espera</span>.</p>
+<p>A urgência jurídica deve acompanhar a urgência médica: quanto mais clara e completa estiver a documentação, melhores serão as condições para análise adequada da situação.</p>
+<p><em>Conteúdo de caráter exclusivamente informativo. Cada situação exige análise individualizada.</em></p>
+<p><span class="destaque">6. FRAUDE BANCÁRIA</span></p>
+    </div>
+  </div>
+</div>
+
+
+<article class="artigo-card" data-categoria="Direito do Consumidor">
+  <img src="artigo fraude.jpg" alt="Fraude bancária">
+  <div class="artigo-card-conteudo">
+    <small>Direito do Consumidor</small>
+    <h3>Fraude bancária</h3>
+    <p>Fraudes bancárias podem envolver transferências, PIX, empréstimos, compras, cartões, abertura de contas ou outras operações não reconhecidas pelo consumidor. Mas uma dúvida é...</p>
+    <button class="abrir-artigo" type="button" onclick="abrirArtigo('artigo-6')">Ler artigo →</button>
+  </div>
+</article>
+
+<div class="artigo-completo" id="artigo-6" aria-hidden="true">
+  <div class="artigo-completo-caixa">
+    <button class="fechar-artigo" type="button" onclick="fecharArtigo('artigo-6')" aria-label="Fechar artigo">×</button>
+    <span class="artigo-categoria">Direito do Consumidor</span>
+    <h2>Fui vítima de fraude bancária. O banco é obrigado a devolver o dinheiro?</h2>
+    <div class="artigo-corpo">
+      <p>Fraudes bancárias podem envolver <span class="destaque">transferências, PIX, empréstimos, compras, cartões, abertura de contas ou outras operações não reconhecidas pelo consumidor</span>.</p>
+<p>Mas uma dúvida é recorrente: o banco é sempre responsável?</p>
+<p><span class="destaque">Não necessariamente.</span></p>
+<p>A responsabilidade dependerá das circunstâncias da fraude e, especialmente, da existência de eventual falha na segurança ou na prestação do serviço bancário.</p>
+<p>Operações completamente incompatíveis com o perfil do consumidor, falhas nos mecanismos de segurança e outras circunstâncias podem ser relevantes para a análise da responsabilidade da instituição financeira.</p>
+<h4>O que fazer ao identificar uma fraude?</h4>
+<p>É importante agir rapidamente: comunicar a instituição financeira, registrar a contestação das operações e preservar protocolos, extratos, mensagens, comprovantes e demais documentos relacionados ao ocorrido.</p>
+<p>Dependendo das circunstâncias, poderá existir discussão sobre <span class="destaque">restituição dos valores e eventual indenização pelos danos efetivamente sofridos</span>.</p>
+<p>Fraude bancária exige análise individualizada. Nem toda fraude gera automaticamente responsabilidade do banco, mas também não é correto presumir que todo prejuízo deve ser suportado pelo consumidor.</p>
+<p><em>Conteúdo de caráter exclusivamente informativo.</em></p>
+<p><span class="destaque">7. DEFESA CRIMINAL COMEÇA NA DELEGACIA</span></p>
+    </div>
+  </div>
+</div>
+
+
+<article class="artigo-card" data-categoria="Direito Criminal">
+  <img src="artigo delegacia.jpg" alt="Defesa criminal começa na delegacia">
+  <div class="artigo-card-conteudo">
+    <small>Direito Criminal</small>
+    <h3>Defesa criminal começa na delegacia</h3>
+    <p>Um dos equívocos mais comuns é acreditar que um advogado criminal somente será necessário quando existir uma ação penal. A fase investigativa pode ser determinante para tudo o que...</p>
+    <button class="abrir-artigo" type="button" onclick="abrirArtigo('artigo-7')">Ler artigo →</button>
+  </div>
+</article>
+
+<div class="artigo-completo" id="artigo-7" aria-hidden="true">
+  <div class="artigo-completo-caixa">
+    <button class="fechar-artigo" type="button" onclick="fecharArtigo('artigo-7')" aria-label="Fechar artigo">×</button>
+    <span class="artigo-categoria">Direito Criminal</span>
+    <h2>A defesa criminal começa na delegacia, e não apenas no processo</h2>
+    <div class="artigo-corpo">
+      <p>Um dos equívocos mais comuns é acreditar que um advogado criminal somente será necessário quando existir uma ação penal.</p>
+<p>A <span class="destaque">fase investigativa pode ser determinante para tudo o que acontecerá posteriormente</span>.</p>
+<p>Depoimentos, interrogatórios, documentos, perícias, medidas cautelares e outros elementos produzidos durante uma investigação podem repercutir diretamente em eventual processo criminal.</p>
+<p>Por isso, o acompanhamento jurídico desde a delegacia permite compreender a investigação, preservar direitos e estabelecer uma estratégia defensiva adequada desde os primeiros atos.</p>
+<h4>Fui chamado para prestar depoimento. Preciso de advogado?</h4>
+<p>Antes de qualquer ato, é importante compreender <span class="destaque">em qual condição a pessoa foi chamada, qual é o objeto da investigação e quais são os seus direitos naquele procedimento</span>.</p>
+<p>A presença de um advogado não significa admitir culpa. Significa exercer adequadamente o direito de defesa.</p>
+<p><span class="destaque">Na esfera criminal, a estratégia defensiva não deve começar somente depois da acusação.</span></p>
+<p><em>Conteúdo de caráter exclusivamente informativo.</em></p>
+<p><span class="destaque">8. AUDIÊNCIA DE CUSTÓDIA</span></p>
+    </div>
+  </div>
+</div>
+
+
+<article class="artigo-card" data-categoria="Direito Criminal">
+  <img src="artigo custodia.jpg" alt="Audiência de custódia">
+  <div class="artigo-card-conteudo">
+    <small>Direito Criminal</small>
+    <h3>Audiência de custódia</h3>
+    <p>A audiência de custódia não deve ser tratada como mera formalidade. Nesse momento, o Poder Judiciário analisará questões relacionadas à legalidade da prisão e à necessidade de sua...</p>
+    <button class="abrir-artigo" type="button" onclick="abrirArtigo('artigo-8')">Ler artigo →</button>
+  </div>
+</article>
+
+<div class="artigo-completo" id="artigo-8" aria-hidden="true">
+  <div class="artigo-completo-caixa">
+    <button class="fechar-artigo" type="button" onclick="fecharArtigo('artigo-8')" aria-label="Fechar artigo">×</button>
+    <span class="artigo-categoria">Direito Criminal</span>
+    <h2>Audiência de custódia: por que as primeiras horas após uma prisão são importantes?</h2>
+    <div class="artigo-corpo">
+      <p>A audiência de custódia não deve ser tratada como mera formalidade.</p>
+<p>Nesse momento, o Poder Judiciário analisará questões relacionadas à <span class="destaque">legalidade da prisão e à necessidade de sua manutenção</span>, além de verificar outras circunstâncias relevantes relacionadas à detenção.</p>
+<p>Dependendo do caso, serão analisadas questões que podem resultar na manutenção da prisão, aplicação de medidas cautelares diversas ou outras providências juridicamente cabíveis.</p>
+<p>Por isso, a defesa precisa conhecer as circunstâncias da prisão e apresentar tecnicamente os elementos relevantes para aquela análise.</p>
+<p>A atuação jurídica nas primeiras horas permite organizar informações, documentos e argumentos que podem ser importantes para a defesa.</p>
+<p><span class="destaque">No Direito Criminal, cada fase possui uma finalidade — e as primeiras decisões podem repercutir em todo o processo.</span></p>
+<p><em>Conteúdo de caráter exclusivamente informativo e sem promessa de resultado.</em></p>
+    </div>
+  </div>
+</div>
+
+
+<article class="artigo-card" data-categoria="Direito de Família">
+  <img src="artigo pensao.jpg" alt="Pensão alimentícia para filhos">
+  <div class="artigo-card-conteudo">
+    <small>Direito de Família</small>
+    <h3>Pensão alimentícia para filhos</h3>
+    <p>A pensão alimentícia é um direito do filho e tem como finalidade contribuir para suas necessidades de alimentação, moradia, saúde, educação, vestuário, lazer e demais despesas...</p>
+    <button class="abrir-artigo" type="button" onclick="abrirArtigo('artigo-9')">Ler artigo →</button>
+  </div>
+</article>
+
+<div class="artigo-completo" id="artigo-9" aria-hidden="true">
+  <div class="artigo-completo-caixa">
+    <button class="fechar-artigo" type="button" onclick="fecharArtigo('artigo-9')" aria-label="Fechar artigo">×</button>
+    <span class="artigo-categoria">Direito de Família</span>
+    <h2>PENSÃO ALIMENTÍCIA PARA FILHOS: QUEM TEM DIREITO E COMO PEDIR?</h2>
+    <div class="artigo-corpo">
+      <p>A <span class="destaque">pensão alimentícia é um direito do filho</span> e tem como finalidade contribuir para suas necessidades de alimentação, moradia, saúde, educação, vestuário, lazer e demais despesas necessárias ao seu desenvolvimento.</p>
+<p>Quando os genitores não vivem juntos e não existe acordo adequado sobre a contribuição financeira, é possível ajuizar uma <span class="destaque">ação de alimentos</span> para que o valor seja fixado judicialmente.</p>
+<h4>Como é definido o valor da pensão?</h4>
+<p>Não existe um percentual único aplicável a todos os casos. O valor deve ser definido considerando as <span class="destaque">necessidades da criança ou do adolescente e a capacidade financeira de quem deverá prestar os alimentos</span>, observadas as circunstâncias de cada família.</p>
+<p>Despesas com escola, medicamentos, plano de saúde, alimentação, transporte, atividades extracurriculares e outras necessidades podem ser relevantes para demonstrar os custos do menor.</p>
+<h4>É possível pedir pensão logo no início do processo?</h4>
+<p>Sim. Ao receber a ação de alimentos, o juiz poderá fixar <span class="destaque">alimentos provisórios</span>, garantindo uma contribuição durante a tramitação do processo, observados os elementos apresentados no caso concreto.</p>
+<h4>E se a pensão não for paga?</h4>
+<p>O inadimplemento pode dar origem à <span class="destaque">execução de alimentos</span>, com utilização das medidas legalmente previstas para cobrança da dívida, que, conforme o caso, podem incluir penhora de patrimônio e até <span class="destaque">prisão civil do devedor</span>.</p>
+<p>A pensão alimentícia não deve ser tratada como um favor entre os genitores. <span class="destaque">Trata-se de um direito destinado à proteção e ao desenvolvimento dos filhos.</span></p>
+<p><em>Conteúdo de caráter exclusivamente informativo. A fixação e a cobrança de alimentos dependem das particularidades de cada caso.</em></p>
+    </div>
+  </div>
+</div>
+
+
+<article class="artigo-card" data-categoria="Direito do Consumidor">
+  <img src="artigo busca-apreensao.jpg" alt="Busca e apreensão de veículo">
+  <div class="artigo-card-conteudo">
+    <small>Direito do Consumidor</small>
+    <h3>Busca e apreensão de veículo</h3>
+    <p>O atraso no financiamento de um veículo pode resultar em ação de busca e apreensão, permitindo que a instituição financeira requeira judicialmente a apreensão do bem dado em...</p>
+    <button class="abrir-artigo" type="button" onclick="abrirArtigo('artigo-10')">Ler artigo →</button>
+  </div>
+</article>
+
+<div class="artigo-completo" id="artigo-10" aria-hidden="true">
+  <div class="artigo-completo-caixa">
+    <button class="fechar-artigo" type="button" onclick="fecharArtigo('artigo-10')" aria-label="Fechar artigo">×</button>
+    <span class="artigo-categoria">Direito do Consumidor</span>
+    <h2>BUSCA E APREENSÃO DE VEÍCULO: O QUE FAZER?</h2>
+    <div class="artigo-corpo">
+      <p>O atraso no financiamento de um veículo pode resultar em <span class="destaque">ação de busca e apreensão</span>, permitindo que a instituição financeira requeira judicialmente a apreensão do bem dado em garantia.</p>
+<p>Entretanto, a existência de parcelas em atraso <span class="destaque">não significa que o consumidor esteja sem alternativas ou sem direito de defesa</span>.</p>
+<h4>O veículo pode ser apreendido?</h4>
+<p>Preenchidos os requisitos legais, o juiz poderá conceder <span class="destaque">liminar de busca e apreensão</span>, possibilitando a apreensão do veículo antes mesmo da apresentação da defesa pelo devedor.</p>
+<p>Por isso, ao receber qualquer comunicação sobre uma ação de busca e apreensão — ou imediatamente após a apreensão do veículo —, é importante buscar orientação jurídica, pois <span class="destaque">existem prazos específicos e consequências relevantes após o cumprimento da medida</span>.</p>
+<h4>O contrato e a cobrança podem ser analisados?</h4>
+<p>Sim. A defesa deve partir da análise do contrato, da constituição em mora, dos pagamentos realizados e das circunstâncias específicas da cobrança.</p>
+<p>Dependendo do caso, podem existir questões relacionadas à <span class="destaque">regularidade da notificação, encargos contratuais, pagamentos efetuados, valor efetivamente devido e cumprimento dos requisitos necessários à busca e apreensão</span>.</p>
+<h4>Meu veículo já foi apreendido. Ainda posso me defender?</h4>
+<p>Sim. A apreensão do veículo não encerra automaticamente a discussão judicial. Entretanto, a legislação estabelece <span class="destaque">prazos curtos</span>, inclusive para determinadas providências destinadas à recuperação do bem.</p>
+<p>Por isso, uma ação de busca e apreensão exige análise jurídica rápida e estratégica.</p>
+<p><span class="destaque">Receber uma ação de busca e apreensão não significa que o consumidor deva permanecer inerte. Conhecer o contrato, os valores cobrados e a regularidade do procedimento é essencial para definir a defesa adequada.</span></p>
+<p><em>Conteúdo de caráter exclusivamente informativo. As medidas cabíveis dependem da análise do contrato, do processo e das particularidades de cada caso.</em></p>
+    </div>
+  </div>
+</div>
+
+
+<article class="artigo-card" data-categoria="Direito Imobiliário">
+  <img src="artigo distrato.jpg" alt="Distrato de imóvel">
+  <div class="artigo-card-conteudo">
+    <small>Direito Imobiliário</small>
+    <h3>Distrato de imóvel</h3>
+    <p>Ao desistir da compra de um imóvel, é comum o consumidor ser informado de que perderá grande parte do que já pagou ou que somente receberá os valores após um longo período. Mas a...</p>
+    <button class="abrir-artigo" type="button" onclick="abrirArtigo('artigo-11')">Ler artigo →</button>
+  </div>
+</article>
+
+<div class="artigo-completo" id="artigo-11" aria-hidden="true">
+  <div class="artigo-completo-caixa">
+    <button class="fechar-artigo" type="button" onclick="fecharArtigo('artigo-11')" aria-label="Fechar artigo">×</button>
+    <span class="artigo-categoria">Direito Imobiliário</span>
+    <h2>DISTRATO DE IMÓVEL: A CONSTRUTORA PODE RETER 50% E DEVOLVER O VALOR PARCELADO?</h2>
+    <div class="artigo-corpo">
+      <p>Ao desistir da compra de um imóvel, é comum o consumidor ser informado de que perderá grande parte do que já pagou ou que somente receberá os valores após um longo período.</p>
+<p>Mas <span class="destaque">a construtora pode reter 50%? E pode devolver os valores de forma parcelada?</span></p>
+<p>A jurisprudência entende que não! Mas a analise, vai depender  do contrato, da forma de incorporação do empreendimento, do motivo da rescisão e da legislação aplicável.</p>
+<h4>A construtora pode reter 50%?</h4>
+<p>A retenção de valores não pode ser analisada de forma automática.</p>
+<p>A <span class="destaque">Lei nº 13.786/2018</span>, conhecida como Lei do Distrato, estabeleceu regras específicas para a resolução de contratos imobiliários, inclusive hipóteses e limites distintos de retenção.</p>
+<p>Por isso, a previsão contratual de retenção elevada <span class="destaque">não significa, por si só, que aquele percentual será necessariamente aplicável ao caso concreto</span>.</p>
+<h4>E a devolução pode ser parcelada?</h4>
+<p>A forma e o prazo para restituição também devem ser analisados conforme <span class="destaque">a data do contrato, o tipo de empreendimento, a existência ou não de patrimônio de afetação, a responsabilidade pelo encerramento do negócio e as cláusulas contratuais</span>.</p>
+<p>Assim, antes de aceitar uma proposta de distrato, é importante verificar se as condições impostas pela imobiliária ou construtora estão de acordo com a legislação aplicável.</p>
+<h4>Antes de assinar o distrato, analise seus direitos</h4>
+<p>O consumidor deve ter especial atenção ao <span class="destaque">percentual de retenção, multas, taxas administrativas, comissão de corretagem, prazo e forma de restituição dos valores pagos</span>.</p>
+<p>Um distrato assinado sem a adequada compreensão das consequências financeiras pode representar perda patrimonial significativa.</p>
+<p><span class="destaque">Nem toda cláusula prevista pela construtora ou imobiliária é automaticamente válida. O contrato e as circunstâncias da rescisão precisam ser analisados individualmente.</span></p>
+<p><em>Conteúdo de caráter exclusivamente informativo. Os direitos relacionados ao distrato imobiliário variam conforme a data e as condições do contrato e as particularidades do empreendimento.</em></p>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  <section class="casos" id="sentencas">
+    <div class="secao-cabecalho">
+      <h2>Decisões &amp; Sentenças</h2>
+    </div>
+
+    <p class="casos-intro">
+      Alguns resultados relevantes da atuação do escritório, apresentados de
+      forma informativa e preservando as informações sensíveis de cada caso.
+    </p>
+
+    <input type="text" id="filtroCasos" placeholder="Buscar decisões e sentenças..." aria-label="Buscar decisões e sentenças">
+
+    <div class="caso" tabindex="0" role="button" aria-expanded="false" onclick="toggleDescricao(this)" onkeydown="keyToggleDescricao(event,this)">
+      <h3>Ação de Divórcio com Guarda Compartilhada</h3>
+      <div class="descricao-caso">
         Conseguimos homologar um divórcio litigioso com guarda compartilhada e pensão alimentícia proporcional à renda, preservando o melhor interesse da criança.
       </div>
     </div>
 
-    <div class="caso" tabindex="0" role="button" aria-expanded="false" aria-controls="desc2" onclick="toggleDescricao(this)" onkeydown="keyToggleDescricao(event, this)">
-      <h3>♦️ Cancelamento de Cobrança Indevida</h3>
-      <div class="descricao-caso" id="desc2">
+    <div class="caso" tabindex="0" role="button" aria-expanded="false" onclick="toggleDescricao(this)" onkeydown="keyToggleDescricao(event,this)">
+      <h3>Cancelamento de Cobrança Indevida</h3>
+      <div class="descricao-caso">
         Sentença favorável condenou empresa ao cancelamento de débito inexistente e pagamento de R$ 5.000,00 por danos morais.
       </div>
     </div>
 
-    <div class="caso" tabindex="0" role="button" aria-expanded="false" aria-controls="desc3" onclick="toggleDescricao(this)" onkeydown="keyToggleDescricao(event, this)">
-      <h3>♦️ Liberdade Provisória Concedida</h3>
-      <div class="descricao-caso" id="desc3">
+    <div class="caso" tabindex="0" role="button" aria-expanded="false" onclick="toggleDescricao(this)" onkeydown="keyToggleDescricao(event,this)">
+      <h3>Liberdade Provisória Concedida</h3>
+      <div class="descricao-caso">
         Garantimos liberdade provisória com medidas cautelares, preservando os direitos do acusado.
       </div>
     </div>
   </section>
 
-  <!-- Podcast Jurídico -->
   <section class="podcasts">
     <h2>🎥 Vídeos Jurídicos</h2>
 
@@ -306,46 +626,74 @@
   </section>
 
   <script>
-    function toggleFab() {
-      document.getElementById("fab").classList.toggle("fab-open");
+    function abrirArtigo(id){
+      const artigo=document.getElementById(id);
+      artigo.classList.add('aberto');
+      artigo.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
     }
 
-    function toggleDescricao(element) {
-      const todosCasos = document.querySelectorAll('.caso');
-      todosCasos.forEach(caso => {
-        if (caso !== element) {
+    function fecharArtigo(id){
+      const artigo=document.getElementById(id);
+      artigo.classList.remove('aberto');
+      artigo.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+    }
+
+    document.querySelectorAll('.artigo-completo').forEach(modal=>{
+      modal.addEventListener('click',e=>{
+        if(e.target===modal) fecharArtigo(modal.id);
+      });
+    });
+
+    document.addEventListener('keydown',e=>{
+      if(e.key==='Escape'){
+        const aberto=document.querySelector('.artigo-completo.aberto');
+        if(aberto) fecharArtigo(aberto.id);
+      }
+    });
+
+    document.querySelectorAll('.filtro-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        document.querySelectorAll('.filtro-btn').forEach(b=>b.classList.remove('ativo'));
+        btn.classList.add('ativo');
+        const filtro=btn.dataset.filtro;
+
+        document.querySelectorAll('.artigo-card').forEach(card=>{
+          card.style.display=(filtro==='Todos'||card.dataset.categoria===filtro)?'grid':'none';
+        });
+      });
+    });
+
+    function toggleDescricao(element){
+      document.querySelectorAll('.caso').forEach(caso=>{
+        if(caso!==element){
           caso.classList.remove('selecionado');
-          const desc = caso.querySelector('.descricao-caso');
-          if(desc) {
-            desc.classList.remove('aberto');
-            caso.setAttribute('aria-expanded', 'false');
-          }
+          const desc=caso.querySelector('.descricao-caso');
+          if(desc) desc.classList.remove('aberto');
+          caso.setAttribute('aria-expanded','false');
         }
       });
 
       element.classList.toggle('selecionado');
-      const descricao = element.querySelector('.descricao-caso');
-      if (descricao) {
+      const descricao=element.querySelector('.descricao-caso');
+      if(descricao){
         descricao.classList.toggle('aberto');
-        const expanded = descricao.classList.contains('aberto');
-        element.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        element.setAttribute('aria-expanded',descricao.classList.contains('aberto')?'true':'false');
       }
     }
 
-    function keyToggleDescricao(event, element) {
-      if (event.key === "Enter" || event.key === " ") {
+    function keyToggleDescricao(event,element){
+      if(event.key==='Enter'||event.key===' '){
         event.preventDefault();
         toggleDescricao(element);
       }
     }
 
-    const filtroInput = document.getElementById('filtroCasos');
-    filtroInput.addEventListener('input', () => {
-      const termo = filtroInput.value.toLowerCase();
-      const casos = document.querySelectorAll('.caso');
-      casos.forEach(caso => {
-        const texto = caso.textContent.toLowerCase();
-        caso.style.display = texto.includes(termo) ? 'block' : 'none';
+    document.getElementById('filtroCasos').addEventListener('input',e=>{
+      const termo=e.target.value.toLowerCase();
+      document.querySelectorAll('.caso').forEach(caso=>{
+        caso.style.display=caso.textContent.toLowerCase().includes(termo)?'block':'none';
       });
     });
   </script>
