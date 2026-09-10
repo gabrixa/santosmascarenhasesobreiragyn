@@ -88,22 +88,30 @@
       background-color: #6e6b5c;
     }
 
-    /* Botão Voltar ao topo */
+    /* =====================================================
+       NAVEGAÇÃO PADRONIZADA - VOLTAR AO INÍCIO
+       ===================================================== */
+    .navegacao-topo {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 30px 20px 0;
+    }
+
     .voltar-inicio {
-      display: block;
-      margin: 50px auto 30px;
+      display: inline-flex;
+      align-items: center;
       width: fit-content;
-      background-color: #918e7d;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
+      color: #d7d2c4;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 400;
       text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
+      transition: color 0.25s ease, transform 0.25s ease;
     }
 
     .voltar-inicio:hover {
-      background-color: #6e6b5c;
+      color: #fffcec;
+      transform: translateX(-3px);
     }
 
     /* Tablet */
@@ -114,62 +122,6 @@
       }
     }
 
-    /* Botão de menu flutuante */
-    .menu-fab {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-
-    .fab-button {
-      background-color: #918e7d;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      color: white;
-      font-size: 28px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .fab-button:hover {
-      transform: scale(1.1);
-      background-color: #6e6b5c;
-    }
-
-    .fab-menu {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      position: absolute;
-      bottom: 70px;
-      right: 0;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      padding: 10px 0;
-      min-width: 150px;
-    }
-
-    .fab-menu a {
-      text-decoration: none;
-      color: #333;
-      padding: 10px 20px;
-      transition: background-color 0.3s ease;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    .fab-menu a:hover {
-      background-color: #f0f0f0;
-    }
-
-    .fab-open .fab-menu {
-      display: flex;
-    }
 
     /* =========================================
        BLOCO EXCLUSIVO PARA CELULAR (≤600px)
@@ -224,21 +176,12 @@
         font-size: 0.9em;
       }
 
+      .navegacao-topo {
+        padding: 22px 14px 0;
+      }
+
       .voltar-inicio {
-        padding: 10px 16px;
-        font-size: 0.9em;
-        margin: 36px auto 24px;
-      }
-
-      .fab-button {
-        width: 56px;
-        height: 56px;
-        font-size: 24px;
-      }
-
-      .fab-menu a {
-        padding: 10px 16px;
-        font-size: 0.95em;
+        font-size: 0.86rem;
       }
     }
   
@@ -257,10 +200,13 @@
 </head>
 <body>
 
-  <!-- âncora para voltar ao topo -->
-  <a id="topo"></a>
-
-  <!-- Seção Equipe -->
+  <!-- =====================================================
+       NAVEGAÇÃO - PÁGINA EQUIPE
+       ===================================================== -->
+  <div class="navegacao-topo">
+    <a href="index.html" class="voltar-inicio">← Voltar ao início</a>
+  </div>
+<!-- Seção Equipe -->
   <section class="equipe">
     <h2>Sócios Fundadores</h2>
     <h3 class="titulo-categoria">Experiência, estratégia e compromisso à frente do escritório.</h3>
@@ -429,24 +375,7 @@
 
 
     </div>
-
-    <a class="voltar-inicio" href="#topo">Voltar ao Início</a>
   </section>
-
-  <!-- Botão flutuante -->
-  <div class="menu-fab" id="fab">
-    <button class="fab-button" aria-label="Abrir menu" onclick="toggleFab()">☰</button>
-    <div class="fab-menu" role="menu">
-      <a href="index.html" role="menuitem">Início</a>
-    </div>
-  </div>
-
-  <!-- Script para abrir/fechar o menu -->
-  <script>
-    function toggleFab() {
-      document.getElementById('fab').classList.toggle('fab-open');
-    }
-  </script>
 
 </body>
 </html>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fale Conosco - SMS Advocacia</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  >
+
+  <style>
+    /* =====================================================
+       PÁGINA FALE CONOSCO - SMS ADVOCACIA
+       Estilo isolado para não alterar o restante do site
+       ===================================================== */
+
+    body.pagina-contato {
+      margin: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          #ddd5ca 0%,
+          #e8e2d8 18%,
+          #f4f1eb 52%,
+          #eee8df 78%,
+          #ddd5ca 100%
+        );
+      color: #3f3c35;
+      font-family: Arial, sans-serif;
+    }
+
+    .pagina-contato * {
+      box-sizing: border-box;
+    }
+
+    /* 1. TOPO DA PÁGINA */
+    .contato-topo {
+      width: 100%;
+      padding: 28px 24px 0;
+    }
+
+    .contato-topo-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .contato-marca {
+      text-decoration: none;
+      color: #3f3c35;
+    }
+
+    .contato-marca strong {
+      display: block;
+      font-size: .9rem;
+      letter-spacing: 2.4px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .contato-marca span {
+      display: block;
+      margin-top: 5px;
+      font-size: .7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #777166;
+    }
+
+    .contato-voltar {
+      text-decoration: none;
+      color: #55534d;
+      font-size: .9rem;
+      font-weight: 500;
+      transition: .25s ease;
+    }
+
+    .contato-voltar:hover {
+      color: #111;
+    }
+
+    /* 2. BLOCO PRINCIPAL */
+    .contato-pagina {
+      width: 100%;
+      padding: 62px 24px 90px;
+    }
+
+    .contato-pagina-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: clamp(42px, 6vw, 78px);
+      align-items: stretch;
+    }
+
+    /* 3. FOTO DA EQUIPE */
+    .contato-equipe {
+      position: relative;
+      min-height: 650px;
+    }
+
+    .contato-equipe::before {
+      content: "";
+      position: absolute;
+      inset: 18px -18px -18px 18px;
+      border: 1px solid rgba(120,115,103,.42);
+      border-radius: 22px;
+      z-index: 0;
+    }
+
+    .contato-equipe img {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 22px;
+      box-shadow:
+        0 18px 34px rgba(54,49,42,.14),
+        0 5px 12px rgba(54,49,42,.08);
+    }
+
+    .contato-equipe-frase {
+      position: absolute;
+      z-index: 2;
+      left: 28px;
+      bottom: 28px;
+      max-width: 260px;
+      padding: 18px 20px;
+      border-left: 2px solid rgba(255,255,255,.75);
+      background: rgba(27,27,25,.58);
+      backdrop-filter: blur(8px);
+      color: #fff;
+      border-radius: 4px 12px 12px 4px;
+      font-size: .76rem;
+      line-height: 1.8;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    /* 4. CONTEÚDO E TÍTULO */
+    .contato-conteudo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 28px 0;
+    }
+
+    .contato-etiqueta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: .76rem;
+      font-weight: 500;
+      letter-spacing: 2.6px;
+      text-transform: uppercase;
+      color: #777166;
+    }
+
+    .contato-etiqueta::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: #918e7d;
+    }
+
+    .contato-conteudo h1 {
+      margin: 0 0 18px;
+      font-family: Arial, sans-serif;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      line-height: 1.03;
+      letter-spacing: -2px;
+      font-weight: 700;
+      color: #3f3c35;
+    }
+
+    .contato-intro {
+      margin: 0 0 34px;
+      max-width: 640px;
+      font-size: 1.03rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: #5c5952;
+    }
+
+    /* 5. CARDS DE CONTATO */
+    .contato-opcoes {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .contato-opcao {
+      min-height: 98px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px;
+      border: 1px solid rgba(145,142,125,.38);
+      border-radius: 15px;
+      background: rgba(255,255,255,.34);
+      color: #3f3c35;
+      text-decoration: none;
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .contato-opcao:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,.58);
+      box-shadow: 0 10px 24px rgba(54,49,42,.08);
+    }
+
+    .contato-opcao i {
+      width: 42px;
+      flex: 0 0 42px;
+      text-align: center;
+      font-size: 1.5rem;
+      color: #656156;
+    }
+
+    .contato-opcao-texto {
+      min-width: 0;
+    }
+
+    .contato-opcao strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: .92rem;
+      font-weight: 700;
+    }
+
+    .contato-opcao span {
+      display: block;
+      font-size: .86rem;
+      font-weight: 300;
+      line-height: 1.45;
+      color: #67635c;
+      overflow-wrap: anywhere;
+    }
+
+    /* 6. REDES SOCIAIS */
+    .contato-redes {
+      margin-top: 34px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(120,115,103,.25);
+    }
+
+    .contato-redes-titulo {
+      display: block;
+      margin-bottom: 16px;
+      font-size: .72rem;
+      letter-spacing: 2.6px;
+      text-transform: uppercase;
+      color: #777166;
+    }
+
+    .contato-redes-lista {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .contato-rede {
+      width: 52px;
+      height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(145,142,125,.4);
+      border-radius: 13px;
+      background: rgba(255,255,255,.32);
+      color: #3f3c35;
+      text-decoration: none;
+      font-size: 1.25rem;
+      transition: .25s ease;
+    }
+
+    .contato-rede:hover {
+      transform: translateY(-3px);
+      background: #3f3c35;
+      color: #f4f1eb;
+      border-color: #3f3c35;
+    }
+
+    /* 7. BOTÃO PRINCIPAL */
+    .contato-btn-principal {
+      margin-top: 30px;
+      min-height: 58px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 24px;
+      border-radius: 12px;
+      background: #24231f;
+      color: #fff;
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: .25s ease;
+    }
+
+    .contato-btn-principal:hover {
+      transform: translateY(-2px);
+      background: #111;
+    }
+
+    /* 8. RESPONSIVO */
+    @media (max-width: 900px) {
+      .contato-pagina-container {
+        grid-template-columns: 1fr;
+      }
+
+      .contato-equipe {
+        min-height: 560px;
+        max-width: 650px;
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .contato-topo {
+        padding: 22px 18px 0;
+      }
+
+      .contato-pagina {
+        padding: 44px 18px 65px;
+      }
+
+      .contato-pagina-container {
+        gap: 42px;
+      }
+
+      .contato-equipe {
+        min-height: 470px;
+      }
+
+      .contato-equipe::before {
+        inset: 12px -9px -12px 9px;
+      }
+
+      .contato-equipe-frase {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        max-width: none;
+      }
+
+      .contato-conteudo h1 {
+        letter-spacing: -1px;
+      }
+
+      .contato-opcoes {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body class="pagina-contato">
+
+  <!-- =====================================================
+       TOPO
+       ===================================================== -->
+  <div class="contato-topo">
+    <div class="contato-topo-inner">
+      <a href="index.html" class="contato-marca">
+        <strong>Santos Mascarenhas e Sobreira</strong>
+        <span>Advocacia e Associados</span>
+      </a>
+
+      <a href="index.html" class="contato-voltar">
+        ← Voltar ao início
+      </a>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       CONTEÚDO PRINCIPAL
+       ===================================================== -->
+  <main class="contato-pagina">
+    <div class="contato-pagina-container">
+
+      <!-- FOTO DA EQUIPE -->
+      <div class="contato-equipe">
+        <img src="foto para equipe.jpeg" alt="Equipe Santos Mascarenhas e Sobreira Advocacia">0
+        <div class="contato-equipe-frase">
+          Pessoas • Estratégia • Responsabilidade
+        </div>
+      </div>
+
+      <!-- INFORMAÇÕES DE CONTATO -->
+      <section class="contato-conteudo" aria-labelledby="titulo-contato">
+
+        <span class="contato-etiqueta">Fale com o SMS</span>
+
+        <h1 id="titulo-contato">
+          Estamos aqui quando você precisar.
+        </h1>
+
+        <p class="contato-intro">
+          Atendimento jurídico presencial e digital, com comunicação direta,
+          acompanhamento próximo e orientação adequada para cada demanda.
+        </p>
+
+        <!-- FORMAS DE CONTATO -->
+        <div class="contato-opcoes">
+
+          <a
+            class="contato-opcao"
+            href="https://wa.me/556282125318"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+            <div class="contato-opcao-texto">
+              <strong>WhatsApp</strong>
+              <span>(62) 8212-5318</span>
+            </div>
+          </a>
+
+          <a class="contato-opcao" href="tel:+556282809879">
+            <i class="fa-solid fa-phone"></i>
+            <div class="contato-opcao-texto">
+              <strong>Telefone</strong>
+              <span>(62) 8212-5318</span>
+            </div>
+          </a>
+
+         <a
+  class="contato-opcao"
+  href="mailto:santosmacarenhasesobreiro@gmail.com?subject=Contato%20pelo%20site%20-%20SMS%20Advocacia"
+>
+  <i class="fa-regular fa-envelope"></i>
+
+  <div class="contato-opcao-texto">
+    <strong>E-mail</strong>
+    <span>santosmacarenhasesobreiro@gmail.com</span>
+  </div>
+</a>
+
+          <a
+            class="contato-opcao"
+            href="https://share.google/FMevaXivilNY40emQ"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fa-solid fa-location-dot"></i>
+            <div class="contato-opcao-texto">
+              <strong>Sede</strong>
+              <span>Goiânia - GO</span>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- REDES SOCIAIS -->
+        <div class="contato-redes">
+          <span class="contato-redes-titulo">
+            Acompanhe nosso trabalho
+          </span>
+
+          <div class="contato-redes-lista">
+
+            <a
+              class="contato-rede"
+              href="https://www.instagram.com/smsadvocaciaoficial"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+              title="Instagram"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a
+              class="contato-rede"
+              href="https://www.tiktok.com/@smsadvocaciaoficial"
+              target="_blank"
+              rel="noopener"
+              aria-label="TikTok"
+              title="TikTok"
+            >
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <a
+              class="contato-rede"
+              href="https://www.linkedin.com/company/suaempresa"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a
+              class="contato-rede"
+              href="https://www.facebook.com/seuperfil"
+              target="_blank"
+              rel="noopener"
+              aria-label="Facebook"
+              title="Facebook"
+            >
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a
+              class="contato-rede"
+              href="https://www.youtube.com/@seucanal"
+              target="_blank"
+              rel="noopener"
+              aria-label="YouTube"
+              title="YouTube"
+            >
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a
+              class="contato-rede"
+              href="https://share.google/FMevaXivilNY40emQ"
+              target="_blank"
+              rel="noopener"
+              aria-label="Google"
+              title="Google"
+            >
+              <i class="fa-brands fa-google"></i>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <a
+          class="contato-btn-principal"
+          href="https://wa.me/556281734020"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="fa-brands fa-whatsapp"></i>
+          Plantão criminal 24hrs
+        </a>
+
+      </section>
+    </div>
+  </main>
+
+</body>
+</html>
