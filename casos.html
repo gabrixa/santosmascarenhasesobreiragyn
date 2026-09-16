@@ -38,8 +38,22 @@
     }
     .portal-card.invertido .portal-imagem{order:2}
     .portal-card.invertido .portal-conteudo{order:1}
-    .portal-imagem{min-height:340px;overflow:hidden}
+    .portal-imagem{min-height:340px;overflow:hidden;position:relative}
     .portal-imagem img{width:100%;height:100%;object-fit:cover;display:block}
+    .portal-imagem::after{
+      content:"";position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,.18));
+    }
+    .portal-card:not(.invertido) .portal-imagem::after{
+      background:
+        linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,.18)),
+        linear-gradient(to right,transparent 0%,transparent 70%,rgba(255,255,255,.22) 80%,rgba(255,255,255,.70) 94%,rgba(255,255,255,.96) 100%);
+    }
+    .portal-card.invertido .portal-imagem::after{
+      background:
+        linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,.18)),
+        linear-gradient(to left,transparent 0%,transparent 70%,rgba(255,255,255,.22) 80%,rgba(255,255,255,.70) 94%,rgba(255,255,255,.96) 100%);
+    }
     .portal-conteudo{padding:54px 58px;display:flex;flex-direction:column;justify-content:center}
     .portal-tag{margin-bottom:14px;font-size:.76rem;letter-spacing:2.6px;text-transform:uppercase;color:#8a8377}
     .portal-conteudo h2{margin:0 0 18px;font-size:clamp(2rem,3vw,2.8rem)}
@@ -57,8 +71,14 @@
       background:rgba(255,255,255,.56);border:1px solid rgba(100,96,87,.11);
       box-shadow:0 10px 26px rgba(54,49,42,.07);
     }
-    .artigo-destaque-imagem{min-height:330px}
+    .artigo-destaque-imagem{min-height:330px;position:relative;overflow:hidden}
     .artigo-destaque-imagem img{width:100%;height:100%;object-fit:cover;display:block}
+    .artigo-destaque-imagem::after{
+      content:"";position:absolute;inset:0;pointer-events:none;
+      background:
+        linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,.18)),
+        linear-gradient(to right,transparent 0%,transparent 68%,rgba(255,255,255,.20) 78%,rgba(255,255,255,.62) 91%,rgba(255,255,255,.96) 100%);
+    }
     .artigo-destaque-texto{padding:42px 44px;display:flex;flex-direction:column;justify-content:center}
     .artigo-meta{margin-bottom:14px;font-size:.86rem;color:#858076}
     .artigo-destaque h3{margin:0 0 14px;font-size:clamp(1.55rem,2.7vw,2.25rem);line-height:1.12}
@@ -78,7 +98,15 @@
       border-radius:14px;background:rgba(255,255,255,.52);
       border:1px solid rgba(100,96,87,.10);box-shadow:0 5px 16px rgba(54,49,42,.04);
     }
-    .artigo-card img{width:100%;height:100%;object-fit:cover}
+    .artigo-card{position:relative}
+    .artigo-card img{width:100%;height:100%;object-fit:cover;display:block}
+    .artigo-card::before{
+      content:"";position:absolute;left:0;top:0;bottom:0;width:150px;pointer-events:none;z-index:1;
+      background:
+        linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,.18)),
+        linear-gradient(to right,transparent 0%,transparent 62%,rgba(255,255,255,.22) 73%,rgba(255,255,255,.68) 90%,rgba(255,255,255,.96) 100%);
+    }
+    .artigo-card-conteudo{position:relative;z-index:2}
     .artigo-card-conteudo{padding:20px}
     .artigo-card small{display:block;margin-bottom:8px;color:#8a857b;font-size:.75rem}
     .artigo-card h3{margin:0 0 10px;font-size:1.05rem;line-height:1.35}
@@ -133,8 +161,25 @@
       .portal-imagem{min-height:235px}
       .artigo-destaque-texto{padding:28px 24px}
       .artigo-destaque-imagem{min-height:230px}
+      .artigo-destaque-imagem::after{
+        background:
+          linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,.18)),
+          linear-gradient(to bottom,transparent 0%,transparent 70%,rgba(255,255,255,.22) 80%,rgba(255,255,255,.70) 94%,rgba(255,255,255,.96) 100%);
+      }
+      .portal-card:not(.invertido) .portal-imagem::after,
+      .portal-card.invertido .portal-imagem::after{
+        background:
+          linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,.18)),
+          linear-gradient(to bottom,transparent 0%,transparent 70%,rgba(255,255,255,.22) 80%,rgba(255,255,255,.70) 94%,rgba(255,255,255,.96) 100%);
+      }
       .artigos-recentes{grid-template-columns:1fr}
       .artigo-card{grid-template-columns:105px 1fr}
+      .artigo-card::before{
+        width:105px;
+        background:
+          linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,.18)),
+          linear-gradient(to right,transparent 0%,transparent 58%,rgba(255,255,255,.22) 70%,rgba(255,255,255,.68) 89%,rgba(255,255,255,.96) 100%);
+      }
       .artigo-card-conteudo{padding:15px}
       .artigo-card p{display:none}
       .artigo-completo{padding:16px 10px}
@@ -167,7 +212,7 @@
   <section class="portais">
     <article class="portal-card">
       <div class="portal-imagem">
-        <img src="blog juridico.jpg" alt="Blog Jurídico SMS">
+        <img src="acesso-artigos-juridicos-sms.png" alt="Blog Jurídico SMS">
       </div>
       <div class="portal-conteudo">
         <span class="portal-tag">Artigos e conteúdos</span>
@@ -182,7 +227,7 @@
 
     <article class="portal-card invertido">
       <div class="portal-imagem">
-        <img src="sentencas.jpg" alt="Decisões e Sentenças">
+        <img src="decisoes-juridicas-sms-advocacia.png" alt="Decisões e Sentenças">
       </div>
       <div class="portal-conteudo">
         <span class="portal-tag">Resultados relevantes</span>
@@ -204,7 +249,7 @@
 
     <article class="artigo-destaque">
       <div class="artigo-destaque-imagem">
-        <img src="artigo divorcio.jpg" alt="Divórcio sem autorização do outro cônjuge">
+        <img src="advogado-divorcio-goiania.png" alt="Divórcio sem autorização do outro cônjuge">
       </div>
       <div class="artigo-destaque-texto">
         <div class="artigo-meta">Direito de Família • Conteúdo jurídico</div>
@@ -247,7 +292,7 @@
     <div class="artigos-recentes">
       
 <article class="artigo-card" data-categoria="Direito de Família">
-  <img src="artigo partilha.jpg" alt="Partilha de bens no divórcio">
+  <img src="advogado-partilha-bens-goiania.png" alt="Partilha de bens no divórcio">
   <div class="artigo-card-conteudo">
     <small>Direito de Família</small>
     <h3>Partilha de bens no divórcio</h3>
@@ -278,7 +323,7 @@
 
 
 <article class="artigo-card" data-categoria="Direito da Saúde">
-  <img src="artigo medicamento.jpg" alt="Medicamento de alto custo pelo SUS">
+  <img src="advogado-negativa-sus-goiania.png" alt="Medicamento de alto custo pelo SUS">
   <div class="artigo-card-conteudo">
     <small>Direito da Saúde</small>
     <h3>Medicamento de alto custo pelo SUS</h3>
@@ -310,7 +355,7 @@
 
 
 <article class="artigo-card" data-categoria="Direito da Saúde">
-  <img src="artigo uti.jpg" alt="Falta de leito de UTI">
+  <img src="advogado-direito-saude-uti-goiania.png" alt="Falta de leito de UTI">
   <div class="artigo-card-conteudo">
     <small>Direito da Saúde</small>
     <h3>Falta de leito de UTI</h3>
@@ -341,7 +386,7 @@
 
 
 <article class="artigo-card" data-categoria="Direito da Saúde">
-  <img src="artigo upa.jpg" alt="Internação aguardando em UPA">
+  <img src="direito-saude-vaga-uti.png" alt="Internação aguardando em UPA">
   <div class="artigo-card-conteudo">
     <small>Direito da Saúde</small>
     <h3>Internação aguardando em UPA</h3>
@@ -369,7 +414,7 @@
 
 
 <article class="artigo-card" data-categoria="Direito do Consumidor">
-  <img src="artigo fraude.jpg" alt="Fraude bancária">
+  <img src="advogado-fraude-bancaria-goiania.png" alt="Fraude bancária">
   <div class="artigo-card-conteudo">
     <small>Direito do Consumidor</small>
     <h3>Fraude bancária</h3>
@@ -401,7 +446,7 @@
 
 
 <article class="artigo-card" data-categoria="Direito Criminal">
-  <img src="artigo delegacia.jpg" alt="Defesa criminal começa na delegacia">
+  <img src="advogado-defesa-criminal-goiania.png" alt="Defesa criminal começa na delegacia">
   <div class="artigo-card-conteudo">
     <small>Direito Criminal</small>
     <h3>Defesa criminal começa na delegacia</h3>
@@ -432,7 +477,7 @@
 
 
 <article class="artigo-card" data-categoria="Direito Criminal">
-  <img src="artigo custodia.jpg" alt="Audiência de custódia">
+  <img src="advogado-audiencia-custodia-goiania.png" alt="Audiência de custódia">
   <div class="artigo-card-conteudo">
     <small>Direito Criminal</small>
     <h3>Audiência de custódia</h3>
@@ -460,7 +505,7 @@
 
 
 <article class="artigo-card" data-categoria="Direito de Família">
-  <img src="artigo pensao.jpg" alt="Pensão alimentícia para filhos">
+  <img src="advogado-pensao-alimenticia-goiania.png" alt="Pensão alimentícia para filhos">
   <div class="artigo-card-conteudo">
     <small>Direito de Família</small>
     <h3>Pensão alimentícia para filhos</h3>
@@ -492,7 +537,7 @@
 
 
 <article class="artigo-card" data-categoria="Direito do Consumidor">
-  <img src="artigo busca-apreensao.jpg" alt="Busca e apreensão de veículo">
+  <img src="advogado-busca-apreensao-goiania.png" alt="Busca e apreensão de veículo">
   <div class="artigo-card-conteudo">
     <small>Direito do Consumidor</small>
     <h3>Busca e apreensão de veículo</h3>
@@ -526,7 +571,7 @@
 
 
 <article class="artigo-card" data-categoria="Direito Imobiliário">
-  <img src="artigo distrato.jpg" alt="Distrato de imóvel">
+  <img src="advogado-distrato-imovel-goiania.png" alt="Distrato de imóvel">
   <div class="artigo-card-conteudo">
     <small>Direito Imobiliário</small>
     <h3>Distrato de imóvel</h3>
@@ -563,6 +608,16 @@
     </div>
   </section>
 
+
+
+
+
+
+
+
+
+
+
   <section class="casos" id="sentencas">
     <div class="secao-cabecalho">
       <h2>Decisões &amp; Sentenças</h2>
@@ -597,8 +652,16 @@
     </div>
   </section>
 
+
+
+
+
+
+
+  
+
   <section class="podcasts">
-    <h2>🎥 Vídeos Jurídicos</h2>
+    <h2> Vídeos Jurídicos</h2>
 
     <div class="episodio">
       <h4>📌 Ep. 01 – Como funciona a guarda compartilhada?</h4>

@@ -117,6 +117,17 @@
       z-index: 0;
     }
 
+    /* Clareamento suave da foto para harmonizar com a paleta clara/bege */
+    .contato-equipe::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      border-radius: 22px;
+      background: rgba(255,255,255,.22);
+      pointer-events: none;
+    }
+
     .contato-equipe img {
       position: absolute;
       inset: 0;
@@ -133,7 +144,7 @@
 
     .contato-equipe-frase {
       position: absolute;
-      z-index: 2;
+      z-index: 3;
       left: 28px;
       bottom: 28px;
       max-width: 260px;
@@ -401,7 +412,7 @@
 
       <!-- FOTO DA EQUIPE -->
       <div class="contato-equipe">
-        <img src="foto para equipe.jpeg" alt="Equipe Santos Mascarenhas e Sobreira Advocacia">0
+        <img src="contato-santos-mascarenhas-sobreira.jpeg" alt="Equipe Santos Mascarenhas e Sobreira Advocacia">0
         <div class="contato-equipe-frase">
           Pessoas • Estratégia • Responsabilidade
         </div>
