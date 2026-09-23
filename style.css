@@ -2428,3 +2428,1829 @@ max-width: 700px;
     letter-spacing: 2px;
   }
 }
+
+
+/* =========================================================
+   HOME 2026 — BLOCO DE CONVERSÃO + ATUAÇÃO JURÍDICA
+   Visual inspirado no mockup aprovado.
+   ========================================================= */
+
+.atendimento-especializado,
+.atuacao-juridica-home {
+  --sms-grafite: #45423c;
+  --sms-texto: #625d54;
+  --sms-bege: #b7aa94;
+  --sms-borda: #cfc4b2;
+  --sms-claro: #f7f2e9;
+  --sms-card: rgba(255, 252, 246, .93);
+}
+
+.atendimento-especializado {
+  position: relative;
+  padding: 56px 24px 22px;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255,255,255,.92), transparent 32%),
+    radial-gradient(circle at 88% 12%, rgba(218,205,184,.30), transparent 30%),
+    linear-gradient(180deg, #f7f3ec 0%, #eee6da 100%);
+  color: var(--sms-grafite);
+}
+
+.atendimento-container {
+  width: min(1220px, 100%);
+  margin: 0 auto;
+}
+
+.atendimento-cabecalho {
+  max-width: 760px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.atendimento-etiqueta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin-bottom: 12px;
+  color: #9d8c72;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.atendimento-etiqueta::before,
+.atendimento-etiqueta::after {
+  content: "";
+  width: 45px;
+  height: 1px;
+  background: #b7aa94;
+}
+
+.atendimento-cabecalho h2 {
+  margin: 0 0 5px;
+  color: var(--sms-grafite);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -.8px;
+}
+
+.atendimento-cabecalho p {
+  margin: 0;
+  color: #716b62;
+  font-size: 1rem;
+}
+
+.atendimento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.atendimento-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(151, 135, 111, .30);
+  border-radius: 13px;
+  background: var(--sms-card);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(66, 58, 47, .08);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+
+.atendimento-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(134, 116, 89, .52);
+  box-shadow: 0 18px 34px rgba(66, 58, 47, .14);
+}
+
+.atendimento-visual {
+  position: relative;
+  height: 118px;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(103,91,73,.13), rgba(255,255,255,.20)),
+    linear-gradient(180deg, #d9cfbf 0%, #b7aa94 100%);
+}
+
+.atendimento-visual::before,
+.atendimento-visual::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255,255,255,.38);
+  border-radius: 50%;
+}
+
+.atendimento-visual::before {
+  width: 150px;
+  height: 150px;
+  right: -34px;
+  top: -60px;
+}
+
+.atendimento-visual::after {
+  width: 95px;
+  height: 95px;
+  left: -20px;
+  bottom: -52px;
+}
+
+.atendimento-familia {
+  background:
+    radial-gradient(circle at 25% 30%, rgba(255,255,255,.55) 0 5%, transparent 6%),
+    linear-gradient(135deg, #d7c6aa, #9c8a70);
+}
+
+.atendimento-criminal {
+  background: linear-gradient(135deg, #c7bdad, #82796c);
+}
+
+.atendimento-saude {
+  background: linear-gradient(135deg, #d7d4cb, #9a9489);
+}
+
+.atendimento-consumidor {
+  background: linear-gradient(135deg, #d7c7b2, #8f7d69);
+}
+
+.atendimento-icone {
+  position: absolute;
+  left: 22px;
+  bottom: -24px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  border: 2px solid rgba(255,255,255,.88);
+  border-radius: 50%;
+  background: #eee6d9;
+  color: #4c3525;
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  box-shadow: 0 6px 15px rgba(68,57,44,.12);
+}
+
+.atendimento-conteudo {
+  display: flex;
+  min-height: 248px;
+  flex-direction: column;
+  padding: 34px 22px 20px;
+}
+
+.atendimento-conteudo h3 {
+  margin: 0 0 11px;
+  color: #302d29;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.12;
+}
+
+.atendimento-conteudo p {
+  margin: 0 0 20px;
+  color: #69645c;
+  font-size: .95rem;
+  line-height: 1.45;
+}
+
+.atendimento-link {
+  margin-top: auto;
+  color: #332e28;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.atendimento-link b,
+.atuacao-link b {
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform .22s ease;
+}
+
+.atendimento-card:hover .atendimento-link b,
+.atuacao-juridica-home .contato-card:hover .atuacao-link b {
+  transform: translateX(4px);
+}
+
+.atendimento-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 16px;
+  padding: 12px 20px;
+  border: 1px solid rgba(151, 135, 111, .28);
+  border-radius: 12px;
+  background: rgba(255, 252, 246, .76);
+  box-shadow: 0 8px 20px rgba(66, 58, 47, .05);
+}
+
+.atendimento-whatsapp-texto {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.atendimento-balao {
+  display: grid;
+  place-items: center;
+  flex: 0 0 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e9dfd0;
+  color: #443a30;
+  font-size: 1.7rem;
+}
+
+.atendimento-whatsapp h3 {
+  margin: 0 0 2px;
+  color: #39352f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+}
+
+.atendimento-whatsapp p {
+  margin: 0;
+  color: #716b62;
+  font-size: .88rem;
+}
+
+.atendimento-whatsapp-botao {
+  display: flex;
+  min-width: 300px;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #494640, #34322e);
+  color: #fff;
+  text-decoration: none;
+  font-size: .80rem;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: .2px;
+  box-shadow: 0 8px 18px rgba(41,38,33,.17);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.atendimento-whatsapp-botao:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(41,38,33,.23);
+}
+
+
+/* ATUAÇÃO JURÍDICA */
+.contato.atuacao-juridica-home {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(241, 235, 225, .88), rgba(231, 222, 208, .92)),
+    url('foto\\ equipe3.png') center 40% / cover no-repeat;
+  color: var(--sms-grafite);
+  text-align: center;
+}
+
+.contato.atuacao-juridica-home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.48), transparent 40%),
+    linear-gradient(90deg, rgba(255,255,255,.18), transparent 22%, transparent 78%, rgba(255,255,255,.18));
+  pointer-events: none;
+}
+
+.atuacao-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 36px 0 24px;
+}
+
+.atuacao-cabecalho {
+  margin-bottom: 22px;
+}
+
+.atuacao-juridica-home .atuacao-cabecalho h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 0 0 6px;
+  color: #34312d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  text-shadow: none;
+}
+
+.atuacao-juridica-home .atuacao-cabecalho h2::before,
+.atuacao-juridica-home .atuacao-cabecalho h2::after {
+  content: "";
+  width: 50px;
+  height: 1px;
+  background: #9d8d74;
+}
+
+.atuacao-juridica-home .subtitulo-contato {
+  margin: 0;
+  color: #4e4a44;
+  font-size: .98rem;
+  text-shadow: none;
+}
+
+.atuacao-juridica-home .contato-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+}
+
+.atuacao-juridica-home .contato-card {
+  width: auto;
+  min-width: 0;
+  padding: 0;
+  border: 1px solid rgba(146, 128, 101, .30);
+  border-radius: 12px;
+  background: rgba(255, 252, 246, .90);
+  box-shadow: 0 10px 22px rgba(58, 51, 43, .10);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+
+.atuacao-juridica-home .contato-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(134, 116, 89, .48);
+  box-shadow: 0 18px 32px rgba(58, 51, 43, .16);
+}
+
+.atuacao-juridica-home .contato-card a {
+  display: flex;
+  min-height: 240px;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 15px 17px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.atuacao-juridica-home .atuacao-icone {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  background: #e9dfd0;
+  color: #513827;
+  font-family: Georgia, serif;
+  font-size: 1.75rem;
+  box-shadow: inset 0 0 0 1px rgba(130,111,84,.12);
+}
+
+.atuacao-juridica-home .contato-card h3 {
+  margin: 0 0 10px;
+  color: #302d29;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.12rem;
+  line-height: 1.08;
+}
+
+.atuacao-juridica-home .cargo {
+  display: none;
+}
+
+.atuacao-juridica-home .contato-card p {
+  margin: 0 0 18px;
+  color: #676159;
+  font-size: .86rem;
+  line-height: 1.42;
+}
+
+.atuacao-link {
+  margin-top: auto;
+  color: #342f29;
+  font-size: .72rem;
+  font-weight: 800;
+}
+
+.atuacao-assinatura {
+  display: grid;
+  grid-template-columns: minmax(40px, 1fr) auto auto minmax(40px, 1fr);
+  align-items: center;
+  gap: 18px;
+  width: min(800px, 92%);
+  margin: 25px auto 0;
+  color: #8c7b62;
+}
+
+.atuacao-assinatura > span {
+  height: 1px;
+  background: rgba(140,123,98,.62);
+}
+
+.atuacao-assinatura strong {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.atuacao-assinatura p {
+  margin: 0;
+  color: #7a7063;
+  font-size: .69rem;
+  letter-spacing: 1.35px;
+  white-space: nowrap;
+}
+
+@media (max-width: 1050px) {
+  .atendimento-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .atuacao-juridica-home .contato-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .atuacao-juridica-home .contato-card:last-child {
+    grid-column: 1 / -1;
+    width: min(420px, 100%);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .atendimento-especializado {
+    padding: 42px 14px 16px;
+  }
+
+  .atendimento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .atendimento-conteudo {
+    min-height: auto;
+  }
+
+  .atendimento-whatsapp {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+  }
+
+  .atendimento-whatsapp-botao {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .atuacao-inner {
+    width: calc(100% - 28px);
+    padding-top: 30px;
+  }
+
+  .atuacao-juridica-home .atuacao-cabecalho h2 {
+    gap: 12px;
+    font-size: 1.65rem;
+  }
+
+  .atuacao-juridica-home .atuacao-cabecalho h2::before,
+  .atuacao-juridica-home .atuacao-cabecalho h2::after {
+    width: 30px;
+  }
+
+  .atuacao-juridica-home .contato-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .atuacao-juridica-home .contato-card,
+  .atuacao-juridica-home .contato-card:last-child {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .atuacao-juridica-home .contato-card a {
+    min-height: 215px;
+  }
+
+  .atuacao-assinatura {
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .atuacao-assinatura p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 430px) {
+  .atendimento-cabecalho h2 {
+    font-size: 2rem;
+  }
+
+  .atendimento-whatsapp-texto {
+    align-items: flex-start;
+  }
+
+  .atendimento-balao {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+
+/* =========================================================
+   AJUSTE SOLICITADO — mantém tamanhos e estética atuais
+   1) tipografia igual ao padrão da Home
+   2) foto de fundo visível em Atuação Jurídica
+   ========================================================= */
+
+/* Tipografia padrão já usada na Home */
+.atendimento-especializado,
+.atendimento-especializado *,
+.atuacao-juridica-home,
+.atuacao-juridica-home * {
+  font-family: Arial, sans-serif !important;
+}
+
+/* Mantém pesos/tamanhos já definidos; remove apenas a família diferente */
+.atendimento-cabecalho h2,
+.atendimento-conteudo h3,
+.atendimento-whatsapp h3,
+.atuacao-juridica-home .atuacao-cabecalho h2,
+.atuacao-juridica-home .contato-card h3 {
+  font-family: Arial, sans-serif !important;
+}
+
+/* Atuação Jurídica: MESMO tamanho/layout, agora com a foto de fundo original visível */
+.contato.atuacao-juridica-home {
+  background:
+    linear-gradient(rgba(241, 235, 225, .70), rgba(231, 222, 208, .76)),
+    url('foto\ equipe3.png') center 40% / cover no-repeat !important;
+}
+
+/* Clareia a camada decorativa que estava escondendo demais a fotografia */
+.contato.atuacao-juridica-home::before {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.24), transparent 42%),
+    linear-gradient(90deg, rgba(255,255,255,.08), transparent 22%, transparent 78%, rgba(255,255,255,.08)) !important;
+}
+
+/* Cards continuam translúcidos para a foto aparecer por trás */
+.atuacao-juridica-home .contato-card {
+  background: rgba(255, 252, 246, .84) !important;
+}
+
+
+/* =========================================================
+   AJUSTE — ATUAÇÃO JURÍDICA FULL WIDTH
+   Mantém altura, cards, tipografia e espaçamentos atuais.
+   Apenas leva o fundo até as duas bordas da tela e dá zoom
+   suficiente na foto para cobrir toda a faixa.
+   ========================================================= */
+
+.contato.atuacao-juridica-home {
+  width: 100vw !important;
+  max-width: none !important;
+
+  /* quebra qualquer limite do container pai e encosta nas duas laterais */
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+
+  /* mantém o tamanho vertical atual */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+
+  /* foto de fundo cobrindo a faixa inteira */
+  background-image:
+    linear-gradient(rgba(241, 235, 225, .70), rgba(231, 222, 208, .76)),
+    url('foto\ equipe3.png') !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+
+  border-radius: 0 !important;
+  overflow: hidden !important;
+}
+
+/* O conteúdo continua centralizado no mesmo tamanho.
+   Só o FUNDO passa a ocupar a tela inteira. */
+.contato.atuacao-juridica-home .atuacao-inner {
+  width: min(1240px, calc(100% - 48px)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Camada clara mais suave para a fotografia continuar aparecendo */
+.contato.atuacao-juridica-home::before {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.20), transparent 42%),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.05),
+      transparent 22%,
+      transparent 78%,
+      rgba(255,255,255,.05)
+    ) !important;
+}
+
+@media (max-width: 720px) {
+  .contato.atuacao-juridica-home .atuacao-inner {
+    width: calc(100% - 28px) !important;
+  }
+
+  .contato.atuacao-juridica-home {
+    background-position: center center !important;
+    background-size: cover !important;
+  }
+}
+
+
+/* =========================================================
+   AJUSTE ESTÉTICO — COMO PODEMOS AJUDAR VOCÊ?
+   Fundo taupe médio aprovado, mantendo Atuação Jurídica intacta.
+   ========================================================= */
+
+.atendimento-especializado {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255,255,255,.16), transparent 34%),
+    radial-gradient(circle at 88% 12%, rgba(255,255,255,.08), transparent 32%),
+    linear-gradient(180deg, #b8ad9d 0%, #a99e8e 52%, #b5aa9a 100%) !important;
+  color: #302d29 !important;
+}
+
+/* Cabeçalho com contraste elegante, sem mudar a tipografia/tamanhos */
+.atendimento-especializado .atendimento-etiqueta {
+  color: #5d554b !important;
+}
+
+.atendimento-especializado .atendimento-etiqueta::before,
+.atendimento-especializado .atendimento-etiqueta::after {
+  background: rgba(77, 69, 59, .48) !important;
+}
+
+.atendimento-especializado .atendimento-cabecalho h2 {
+  color: #2f2c28 !important;
+}
+
+.atendimento-especializado .atendimento-cabecalho p {
+  color: #514c45 !important;
+}
+
+/* Cards claros para contrastar com o novo fundo */
+.atendimento-especializado .atendimento-card {
+  background: rgba(255, 252, 246, .94) !important;
+  border-color: rgba(91, 80, 65, .22) !important;
+  box-shadow: 0 12px 28px rgba(55, 49, 42, .14) !important;
+}
+
+.atendimento-especializado .atendimento-card:hover {
+  border-color: rgba(91, 80, 65, .42) !important;
+  box-shadow: 0 18px 36px rgba(55, 49, 42, .20) !important;
+}
+
+/* Barra inferior clara para não pesar a seção */
+.atendimento-especializado .atendimento-whatsapp {
+  background: rgba(250, 246, 239, .91) !important;
+  border-color: rgba(91, 80, 65, .24) !important;
+  box-shadow: 0 10px 24px rgba(55, 49, 42, .14) !important;
+}
+
+/* CTA principal mais destacado, ainda dentro da paleta do site */
+.atendimento-especializado .atendimento-whatsapp-botao {
+  background: linear-gradient(135deg, #514d47 0%, #35332f 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(218, 202, 175, .78) !important;
+  box-shadow:
+    0 9px 22px rgba(45, 41, 36, .30),
+    inset 0 0 0 1px rgba(255,255,255,.06) !important;
+}
+
+.atendimento-especializado .atendimento-whatsapp-botao:hover {
+  background: linear-gradient(135deg, #44413c 0%, #292824 100%) !important;
+  box-shadow:
+    0 13px 28px rgba(45, 41, 36, .36),
+    0 0 0 3px rgba(205, 187, 158, .20) !important;
+}
+
+
+/* =========================================================
+   REFINO ESTÉTICO APROVADO — COMO PODEMOS AJUDAR VOCÊ?
+   Mantém estrutura/tamanhos. Atuação Jurídica permanece clara.
+   WhatsApp em verde.
+   ========================================================= */
+
+.atendimento-especializado {
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255,255,255,.16) 0%, rgba(255,255,255,0) 38%),
+    linear-gradient(90deg, #aaa08f 0%, #b8ad9d 48%, #a69b8a 100%) !important;
+}
+
+/* Cards mais quentes e refinados */
+.atendimento-especializado .atendimento-card {
+  background: rgba(255, 252, 246, .95) !important;
+  border: 1px solid rgba(111, 94, 72, .16) !important;
+  box-shadow: 0 10px 24px rgba(56, 49, 40, .11) !important;
+}
+
+.atendimento-especializado .atendimento-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(111, 94, 72, .30) !important;
+  box-shadow: 0 15px 30px rgba(56, 49, 40, .16) !important;
+}
+
+/* Topo dos cards em taupe suave */
+.atendimento-especializado .atendimento-card-topo {
+  background:
+    linear-gradient(135deg, rgba(196,180,155,.96), rgba(158,149,135,.96)) !important;
+}
+
+/* Barra de orientação */
+.atendimento-especializado .atendimento-whatsapp {
+  background: rgba(255, 252, 246, .94) !important;
+  border: 1px solid rgba(111, 94, 72, .17) !important;
+  box-shadow: 0 9px 22px rgba(56, 49, 40, .12) !important;
+}
+
+/* WhatsApp: único elemento verde de destaque */
+.atendimento-especializado .atendimento-whatsapp-botao {
+  background: linear-gradient(135deg, #25D366 0%, #128C45 100%) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.35) !important;
+  box-shadow: 0 9px 22px rgba(18,140,69,.30) !important;
+}
+
+.atendimento-especializado .atendimento-whatsapp-botao:hover {
+  background: linear-gradient(135deg, #20c55c 0%, #0f7b3c 100%) !important;
+  box-shadow: 0 13px 28px rgba(18,140,69,.40) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Atuação Jurídica: mantém clara, apenas melhora definição dos cards */
+.atuacao-juridica-home .contato-card {
+  background: rgba(255, 252, 246, .92) !important;
+  border: 1px solid rgba(139, 119, 91, .20) !important;
+  box-shadow: 0 10px 25px rgba(64, 56, 46, .13) !important;
+}
+
+.atuacao-juridica-home .contato-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(139, 119, 91, .32) !important;
+  box-shadow: 0 15px 31px rgba(64, 56, 46, .18) !important;
+}
+
+/* =========================================================
+   ETAPA 1 — COMPACTAR SOMENTE "COMO PODEMOS AJUDAR VOCÊ?"
+   Compatível com o HTML da Etapa 1.
+   Não altera a seção Atuação Jurídica.
+   ========================================================= */
+
+.atendimento-especializado {
+  padding-top: 42px !important;
+  padding-bottom: 28px !important;
+}
+
+.atendimento-especializado .atendimento-cabecalho {
+  margin-bottom: 22px !important;
+}
+
+.atendimento-especializado .atendimento-grid {
+  gap: 14px !important;
+}
+
+.atendimento-especializado .atendimento-visual {
+  height: 88px !important;
+}
+
+.atendimento-especializado .atendimento-icone {
+  width: 54px !important;
+  height: 54px !important;
+  left: 18px !important;
+  bottom: -20px !important;
+  font-size: 1.55rem !important;
+}
+
+.atendimento-especializado .atendimento-conteudo {
+  min-height: 150px !important;
+  padding: 30px 18px 18px !important;
+}
+
+.atendimento-especializado .atendimento-conteudo h3 {
+  margin-bottom: 8px !important;
+  font-size: 1.08rem !important;
+  line-height: 1.2 !important;
+}
+
+.atendimento-especializado .atendimento-conteudo p {
+  margin-bottom: 0 !important;
+  font-size: .90rem !important;
+  line-height: 1.4 !important;
+}
+
+.atendimento-especializado .atendimento-whatsapp {
+  min-height: 64px !important;
+  margin-top: 14px !important;
+  padding: 10px 16px !important;
+}
+
+.atendimento-especializado .atendimento-balao {
+  flex-basis: 44px !important;
+  width: 44px !important;
+  height: 44px !important;
+  font-size: 1.45rem !important;
+}
+
+.atendimento-especializado .atendimento-whatsapp h3 {
+  margin: 0 !important;
+  font-size: 1.05rem !important;
+}
+
+.atendimento-especializado .atendimento-whatsapp-botao {
+  min-width: 270px !important;
+  padding: 12px 20px !important;
+}
+
+@media (max-width: 720px) {
+  .atendimento-especializado {
+    padding: 34px 18px 24px !important;
+  }
+
+  .atendimento-especializado .atendimento-visual {
+    height: 82px !important;
+  }
+
+  .atendimento-especializado .atendimento-conteudo {
+    min-height: 0 !important;
+    padding: 28px 17px 17px !important;
+  }
+
+  .atendimento-especializado .atendimento-whatsapp {
+    padding: 12px !important;
+  }
+
+  .atendimento-especializado .atendimento-whatsapp-botao {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+/* =========================================================
+   ATENDIMENTO RÁPIDO — BLOCO ISOLADO
+   Refinado para criar transição visual entre os destaques
+   e a seção Atuação Jurídica.
+   ========================================================= */
+
+.sms-atendimento-rapido {
+  position: relative;
+  width: 100%;
+  padding: 22px 24px 21px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.08), transparent 40%),
+    linear-gradient(90deg, #918778 0%, #9d9384 50%, #8f8576 100%);
+  color: #302d29;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sms-atendimento-inner {
+  position: relative;
+  width: min(1220px, calc(100% - 10px));
+  margin: 0 auto;
+}
+
+.sms-atendimento-cabecalho {
+  margin: 0 0 14px;
+  text-align: center;
+}
+
+.sms-atendimento-etiqueta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 3px;
+  color: rgba(47,44,40,.70);
+  font-size: .64rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.sms-atendimento-etiqueta::before,
+.sms-atendimento-etiqueta::after {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: rgba(47,44,40,.32);
+}
+
+.sms-atendimento-cabecalho h2 {
+  margin: 0;
+  color: #302d29;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: clamp(1.45rem, 2.5vw, 2.15rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -.4px;
+}
+
+.sms-areas-rapidas {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  padding-right: 25px;
+}
+
+.sms-areas-rapidas a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,.40);
+  border-radius: 6px;
+  background: rgba(248,244,237,.78);
+  color: #3b3732;
+  text-align: center;
+  text-decoration: none;
+  font-size: .84rem;
+  font-weight: 500;
+  line-height: 1.2;
+  box-shadow: 0 3px 9px rgba(45,40,34,.06);
+  transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.sms-areas-rapidas a:hover {
+  background: rgba(255,252,247,.94);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(45,40,34,.11);
+}
+
+.sms-areas-rapidas a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -7px;
+  top: 50%;
+  width: 1px;
+  height: 22px;
+  transform: translateY(-50%);
+  background: rgba(64,57,49,.23);
+}
+
+.sms-whatsapp-discreto {
+  position: absolute;
+  right: -18px;
+  bottom: -18px;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 3px solid rgba(244,239,231,.95);
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(18,140,69,.30);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.sms-whatsapp-discreto i {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.sms-whatsapp-discreto:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 9px 20px rgba(18,140,69,.38);
+}
+
+@media (max-width: 760px) {
+  .sms-atendimento-rapido {
+    padding: 20px 18px 24px;
+  }
+
+  .sms-atendimento-cabecalho {
+    margin-bottom: 12px;
+  }
+
+  .sms-atendimento-cabecalho h2 {
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+  }
+
+  .sms-areas-rapidas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    padding-right: 0;
+  }
+
+  .sms-areas-rapidas a {
+    min-height: 42px;
+    padding: 7px 6px;
+    font-size: .76rem;
+  }
+
+  .sms-areas-rapidas a::after {
+    display: none;
+  }
+
+  .sms-whatsapp-discreto {
+    right: 3px;
+    bottom: -18px;
+    width: 39px;
+    height: 39px;
+  }
+
+  .sms-whatsapp-discreto i {
+    font-size: 1.15rem;
+  }
+}
+
+/* =========================================================
+   ATUAÇÃO JURÍDICA — FUNDO COM SAÍDA TRANSPARENTE
+   A fotografia desaparece no final e revela o fundo real do site.
+   Cards, textos e frase permanecem 100% nítidos.
+   ========================================================= */
+
+.atuacao-juridica-home{
+  position: relative !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+
+  /* Remove a fotografia do elemento principal.
+     Assim ela pode ficar transparente sem afetar o conteúdo. */
+  background: transparent !important;
+}
+
+/* Camada exclusiva da fotografia */
+.atuacao-juridica-home::before{
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -2 !important;
+  pointer-events: none !important;
+
+  background:
+    linear-gradient(
+      rgba(241, 223, 199, 0.48),
+      rgba(209, 209, 209, 0.30)
+    ),
+    url('foto equipe3.png') center/cover no-repeat !important;
+
+  /* A própria fotografia perde opacidade no final.
+     Não há faixa branca pintada por cima. */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 66%,
+    rgba(0,0,0,.92) 72%,
+    rgba(0,0,0,.68) 82%,
+    rgba(0,0,0,.34) 91%,
+    transparent 100%
+  ) !important;
+
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 66%,
+    rgba(0,0,0,.92) 72%,
+    rgba(0,0,0,.68) 82%,
+    rgba(0,0,0,.34) 91%,
+    transparent 100%
+  ) !important;
+}
+
+/* Garante que não exista mais a faixa branca artificial */
+.atuacao-juridica-home::after{
+  content: none !important;
+  display: none !important;
+}
+
+/* Conteúdo sempre nítido acima da fotografia */
+.atuacao-juridica-home .atuacao-inner{
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Frase final fica sobre o ponto onde o fundo do site começa a aparecer */
+.atuacao-juridica-home .atuacao-assinatura{
+  position: relative !important;
+  z-index: 3 !important;
+  margin-top: 26px !important;
+  padding: 10px 0 7px !important;
+}
+
+.atuacao-juridica-home .atuacao-assinatura p{
+  color: #625d55 !important;
+  text-shadow: 0 1px 5px rgba(255,255,255,.55) !important;
+}
+
+@media (max-width: 720px){
+  .atuacao-juridica-home::before{
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 62%,
+      rgba(0,0,0,.88) 70%,
+      rgba(0,0,0,.58) 82%,
+      rgba(0,0,0,.25) 92%,
+      transparent 100%
+    ) !important;
+
+    mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 62%,
+      rgba(0,0,0,.88) 70%,
+      rgba(0,0,0,.58) 82%,
+      rgba(0,0,0,.25) 92%,
+      transparent 100%
+    ) !important;
+  }
+}
+
+/* =========================================================
+   AJUSTE FINAL — LARGURA DA ATUAÇÃO JURÍDICA
+   Mantém a seção centralizada e com respiro nas laterais.
+   ========================================================= */
+.contato.atuacao-juridica-home {
+  width: min(1240px, calc(100% - 120px)) !important;
+  max-width: 1240px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: 900px) {
+  .contato.atuacao-juridica-home {
+    width: calc(100% - 40px) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .contato.atuacao-juridica-home {
+    width: calc(100% - 24px) !important;
+  }
+}
+
+/* =========================================================
+   CORREÇÃO FINAL — ATUAÇÃO JURÍDICA CENTRALIZADA
+   Remove o antigo deslocamento de full width e mantém
+   a seção menor, com margens iguais dos dois lados.
+   ========================================================= */
+.contato.atuacao-juridica-home {
+  width: min(1240px, calc(100% - 120px)) !important;
+  max-width: 1240px !important;
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  margin: 0 auto !important;
+  transform: none !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+}
+
+.contato.atuacao-juridica-home .atuacao-inner {
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 900px) {
+  .contato.atuacao-juridica-home {
+    width: calc(100% - 40px) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .contato.atuacao-juridica-home {
+    width: calc(100% - 24px) !important;
+  }
+
+  .contato.atuacao-juridica-home .atuacao-inner {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
+
+/* =========================================================
+   ATUAÇÃO JURÍDICA — AJUSTE DE CORES
+   Fundo: degradê bege/creme sobre a imagem
+   Cards: greige/cinza quente mais escuro
+   Mantém largura, centralização e estrutura existentes.
+   ========================================================= */
+
+.atuacao-juridica-home {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(225, 216, 202, .56) 0%,
+      rgba(211, 202, 189, .66) 52%,
+      rgba(191, 184, 173, .80) 100%
+    ),
+    url('foto equipe3.png') center/cover no-repeat !important;
+}
+
+/* Cards em cinza quente / greige, com transparência suave */
+.atuacao-juridica-home .contato-card {
+  background: rgba(190, 187, 180, .88) !important;
+  border: 1px solid rgba(255, 255, 255, .28) !important;
+  box-shadow: 0 8px 22px rgba(45, 42, 38, .16) !important;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* Degradê da mini-imagem para a nova cor do card */
+.atuacao-juridica-home .atuacao-mini-foto::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(190, 187, 180, 0) 8%,
+    rgba(190, 187, 180, .18) 48%,
+    rgba(190, 187, 180, .96) 100%
+  ) !important;
+}
+
+/* Mantém boa leitura sobre o card mais escuro */
+.atuacao-juridica-home .contato-card h3 {
+  color: #34322f !important;
+}
+
+.atuacao-juridica-home .contato-card p,
+.atuacao-juridica-home .atuacao-link {
+  color: #4a4742 !important;
+}
+
+.atuacao-juridica-home .atuacao-link {
+  border-top-color: rgba(55, 52, 48, .20) !important;
+}
+
+.atuacao-juridica-home .contato-card:hover {
+  background: rgba(181, 178, 171, .94) !important;
+  box-shadow: 0 12px 28px rgba(45, 42, 38, .22) !important;
+}
+
+/* =========================================================
+   ATUAÇÃO JURÍDICA — AJUSTE VISUAL FINAL
+   Topo mais fechado + base creme
+   Cards greige mais escuros
+   Fundo principal com bordas mais arredondadas
+   ========================================================= */
+
+.contato.atuacao-juridica-home {
+  /* Mantém a largura e a centralização já configuradas */
+  border-radius: 24px !important;
+  overflow: hidden !important;
+
+  /* Transição: cinza/greige no topo -> creme na parte inferior */
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(126, 122, 115, .70) 0%,
+      rgba(151, 145, 136, .62) 24%,
+      rgba(190, 181, 169, .56) 55%,
+      rgba(226, 214, 197, .76) 82%,
+      rgba(239, 228, 211, .88) 100%
+    ),
+    url('foto equipe3.png') center 40% / cover no-repeat !important;
+
+  box-shadow: 0 12px 34px rgba(52, 48, 43, .14) !important;
+}
+
+/* Camada decorativa bem discreta para não apagar a foto */
+.contato.atuacao-juridica-home::before {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(62, 59, 55, .10) 0%,
+      rgba(255, 255, 255, 0) 42%,
+      rgba(248, 239, 225, .12) 100%
+    ) !important;
+  border-radius: inherit !important;
+}
+
+/* Cards mais escuros, em greige/cinza quente */
+.atuacao-juridica-home .contato-card {
+  background: rgba(143, 140, 133, .91) !important;
+  border: 1px solid rgba(255, 255, 255, .22) !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 24px rgba(48, 45, 41, .20) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+}
+
+/* Mini-imagem se dissolve no mesmo tom do card */
+.atuacao-juridica-home .atuacao-mini-foto {
+  border-radius: 14px 14px 0 0 !important;
+  overflow: hidden !important;
+}
+
+.atuacao-juridica-home .atuacao-mini-foto::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(143, 140, 133, 0) 8%,
+    rgba(143, 140, 133, .22) 48%,
+    rgba(143, 140, 133, .97) 100%
+  ) !important;
+}
+
+/* Contraste dos textos nos cards */
+.atuacao-juridica-home .contato-card h3 {
+  color: #2f2d2a !important;
+}
+
+.atuacao-juridica-home .contato-card p,
+.atuacao-juridica-home .atuacao-link {
+  color: #3f3c38 !important;
+}
+
+.atuacao-juridica-home .atuacao-link {
+  border-top-color: rgba(47, 45, 42, .22) !important;
+}
+
+/* Hover sem clarear demais */
+.atuacao-juridica-home .contato-card:hover {
+  background: rgba(132, 129, 122, .95) !important;
+  border-color: rgba(255, 255, 255, .30) !important;
+  box-shadow: 0 15px 30px rgba(48, 45, 41, .25) !important;
+}
+
+/* No celular, arredondamento um pouco menor */
+@media (max-width: 600px) {
+  .contato.atuacao-juridica-home {
+    border-radius: 18px !important;
+  }
+
+  .atuacao-juridica-home .contato-card {
+    border-radius: 14px !important;
+  }
+}
+
+/* =========================================================
+   ATUAÇÃO JURÍDICA — REFINO DO FUNDO
+   Topo reto + somente cantos inferiores arredondados
+   Degradê mais claro, neutro e menos alaranjado
+   ========================================================= */
+
+.contato.atuacao-juridica-home {
+  border-radius: 0 0 24px 24px !important;
+  overflow: hidden !important;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(153, 153, 149, .46) 0%,
+      rgba(176, 175, 170, .40) 25%,
+      rgba(202, 199, 193, .38) 52%,
+      rgba(226, 220, 211, .50) 78%,
+      rgba(243, 238, 230, .68) 100%
+    ),
+    url('foto equipe3.png') center 40% / cover no-repeat !important;
+
+  box-shadow: 0 12px 34px rgba(52, 48, 43, .12) !important;
+}
+
+/* Neutraliza a camada anterior para não voltar o tom amarronzado */
+.contato.atuacao-juridica-home::before {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(72, 72, 70, .05) 0%,
+      rgba(255, 255, 255, .02) 45%,
+      rgba(250, 247, 241, .10) 100%
+    ) !important;
+  border-radius: 0 0 24px 24px !important;
+}
+
+/* Mantém o mesmo desenho também no celular */
+@media (max-width: 600px) {
+  .contato.atuacao-juridica-home {
+    border-radius: 0 0 18px 18px !important;
+  }
+
+  .contato.atuacao-juridica-home::before {
+    border-radius: 0 0 18px 18px !important;
+  }
+}
+
+/* =========================================================
+   ATUAÇÃO JURÍDICA — DEGRADÊ MAIS FORTE / MENOS TRANSPARENTE
+   Mantém os tons claros e neutros, mas cobre mais a fotografia.
+   Topo reto e apenas cantos inferiores arredondados.
+   ========================================================= */
+
+.contato.atuacao-juridica-home {
+  border-radius: 0 0 24px 24px !important;
+  overflow: hidden !important;
+
+  background-image: linear-gradient(rgba(194, 193, 188, .200), rgba(194, 193, 188, .500)), url('foto equipe3.png');
+
+  box-shadow: 0 12px 34px rgba(52, 48, 43, .12) !important;
+}
+
+/* Evita que outra camada deixe o degradê visualmente lavado/transparente */
+.contato.atuacao-juridica-home::before {
+  background: linear-gradient(
+    to bottom,
+    rgba(175, 174, 169, .06) 0%,
+    rgba(255, 255, 255, .03) 48%,
+    rgba(250, 247, 241, .12) 100%
+  ) !important;
+  border-radius: 0 0 24px 24px !important;
+}
+
+@media (max-width: 600px) {
+  .contato.atuacao-juridica-home,
+  .contato.atuacao-juridica-home::before {
+    border-radius: 0 0 18px 18px !important;
+  }
+}
+
+/* ===== LOCALIZAÇÃO DO ESCRITÓRIO =====
+   Mesmo padrão de fundo da seção BIOGRAFIA DOS SÓCIOS */
+.sms-localizacao {
+  width: 100%;
+  margin: 0;
+  padding: 58px 0 0;
+  background: #dfd7cc;
+  color: #3f3c35;
+  font-family: Arial, sans-serif;
+  border: 0;
+}
+
+.sms-localizacao-cabecalho {
+  max-width: 920px;
+  margin: 0 auto 34px;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.sms-localizacao-etiqueta {
+  display: block;
+  margin-bottom: 9px;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: 2.3px;
+  text-transform: uppercase;
+  color: #918e7d;
+}
+
+.sms-localizacao-cabecalho h2 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -.5px;
+  color: #3f3c35;
+}
+
+.sms-localizacao-cabecalho p {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: .96rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: #625f58;
+}
+
+.sms-localizacao-mapa {
+  width: 100%;
+  height: 370px;
+  overflow: hidden;
+  background: #ddd8cf;
+
+  /* linha bem mais delicada entre o endereço e o mapa */
+  border-top: 1px solid rgba(160, 139, 100, .45);
+}
+
+.sms-localizacao-mapa iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+
+  /* mapa mais integrado aos tons do site */
+  filter: grayscale(25%) saturate(75%) contrast(90%);
+  transition: filter .35s ease;
+}
+
+/* Ao interagir, o mapa recupera as cores normais */
+.sms-localizacao-mapa:hover iframe,
+.sms-localizacao-mapa:focus-within iframe {
+  filter: grayscale(0%) saturate(100%) contrast(100%);
+}
+
+@media (max-width: 700px) {
+  .sms-localizacao {
+    padding-top: 44px;
+  }
+
+  .sms-localizacao-cabecalho {
+    margin-bottom: 26px;
+    padding: 0 18px;
+  }
+
+  .sms-localizacao-cabecalho h2 {
+    font-size: 2rem;
+  }
+
+  .sms-localizacao-cabecalho p {
+    font-size: .9rem;
+  }
+
+  .sms-localizacao-mapa {
+    height: 320px;
+  }
+}
+
+
+
+/* =========================================================
+   CORREÇÃO FINAL — ATUAÇÃO JURÍDICA
+   Overlay uniforme e bem fechado, sem degradê
+   ========================================================= */
+.atuacao-fundo,
+.atuacao-juridica,
+section.atuacao-fundo {
+  background-image:
+    linear-gradient(
+      rgba(194, 193, 188, 0.985),
+      rgba(194, 193, 188, 0.985)
+    ),
+    var(--atuacao-bg-image, url('foto equipe3.png')) !important;
+}
+
+/* Caso a imagem esteja aplicada por pseudo-elemento, fecha também essa camada */
+.atuacao-fundo::before,
+.atuacao-juridica::before {
+  background: rgba(194, 193, 188, 0.985) !important;
+}
+
+
+/* =========================================================
+   CORREÇÃO REAL — ATUAÇÃO JURÍDICA
+   O HTML usa: <section class="contato atuacao-juridica-home">
+   ========================================================= */
+
+.contato.atuacao-juridica-home {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(194, 193, 188, .92) 0%,
+      rgba(204, 201, 194, .94) 48%,
+      rgba(224, 217, 207, .97) 100%
+    ),
+    url('foto equipe3.png') center 40% / cover no-repeat !important;
+}
+
+/* Neutraliza a camada ::before que também estava interferindo */
+.contato.atuacao-juridica-home::before {
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   AJUSTE FINAL — ATUAÇÃO JURÍDICA
+   Transparência igual à referência aprovada
+   ========================================================= */
+.contato.atuacao-juridica-home {
+  background:
+    linear-gradient(
+      rgba(194, 193, 188, .82),
+      rgba(194, 193, 188, .82)
+    ),
+    url('foto equipe3.png') center 40% / cover no-repeat !important;
+}
+
+.contato.atuacao-juridica-home::before {
+  background: transparent !important;
+}
+
+
+/* =========================================================
+   WHATSAPP FLUTUANTE — SMS ADVOGADOS
+   ========================================================= */
+.whatsapp-flutuante{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-family:Arial,sans-serif;
+}
+
+.whatsapp-texto{
+  padding:10px 16px;
+  border:1px solid rgba(145,142,125,.28);
+  border-radius:999px;
+  background:rgba(255,255,255,.96);
+  color:#3f3c35;
+  font-size:14px;
+  font-weight:600;
+  line-height:1.2;
+  white-space:nowrap;
+  box-shadow:0 8px 24px rgba(0,0,0,.16);
+  opacity:0;
+  visibility:hidden;
+  transform:translateX(12px);
+  transition:opacity .25s ease, transform .25s ease, visibility .25s ease;
+}
+
+.whatsapp-bola{
+  width:58px;
+  height:58px;
+  flex:0 0 58px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#25D366;
+  color:#fff;
+  font-size:31px;
+  box-shadow:0 8px 24px rgba(0,0,0,.24);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.whatsapp-flutuante:hover .whatsapp-texto,
+.whatsapp-flutuante:focus-visible .whatsapp-texto{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(0);
+}
+
+.whatsapp-flutuante:hover .whatsapp-bola,
+.whatsapp-flutuante:focus-visible .whatsapp-bola{
+  transform:scale(1.07);
+  box-shadow:0 10px 28px rgba(0,0,0,.28);
+}
+
+@media(max-width:768px){
+  .whatsapp-flutuante{
+    right:16px;
+    bottom:16px;
+  }
+
+  .whatsapp-texto{
+    display:none;
+  }
+
+  .whatsapp-bola{
+    width:54px;
+    height:54px;
+    flex-basis:54px;
+    font-size:29px;
+  }
+}
+
+/* =========================================================
+   REFINO FINAL — CARDS DA ATUAÇÃO JURÍDICA
+   Mais leves, elegantes e menos "blocados"
+   ========================================================= */
+
+.atuacao-juridica .cards-atuacao,
+.atuacao-juridica .cards-grid,
+.atuacao-juridica .atalhos-grid {
+  gap: 14px !important;
+}
+
+/* Card */
+.atuacao-juridica .card-atuacao,
+.atuacao-juridica .atalho-card {
+  border-radius: 16px !important;
+  overflow: hidden;
+  background: rgba(246, 241, 229, 0.90) !important;
+  border: 1px solid rgba(133, 126, 112, 0.18) !important;
+  box-shadow: 0 10px 24px rgba(42, 39, 34, 0.11) !important;
+  transition: transform .25s ease, box-shadow .25s ease,
+              background-color .25s ease, border-color .25s ease !important;
+}
+
+/* Área superior dos ícones */
+.atuacao-juridica .card-atuacao .card-icon,
+.atuacao-juridica .atalho-card .atalho-icon,
+.atuacao-juridica .card-atuacao .icone,
+.atuacao-juridica .atalho-card .icone {
+  min-height: 112px !important;
+  background: rgba(255,255,255,0.68) !important;
+}
+
+/* Ícones */
+.atuacao-juridica .card-atuacao img,
+.atuacao-juridica .atalho-card img {
+  max-height: 92px !important;
+  object-fit: contain !important;
+}
+
+/* Conteúdo */
+.atuacao-juridica .card-atuacao .card-content,
+.atuacao-juridica .atalho-card .atalho-content,
+.atuacao-juridica .card-atuacao .conteudo,
+.atuacao-juridica .atalho-card .conteudo {
+  padding: 15px 18px 17px !important;
+}
+
+/* Títulos */
+.atuacao-juridica .card-atuacao h3,
+.atuacao-juridica .atalho-card h3 {
+  font-size: 18px !important;
+  line-height: 1.25 !important;
+  font-weight: 650 !important;
+  margin-bottom: 8px !important;
+  color: #34312c !important;
+}
+
+/* Descrições */
+.atuacao-juridica .card-atuacao p,
+.atuacao-juridica .atalho-card p {
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+  color: #57534c !important;
+}
+
+/* Links inferiores */
+.atuacao-juridica .card-atuacao a,
+.atuacao-juridica .atalho-card a {
+  font-size: 12px !important;
+  letter-spacing: .02em !important;
+}
+
+/* Hover mais delicado */
+.atuacao-juridica .card-atuacao:hover,
+.atuacao-juridica .atalho-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 15px 30px rgba(42, 39, 34, 0.15) !important;
+}
+
+/* Card selecionado/ativo: sem o cinza pesado */
+.atuacao-juridica .card-atuacao.active,
+.atuacao-juridica .card-atuacao.ativo,
+.atuacao-juridica .atalho-card.active,
+.atuacao-juridica .atalho-card.ativo {
+  background: rgba(151, 148, 139, 0.72) !important;
+  border-color: rgba(117, 111, 100, 0.25) !important;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  box-shadow: 0 11px 26px rgba(42, 39, 34, 0.14) !important;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .atuacao-juridica .cards-atuacao,
+  .atuacao-juridica .cards-grid,
+  .atuacao-juridica .atalhos-grid {
+    gap: 12px !important;
+  }
+
+  .atuacao-juridica .card-atuacao,
+  .atuacao-juridica .atalho-card {
+    border-radius: 14px !important;
+  }
+}
+
+
+/* Compatibilidade com os cards já existentes no projeto */
+.atuacao-juridica .nav-card,
+.atuacao-juridica .link-card,
+.atuacao-juridica .menu-card {
+  border-radius: 16px !important;
+  background: rgba(246, 241, 229, .90) !important;
+  border: 1px solid rgba(133,126,112,.18) !important;
+  box-shadow: 0 10px 24px rgba(42,39,34,.11) !important;
+}
+
+
+/* HOVER CLARO NOS CARDS DA ATUAÇÃO JURÍDICA */
+.atuacao-juridica-home .contato-card {
+  transition: background-color .3s ease,
+              transform .3s ease,
+              box-shadow .3s ease;
+}
+
+.atuacao-juridica-home .contato-card:hover {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+}
+
+/* garante que o conteúdo interno também clareie */
+.atuacao-juridica-home .contato-card:hover > a {
+  background: rgba(255, 255, 255, 0.35) !important;
+}
