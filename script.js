@@ -358,3 +358,243 @@ document.querySelectorAll('.bio-slideshow').forEach(slideshow => {
     slides[index].classList.add('active');
   }, 4500);
 });
+
+
+/* ==========================================
+   MENU INTERATIVO - SMS ADVOCACIA
+========================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const header = document.getElementById("sms-header");
+  const menuToggle = document.getElementById("sms-menu-toggle");
+  const menu = document.getElementById("sms-menu");
+
+  if (!header) return;
+
+  /* ALTERA O FUNDO DURANTE O SCROLL */
+
+  function atualizarMenu() {
+    if (window.scrollY > 30) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  }
+
+  window.addEventListener("scroll", atualizarMenu, {
+    passive: true
+  });
+
+  atualizarMenu();
+
+  /* ABRE E FECHA O MENU MOBILE */
+
+  if (menuToggle && menu) {
+
+    function fecharMenu() {
+      header.classList.remove("menu-open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      menuToggle.setAttribute(
+        "aria-label",
+        "Abrir menu"
+      );
+    }
+
+    menuToggle.addEventListener("click", function () {
+
+      const aberto = header.classList.toggle("menu-open");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(aberto)
+      );
+
+      menuToggle.setAttribute(
+        "aria-label",
+        aberto ? "Fechar menu" : "Abrir menu"
+      );
+
+    });
+
+    /* FECHA AO CLICAR EM UM LINK */
+
+    menu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", fecharMenu);
+    });
+
+    /* FECHA AO PRESSIONAR ESC */
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        fecharMenu();
+      }
+    });
+
+    /* FECHA QUANDO VOLTA AO DESKTOP */
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 900) {
+        fecharMenu();
+      }
+    });
+
+  }
+
+});
+
+
+
+
+
+/* ==========================================
+   SMS ADVOCACIA | LINHA ANIMADA NO SCROLL
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const secao = document.querySelector(".sms-jornada");
+  if (!secao) return;
+
+  const composicao = secao.querySelector(
+    ".sms-jornada-composicao"
+  );
+
+  const linha = secao.querySelector(
+    ".sms-jornada-progresso"
+  );
+
+  const etapas = [
+    ...secao.querySelectorAll(".sms-jornada-etapa")
+  ];
+
+  if (!composicao || !linha || !etapas.length) return;
+
+  const movimentoReduzido = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+
+  if (movimentoReduzido.matches) {
+    linha.style.height = "100%";
+    return;
+  }
+
+  secao.classList.add("js-ativa");
+
+  let agendado = false;
+
+  function atualizar() {
+    const retangulo = composicao.getBoundingClientRect();
+
+    const referencia = window.innerHeight * 0.55;
+    const altura = Math.max(retangulo.height, 1);
+
+    const progresso = Math.max(
+      0,
+      Math.min(
+        1,
+        (referencia - retangulo.top) / altura
+      )
+    );
+
+    linha.style.height = `${progresso * 100}%`;
+
+    etapas.forEach((etapa) => {
+      const posicao = etapa.getBoundingClientRect();
+
+      if (posicao.top < referencia) {
+        etapa.classList.add("ativa");
+      } else {
+        etapa.classList.remove("ativa");
+      }
+    });
+
+    agendado = false;
+  }
+
+  function solicitarAtualizacao() {
+    if (agendado) return;
+    agendado = true;
+
+    requestAnimationFrame(atualizar);
+  }
+
+  window.addEventListener(
+    "scroll",
+    solicitarAtualizacao,
+    { passive: true }
+  );
+
+  window.addEventListener(
+    "resize",
+    solicitarAtualizacao
+  );
+
+  solicitarAtualizacao();
+});
+
+
+
+/* ==========================================
+   SMS | AVALIAÇÕES AUTOMÁTICAS
+   SEM HOVER, SEM SETAS
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const trilho = document.querySelector(
+    ".sms-avaliacoes-trilho"
+  );
+
+  if (!trilho || trilho.dataset.iniciado === "true") return;
+
+  trilho.dataset.iniciado = "true";
+
+  let animando = false;
+
+  function proximoCard() {
+
+    if (animando || trilho.children.length < 2) return;
+
+    const primeiro = trilho.firstElementChild;
+
+    const distancia =
+      primeiro.getBoundingClientRect().width +
+      (parseFloat(getComputedStyle(trilho).gap) || 0);
+
+    animando = true;
+
+    trilho.style.transition =
+      "transform 700ms ease-in-out";
+
+    trilho.style.transform =
+      `translate3d(-${distancia}px, 0, 0)`;
+
+  }
+
+  trilho.addEventListener("transitionend", (e) => {
+
+    if (e.target !== trilho ||
+        e.propertyName !== "transform" ||
+        !animando) return;
+
+    trilho.style.transition = "none";
+
+    trilho.appendChild(trilho.firstElementChild);
+
+    trilho.style.transform = "translate3d(0, 0, 0)";
+
+    void trilho.offsetWidth;
+
+    animando = false;
+
+  });
+
+  // Avança automaticamente a cada 5 segundos
+  setInterval(proximoCard, 5000);
+
+});

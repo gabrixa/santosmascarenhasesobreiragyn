@@ -510,7 +510,7 @@ body::before {
   background: linear-gradient(135deg, #807f7b, #444444);
   padding: 50px 30px;
   border-radius: 20px;
-  box-shadow: 0 15px 40px ssrgba(0, 0, 0, 0.4); /* sombra dourada */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* sombra dourada */
   text-align: center;
   position: relative;
   color: #e6d7a3; /* dourado claro para texto */
@@ -978,232 +978,216 @@ body::before {
 
 
 
-/* RODAPÉ PRINCIPAL */
-/* RODAPÉ PRINCIPAL */
+/* ==========================================
+   SMS ADVOCACIA | RODAPÉ INSTITUCIONAL
+   GRAFITE SÓLIDO #222222
+   Substitui as antigas regras conflitantes.
+========================================== */
+
 footer {
-  background: linear-gradient(to top, #333333, #6b675fd7);
-  color: #ffae00;
-  padding: 50px 20px 40px;
-  font-family: "Georgia", serif;
-  box-shadow: inset 0 5px 20px rgba(0, 0, 0, 0.4);
-  border-top: 4px solid #bda268;
+  width: 100%;
+  margin: 0;
+  padding: 42px 24px 30px;
+  background: #222222;
+  background-image: none;
+  color: #d3cdc5;
+  font-family: Arial, sans-serif;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-.container-footer {
+footer .container-footer {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(160px, .85fr) minmax(180px, 1fr) minmax(220px, 1.15fr);
   justify-content: space-between;
-  gap: 40px;
+  align-items: start;
+  gap: clamp(22px, 4vw, 56px);
 }
 
-.logo-section {
-  flex: 1 1 250px;
+footer .logo-section {
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 30px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
 }
 
-.logo-section .logo {
-  width: 240px;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 8px;
-  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.6));
-  transition: transform 0.3s ease;
+footer .logo-section .logo,
+footer .logo-section img {
+  display: block;
+  width: 145px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  filter: none;
+  box-shadow: none;
+  transition: none;
 }
 
-.logo-section .logo:hover {
-  transform: scale(1.05);
-}
-
-.logo-section .selo {
+footer .logo-section .selo {
   max-width: 120px;
-  opacity: 0.85;
-  transition: opacity 0.3s ease;
+  opacity: .9;
 }
 
-.logo-section .selo:hover {
-  opacity: 1;
+footer .info-section,
+footer .contato-section {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
 }
 
-/* Info e Contato sections */
-.info-section, .contato-section {
-  flex: 1 1 280px;
+footer .info-section h3,
+footer .contato-section h3 {
+  margin: 0 0 18px;
+  padding-bottom: 12px;
+  border: 0;
+  border-bottom: 1px solid #49423b;
+  font-family: Georgia, serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: .3px;
+  text-transform: none;
+  color: #d8c3a5;
 }
 
-:root {
-  --cor-borda-titulo: rgba(255, 0, 0, 0.6);
+footer p,
+footer li,
+footer span,
+footer strong {
+  color: #d3cdc5;
 }
 
-.info-section h3, .contato-section h3 {
-  font-size: 22px;
-  margin-bottom: 18px;
-  border-bottom: 2px solid var(--cor-borda-titulo);
-  padding-bottom: 6px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.info-section ul {
+footer .info-section ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.info-section ul li {
-  margin-bottom: 12px;
+footer .info-section ul li {
+  margin: 0 0 10px;
 }
 
-.info-section ul li a {
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  /* cor herdada do footer */
-}
-
-.info-section ul li a:hover {
-  color: #ff0202;
-  text-decoration: underline;
-}
-
-.contato-section p {
-  margin-bottom: 14px;
-  font-size: 16px;
-  line-height: 1.5;
-  /* cor herdada do footer */
-}
-
-.contato-section p strong {
-  font-weight: bold;
-  /* cor herdada do footer */
-}
-
-/* Ícones sociais */
-.social-icons {
-  margin-top: 12px;
-  display: flex;
-  gap: 18px;
-  font-size: 22px;
-}
-
-.social-icons a {
-  transition: color 0.3s ease, transform 0.3s ease;
-  /* cor herdada do footer */
-}
-
-.social-icons a:hover {
-  color: #ff0606;
-  transform: scale(1.2);
-}
-
-
-/* ... seu CSS antigo aqui ... */
-
-/* ===== CONFIGURAÇÃO DE CORES DO RODAPÉ ===== */
-:root {
-  --footer-text-color: #c5bda5; /* cor padrão */
-  --footer-hover-color: #aa9e85; /* cor quando passa o mouse */
-}
-
-footer,
-footer * {
-  color: var(--footer-text-color) !important;
-}
-
-footer a:hover {
-  color: var(--footer-hover-color) !important;
-}
-
-
-
-
-/* Rodapé inferior */
-.rodape-inferior {
-  background-color: #4b4b4e;
-  color: #c5bda5;
-  text-align: center;
-  padding: 15px 10px;
+footer .info-section ul li a,
+footer .contato-section p {
+  font-family: Arial, sans-serif;
   font-size: 14px;
-  font-family: "Arial", sans-serif;
-  letter-spacing: 0.05em;
-  border-top: 1px solid #a08b64;
-  user-select: none;
+  font-weight: 400;
+  line-height: 1.8;
 }
 
-/* Responsividade simples */
-@media (max-width: 900px) {
-  .container-footer {
-    flex-direction: column;
-    align-items: center;
-  }
+footer .contato-section p {
+  margin: 0 0 12px;
+}
 
-  .logo-section, .info-section, .contato-section {
+footer a {
+  color: #c6beb4;
+  text-decoration: none;
+  transition: color .25s ease;
+}
+
+footer a:hover,
+footer a:focus-visible {
+  color: #e4c8a5;
+}
+
+footer .social-icons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+footer .social-icons a {
+  margin: 0;
+  color: #d8c3a5;
+  font-size: 21px;
+  transition: color .25s ease;
+}
+
+footer .social-icons a:hover,
+footer .social-icons a:focus-visible {
+  color: #ffffff;
+}
+
+/* Faixa final sem emenda de cor. */
+.rodape-inferior,
+footer .rodape-inferior {
+  width: 100%;
+  margin: 0;
+  padding: 18px 24px;
+  background: #222222;
+  background-image: none;
+  border: 0;
+  border-top: 1px solid #403c38;
+  border-radius: 0;
+  box-shadow: none;
+  color: #aaa39b;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: .3px;
+}
+
+.rodape-inferior a,
+footer .rodape-inferior a {
+  color: #c8b8a5;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  footer {
+    padding: 38px 22px 26px;
+  }
+  footer .container-footer {
+    grid-template-columns: minmax(130px, .75fr) 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  footer {
+    padding: 38px 20px 24px;
+  }
+  footer .container-footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: start;
+    gap: 26px;
+  }
+  footer .logo-section,
+  footer .info-section,
+  footer .contato-section {
     flex: none;
     width: 100%;
-    max-width: 400px;
-    text-align: center;
+    max-width: none;
+    text-align: left;
+    align-items: flex-start;
   }
-
-  .info-section ul li {
-    display: inline-block;
-    margin: 0 10px 12px 10px;
+  .rodape-inferior,
+  footer .rodape-inferior {
+    padding: 17px 20px;
+    font-size: 11px;
   }
 }
-
-/* SEÇÕES DE INFORMAÇÕES E CONTATOS */
-.info-section, .contato-section {
-  max-width: 300px;
-}
-
-
-/* LINHA ABAIXO DE INFORMAÇÕES E CONTATOS NO RODAPE PRINCIPAL */
-
-.info-section h3, .contato-section h3 {
-  color: #ddcdb9;
-  border-bottom: 2px solid #fff6dc;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-.info-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.info-section ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  line-height: 1.8;
-  font-size: 14px;
-}
-
-.info-section ul li a:hover {
-  color: #cfa144;
-}
-
-/* REDES SOCIAIS */
-.social-icons {
-  margin-top: 10px;
-}
-
-.social-icons a {
-  color: #cfa144;
-  margin-right: 10px;
-  font-size: 20px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #000;
-}
-
-
 
 /* ESTILO PARA A SEÇÃO DE DESTAQUES */
 .destaques {
@@ -1634,6 +1618,7 @@ max-width: 700px;
   .video-topo { height: 52vh; min-height: 260px; }
   .video-topo .conteudo-sobreposto { padding: 0.75rem; }
   .slogan-sobreposto { font-size: clamp(22px, 5.2vw, 34px); padding: 12px 20px; }
+}
 
 /* === Compactar DESTAQUES só em celular === */
 @media (max-width: 768px) {
@@ -1662,6 +1647,8 @@ max-width: 700px;
     margin-top: 2px !important;
   }
 }
+
+@media (max-width: 900px) {
   /* Cards de atuação */
   .contato { padding: 44px 22px; }
   .contato h2 { font-size: clamp(22px, 4.6vw, 30px); }
@@ -4253,4 +4240,3472 @@ section.atuacao-fundo {
 /* garante que o conteúdo interno também clareie */
 .atuacao-juridica-home .contato-card:hover > a {
   background: rgba(255, 255, 255, 0.35) !important;
+}
+
+
+
+/* ==========================================
+   MENU PRINCIPAL - SMS ADVOCACIA
+========================================== */
+
+.sms-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none;
+  border-radius: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  transition:
+    background-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* MENU QUANDO DESCE A PÁGINA */
+
+.sms-header.scrolled,
+.sms-header.menu-open {
+  background: #222222 !important;
+  box-shadow: 0 5px 22px rgba(0,0,0,0.18) !important;
+}
+
+/* CONTEÚDO DO MENU */
+
+.sms-header-container {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 94px;
+  padding: 0 48px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+
+  transition: min-height 0.35s ease;
+}
+
+/* REDUZ A ALTURA AO ROLAR */
+
+.sms-header.scrolled .sms-header-container {
+  min-height: 74px;
+}
+
+/* LOGO */
+
+.sms-header-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.sms-logo-sigla {
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -2px;
+  color: #e0d0ba;
+  line-height: 1;
+}
+
+.sms-logo-nome {
+  display: flex;
+  flex-direction: column;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 1.2px;
+  color: #ffffff;
+}
+
+.sms-logo-nome small {
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  color: #e0d0ba;
+}
+
+/* LINKS DE NAVEGAÇÃO */
+
+.sms-header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+.sms-header-nav a {
+  position: relative;
+  padding: 12px 0;
+
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.1px;
+  white-space: nowrap;
+
+  color: #ffffff !important;
+  text-decoration: none;
+
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0;
+
+  transition: color 0.3s ease;
+}
+
+/* LINHA DISCRETA NO HOVER */
+
+.sms-header-nav a:not(.sms-header-contato)::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 0;
+  height: 1px;
+
+  background: #d8cbb7;
+  transition: width 0.3s ease;
+}
+
+.sms-header-nav a:not(.sms-header-contato):hover::after {
+  width: 100%;
+}
+
+.sms-header-nav a:hover {
+  color: #e0d0ba !important;
+  transform: none;
+}
+
+/* BOTÃO FALE CONOSCO */
+
+.sms-header-nav .sms-header-contato {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 13px 22px;
+  border: 1px solid #d8cbb7;
+  border-radius: 2px;
+
+  color: #ffffff;
+  font-size: 11px;
+  letter-spacing: 1.3px;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.sms-header-nav .sms-header-contato:hover {
+  background: #d8cbb7 !important;
+  color: #222222 !important;
+}
+
+/* BOTÃO MOBILE OCULTO NO DESKTOP */
+
+.sms-menu-toggle {
+  display: none;
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 1100px) {
+  .sms-header-container {
+    padding: 0 25px;
+    gap: 18px;
+  }
+
+  .sms-header-nav {
+    gap: 16px;
+  }
+
+  .sms-header-nav a {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .sms-header-container {
+    min-height: 75px;
+    padding: 0 20px;
+  }
+
+  .sms-header.scrolled .sms-header-container {
+    min-height: 68px;
+  }
+
+  .sms-logo-sigla {
+    font-size: 30px;
+  }
+
+  .sms-logo-nome {
+    font-size: 10px;
+  }
+
+  /* BOTÃO HAMBÚRGUER */
+
+  .sms-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+
+    width: 42px;
+    height: 42px;
+    padding: 10px;
+
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.45);
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .sms-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+  }
+
+  /* MENU MOBILE FECHADO */
+
+  .sms-header-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 25px 22px 30px;
+
+    background: #222222;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  /* MENU MOBILE ABERTO */
+
+  .sms-header.menu-open .sms-header-nav {
+    display: flex;
+  }
+
+  .sms-header-nav a {
+    padding: 14px 0;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .sms-header-nav .sms-header-contato {
+    margin-top: 15px;
+    padding: 15px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 430px) {
+  .sms-logo-nome {
+    font-size: 9px;
+    letter-spacing: 0.5px;
+  }
+
+  .sms-logo-nome small {
+    font-size: 8px;
+    letter-spacing: 0.6px;
+  }
+
+  .sms-header-logo {
+    gap: 9px;
+  }
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+  .sms-header,
+  .sms-header-container,
+  .sms-header-nav a {
+    transition: none;
+  }
+}
+
+
+
+
+
+/* ==========================================
+   SMS ADVOCACIA
+   ÁREAS DE ATUAÇÃO | MOSAICO ASSIMÉTRICO
+========================================== */
+
+.sms-areas-vitrine {
+  position: relative;
+  width: 100%;
+  padding: 105px 24px 90px;
+  background: #eeeae4;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.sms-areas-container {
+  position: relative;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* CABEÇALHO */
+
+.sms-areas-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.sms-areas-titulos {
+  max-width: 690px;
+}
+
+.sms-areas-etiqueta {
+  display: block;
+  margin-bottom: 16px;
+  color: #8c7961;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+}
+
+.sms-areas-titulos h2 {
+  margin: 0 0 15px;
+  color: #302d2a;
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 4vw, 53px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.sms-areas-titulos p {
+  max-width: 600px;
+  margin: 0;
+  color: #6b645c;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* CTA GERAL */
+
+.sms-areas-cta-geral {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-shrink: 0;
+
+  padding: 16px 22px;
+  background: #34312e;
+  border: 1px solid #34312e;
+  border-radius: 2px;
+
+  color: #fff !important;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+
+  transition:
+    background-color .3s ease,
+    color .3s ease,
+    border-color .3s ease;
+}
+
+.sms-areas-cta-geral span {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.sms-areas-cta-geral:hover {
+  background: transparent;
+  color: #34312e !important;
+}
+
+/* ==========================================
+   MOSAICO DE CARDS
+========================================== */
+
+.sms-areas-composicao {
+  position: relative;
+  padding-right: 115px;
+}
+
+.sms-areas-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: 1.15fr .85fr 1fr;
+  grid-template-rows: 260px 260px;
+  grid-template-areas:
+    "familia criminal criminal"
+    "familia saude consumidor";
+  gap: 14px;
+}
+
+/* POSICIONAMENTO ASSIMÉTRICO */
+
+.sms-area-familia {
+  grid-area: familia;
+}
+
+.sms-area-criminal {
+  grid-area: criminal;
+}
+
+.sms-area-saude {
+  grid-area: saude;
+}
+
+.sms-area-consumidor {
+  grid-area: consumidor;
+}
+
+/* ESTILO BASE DOS CARDS */
+
+.sms-area-card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #48413b;
+  isolation: isolate;
+}
+
+/* CAMADA DA IMAGEM */
+
+.sms-area-imagem {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-color: #554e47;
+  background-size: cover;
+  background-position: center;
+
+  transition:
+    transform .65s cubic-bezier(.22,1,.36,1),
+    filter .4s ease;
+}
+
+
+/* ==========================================
+   SMS ADVOCACIA | MOSAICO DE ÁREAS
+========================================== */
+
+/* COMPOSIÇÃO GERAL */
+
+.sms-areas-composicao {
+  position: relative;
+  padding-right: 115px;
+}
+
+/* GRID ASSIMÉTRICO */
+
+.sms-areas-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr 1fr;
+  grid-template-rows: 260px 260px;
+
+  grid-template-areas:
+    "familia criminal criminal"
+    "familia saude consumidor";
+
+  gap: 14px;
+}
+
+/* POSICIONAMENTO DOS CARDS */
+
+.sms-area-familia {
+  grid-area: familia;
+}
+
+.sms-area-criminal {
+  grid-area: criminal;
+}
+
+.sms-area-saude {
+  grid-area: saude;
+}
+
+.sms-area-consumidor {
+  grid-area: consumidor;
+}
+
+/* ESTILO BASE */
+
+.sms-area-card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+
+  border-radius: 3px;
+  background-color: #48413b;
+  isolation: isolate;
+}
+
+/* CAMADA DAS IMAGENS */
+
+.sms-area-imagem {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-color: #554e47;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition:
+    transform 0.65s cubic-bezier(.22, 1, .36, 1),
+    filter 0.4s ease;
+}
+
+/* ==========================================
+   IMAGENS | ADICIONAR POSTERIORMENTE
+========================================== */
+
+/* 01 - DIREITO DE FAMÍLIA */
+
+.sms-area-familia .sms-area-imagem {
+  background-color: #514941;
+background-image: url("07_Direito_Familia.jpg");
+  /* ADICIONAR IMAGEM AQUI */
+  /* background-image: url("imagem-familia.jpg"); */
+}
+
+/* 02 - DIREITO CRIMINAL */
+
+.sms-area-criminal .sms-area-imagem {
+  background-color: #403a35;
+background-image: url("02_Direito_Criminal.jpg");
+  /* ADICIONAR IMAGEM AQUI */
+  /* background-image: url("imagem-criminal.jpg"); */
+}
+
+/* 03 - DIREITO DA SAÚDE */
+
+.sms-area-saude .sms-area-imagem {
+  background-color: #655a50;
+background-image: url("03_Direito_Medico_e_Saude.jpg");
+  /* ADICIONAR IMAGEM AQUI */
+  /* background-image: url("imagem-saude.jpg"); */
+}
+
+/* 04 - DIREITO DO CONSUMIDOR */
+
+.sms-area-consumidor .sms-area-imagem {
+  background-color: #4b4945;
+background-image: url("05_Direito_Consumidor.jpg");
+  /* ADICIONAR IMAGEM AQUI */
+  /* background-image: url("imagem-consumidor.jpg"); */
+}
+
+
+/* ==========================================
+   SOBREPOSIÇÃO ESCURA
+========================================== */
+
+.sms-area-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to top,
+    rgba(18, 17, 16, .90) 0%,
+    rgba(18, 17, 16, .48) 48%,
+    rgba(18, 17, 16, .08) 100%
+  );
+
+  transition: background-color .4s ease;
+}
+
+/* CONTEÚDO */
+
+.sms-area-conteudo {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+
+  width: 100%;
+  height: 100%;
+  padding: 27px;
+
+  color: #fff;
+}
+
+.sms-area-numero {
+  display: block;
+  margin-bottom: 10px;
+  color: #d8c6ac;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.sms-area-conteudo h3 {
+  margin: 0;
+  color: #fff;
+  font-family: Georgia, serif;
+  font-size: clamp(22px, 2.3vw, 31px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* DESCRIÇÃO ESCONDIDA INICIALMENTE */
+
+.sms-area-conteudo p {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 0;
+  color: #e5ded4;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+
+  transition:
+    max-height .45s ease,
+    opacity .4s ease,
+    margin .4s ease;
+}
+
+/* CTA DE CADA CARD */
+
+.sms-area-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #d8c6ac;
+
+  color: #e3cfaf !important;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+
+  transition: color .3s ease;
+}
+
+.sms-area-link span {
+  font-size: 17px;
+}
+
+.sms-area-link:hover {
+  color: #fff !important;
+}
+
+/* ==========================================
+   ANIMAÇÃO HOVER
+========================================== */
+
+.sms-area-card:hover .sms-area-imagem {
+  transform: scale(1.08);
+  filter: brightness(.85);
+}
+
+.sms-area-card:hover .sms-area-conteudo p,
+.sms-area-card:focus-within .sms-area-conteudo p {
+  max-height: 110px;
+  opacity: 1;
+  margin-top: 13px;
+}
+
+/* ==========================================
+   BALANÇA DA JUSTIÇA
+========================================== */
+
+.sms-areas-balanca {
+  position: absolute;
+  z-index: 3;
+
+  right: -48px;
+  bottom: -35px;
+
+  width: 245px;
+  height: 400px;
+
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+
+  pointer-events: none;
+
+  /* ======================================
+     ADICIONE A IMAGEM DA BALANÇA AQUI
+
+     Preferencialmente PNG ou WebP
+     com fundo transparente.
+
+     REMOVA OS COMENTÁRIOS ABAIXO:
+
+     background-image:
+       url("balanca-justica-sms.png");
+  ====================================== */
+}
+
+/* RODAPÉ INSTITUCIONAL */
+
+.sms-areas-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  margin-top: 27px;
+  padding-top: 17px;
+  border-top: 1px solid #cfc6ba;
+}
+
+.sms-areas-rodape span {
+  color: #877b6d;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.6px;
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 1050px) {
+
+  .sms-areas-composicao {
+    padding-right: 0;
+  }
+
+  .sms-areas-balanca {
+    width: 165px;
+    height: 260px;
+    right: -20px;
+    bottom: -25px;
+    opacity: .65;
+  }
+
+  .sms-areas-grid {
+    grid-template-rows: 230px 230px;
+  }
+
+  .sms-area-conteudo {
+    padding: 21px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .sms-areas-vitrine {
+    padding: 70px 18px;
+  }
+
+  .sms-areas-cabecalho {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 35px;
+  }
+
+  .sms-areas-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 260px 230px 230px;
+    grid-template-areas:
+      "familia familia"
+      "criminal saude"
+      "consumidor consumidor";
+    gap: 10px;
+  }
+
+  .sms-area-conteudo {
+    padding: 18px;
+  }
+
+  .sms-area-conteudo h3 {
+    font-size: 22px;
+  }
+
+  .sms-areas-balanca {
+    display: none;
+  }
+
+  .sms-areas-rodape {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .sms-areas-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 270px);
+    grid-template-areas:
+      "familia"
+      "criminal"
+      "saude"
+      "consumidor";
+  }
+
+  .sms-area-conteudo p {
+    max-height: none;
+    opacity: 1;
+    margin-top: 12px;
+  }
+
+  .sms-areas-cta-geral {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .sms-areas-rodape span {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sms-area-imagem,
+  .sms-area-conteudo p,
+  .sms-area-link {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   SMS | AJUSTES FINAIS DA VITRINE (imagens serão adicionadas depois)
+   Arquivo original preservado acima.
+   ============================================================ */
+.sms-areas-vitrine { isolation: isolate; }
+.sms-areas-composicao { isolation: isolate; }
+.sms-areas-balanca { z-index: 1; }
+.sms-areas-grid { z-index: 2; }
+.sms-area-conteudo { min-width: 0; }
+.sms-area-conteudo h3 { overflow-wrap: anywhere; }
+.sms-area-link { position: relative; z-index: 4; }
+.sms-area-link:focus-visible,
+.sms-areas-cta-geral:focus-visible { outline: 3px solid #b69771; outline-offset: 4px; }
+@media (max-width: 768px) {
+ .sms-areas-balanca { display: none; }
+ .sms-area-conteudo p { max-height: none; opacity: 1; margin-top: 12px; }
+}
+
+/* ==========================================
+   SMS ADVOCACIA | IMAGENS DAS ÁREAS
+   SUBSTITUIR AS IMAGENS POSTERIORMENTE
+========================================== */
+
+/* DIREITO DE FAMÍLIA */
+.sms-area-familia .sms-area-imagem {
+  background-color: #514941;
+
+  /* ADICIONAR IMAGEM DE FAMÍLIA AQUI */
+  /* background-image: url("imagem-familia.jpg"); */
+}
+
+/* DIREITO CRIMINAL */
+.sms-area-criminal .sms-area-imagem {
+  background-color: #403a35;
+
+  /* ADICIONAR IMAGEM CRIMINAL AQUI */
+  /* background-image: url("imagem-criminal.jpg"); */
+}
+
+/* DIREITO DA SAÚDE */
+.sms-area-saude .sms-area-imagem {
+  background-color: #655a50;
+
+  /* ADICIONAR IMAGEM DE SAÚDE AQUI */
+  /* background-image: url("imagem-saude.jpg"); */
+}
+
+/* DIREITO DO CONSUMIDOR */
+.sms-area-consumidor .sms-area-imagem {
+  background-color: #4b4945;
+
+  /* ADICIONAR IMAGEM DE CONSUMIDOR AQUI */
+  /* background-image: url("imagem-consumidor.jpg"); */
+}
+
+/* BALANÇA DA JUSTIÇA */
+.sms-areas-balanca {
+  background-image: none;
+
+  /* ADICIONAR IMAGEM DA BALANÇA AQUI */
+  /* background-image: url("balanca-justica.png"); */
+}
+
+/* ETAPA 1 | ÁREAS DE ATUAÇÃO: foco acessível e imagens futuras */
+.sms-area-link:focus-visible, .sms-areas-cta-geral:focus-visible { outline: 2px solid #b9996b; outline-offset: 4px; }
+@media (hover: none) { .sms-area-conteudo p { max-height: 120px; opacity: 1; margin-top: 12px; } }
+
+
+
+
+/* ==========================================
+   SMS ADVOCACIA | CTA ABAIXO DOS CARDS
+========================================== */
+
+.sms-areas-cta-inferior {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 42px;
+  margin-bottom: 32px;
+}
+
+.sms-areas-cta-inferior .sms-areas-cta-geral {
+  min-width: 285px;
+  padding: 17px 28px;
+  justify-content: space-between;
+  gap: 30px;
+  text-align: center;
+  background: #34312e;
+  border: 1px solid #34312e;
+  color: #fff;
+}
+
+.sms-areas-cta-inferior .sms-areas-cta-geral:hover {
+  background: transparent;
+  color: #34312e;
+}
+
+@media (max-width: 520px) {
+  .sms-areas-cta-inferior {
+    margin-top: 30px;
+    margin-bottom: 24px;
+  }
+
+  .sms-areas-cta-inferior .sms-areas-cta-geral {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+
+
+
+/* ==========================================
+   SMS ADVOCACIA | NOSSA EQUIPE
+   VERSÃO CONSOLIDADA: TÍTULO À DIREITA,
+   4 CARDS COMPACTOS E CTA SOBREPOSTO
+   ========================================== */
+
+/* Aproxima a equipe da biografia anterior.
+   Aplicado apenas quando as duas seções forem vizinhas. */
+.bio-socios:has(+ .sms-equipe-home) {
+  padding-bottom: 18px;
+}
+
+.sms-equipe-home {
+  position: relative;
+  width: 100%;
+  padding: 14px 24px 74px;
+  background: #ddd5ca;
+  color: #34312e;
+}
+
+.sms-equipe-container {
+  position: relative;
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho breve, alinhado à borda direita dos cards. */
+.sms-equipe-cabecalho {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 20px;
+  text-align: right;
+}
+
+.sms-equipe-etiqueta {
+  display: block;
+  margin-bottom: 6px;
+  font: 500 10px/1.5 Arial, sans-serif;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  color: #917d63;
+}
+
+.sms-equipe-cabecalho h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 2.8vw, 32px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #34312e;
+}
+
+/* Se o HTML ainda contiver subtítulo, não alongar o cabeçalho. */
+.sms-equipe-cabecalho p {
+  margin: 6px 0 0 auto;
+  max-width: 450px;
+  font: 400 13px/1.5 Arial, sans-serif;
+  color: #71685f;
+}
+
+.sms-equipe-composicao {
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.sms-equipe-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.sms-equipe-card {
+  position: relative;
+  height: 280px;
+  min-width: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: #8a7d70;
+  border-radius: 2px;
+}
+
+.sms-equipe-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform .6s cubic-bezier(.22,1,.36,1), filter .4s ease;
+}
+
+.sms-equipe-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to bottom, transparent 40%, rgba(24,21,19,.2) 60%, rgba(24,21,19,.85) 100%);
+  pointer-events: none;
+}
+
+.sms-equipe-info {
+  position: absolute;
+  z-index: 2;
+  inset: auto 0 0;
+  padding: 20px 12px;
+  text-align: center;
+  color: #fff;
+}
+
+.sms-equipe-info h3 {
+  margin: 0;
+  font: 600 13px/1.4 Arial, sans-serif;
+  letter-spacing: .2px;
+  color: #fff;
+}
+
+.sms-equipe-info p {
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(8px);
+  font: 400 11px/1.5 Arial, sans-serif;
+  letter-spacing: .3px;
+  color: #d8c6ac;
+  transition: max-height .35s ease, opacity .35s ease, transform .35s ease, margin-top .35s ease;
+}
+
+@media (hover: hover) {
+  .sms-equipe-card:hover img {
+    transform: scale(1.04);
+    filter: brightness(.75);
+  }
+  .sms-equipe-card:hover .sms-equipe-info p {
+    max-height: 90px;
+    margin-top: 8px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* O botão fica estático na página, mas sobreposto à borda
+   inferior do conjunto de cards. */
+.sms-equipe-cta-container {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: 24px;
+  transform: translate(-50%, 50%);
+  display: flex;
+  justify-content: center;
+  width: max-content;
+  max-width: calc(100% - 24px);
+}
+
+.sms-equipe-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 16px 26px;
+  border: 1px solid #34312e;
+  border-radius: 2px;
+  background: #34312e;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  font: 600 11px/1.4 Arial, sans-serif;
+  letter-spacing: 1.2px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.15);
+  transition: background-color .3s ease, box-shadow .3s ease;
+}
+
+.sms-equipe-cta span {
+  color: #d8c6ac;
+  font-size: 18px;
+  transition: transform .3s ease;
+}
+
+.sms-equipe-cta:hover {
+  background: #4a413a;
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(0,0,0,.2);
+}
+.sms-equipe-cta:hover span { transform: translate(3px, -3px); }
+.sms-equipe-cta:focus-visible { outline: 2px solid #917d63; outline-offset: 4px; }
+
+@media (max-width: 900px) {
+  .sms-equipe-home { padding: 12px 20px 76px; }
+  .sms-equipe-container { max-width: 700px; }
+  .sms-equipe-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .sms-equipe-card { height: 300px; }
+}
+
+@media (max-width: 600px) {
+  .bio-socios:has(+ .sms-equipe-home) { padding-bottom: 10px; }
+  .sms-equipe-home { padding: 10px 16px 55px; }
+  .sms-equipe-cabecalho { margin-bottom: 16px; text-align: right; }
+  .sms-equipe-cabecalho h2 { font-size: 27px; }
+  .sms-equipe-grid { gap: 8px; }
+  .sms-equipe-card { height: 220px; }
+  .sms-equipe-info { padding: 17px 8px; }
+  .sms-equipe-info h3 { font-size: 11px; }
+  .sms-equipe-info p { font-size: 10px; }
+  .sms-equipe-composicao { padding-bottom: 0; }
+  .sms-equipe-cta-container {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 24px;
+  }
+  .sms-equipe-cta { max-width: 100%; padding: 15px 18px; white-space: normal; font-size: 10px; }
+}
+
+/* Função visível em telas touch (sem hover). */
+@media (hover: none) {
+  .sms-equipe-info p {
+    max-height: 90px;
+    margin-top: 7px;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sms-equipe-card img,
+  .sms-equipe-info p,
+  .sms-equipe-cta,
+  .sms-equipe-cta span { transition: none; }
+}
+
+
+
+
+/* ==========================================
+   SMS ADVOCACIA | JORNADA INTERATIVA
+========================================== */
+
+.sms-jornada {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  width: 100%;
+  padding: 110px 24px 100px;
+  background: #34312e;
+  color: #ffffff;
+}
+
+.sms-jornada-container {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.sms-jornada-cabecalho {
+  max-width: 760px;
+  margin-bottom: 65px;
+}
+
+.sms-jornada-etiqueta {
+  display: block;
+  margin-bottom: 15px;
+  color: #cbb89e;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.sms-jornada-cabecalho h2 {
+  max-width: 740px;
+  margin-bottom: 22px;
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.sms-jornada-cabecalho p {
+  max-width: 650px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #d4cdc4;
+}
+
+/* COMPOSIÇÃO */
+
+.sms-jornada-composicao {
+  position: relative;
+  padding: 10px 360px 10px 76px;
+}
+
+/* LINHA DE FUNDO */
+
+.sms-jornada-linha {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 24px;
+  width: 2px;
+  background: #655a4f;
+}
+
+/* LINHA QUE CRESCE NO SCROLL */
+
+.sms-jornada-progresso {
+  width: 100%;
+  height: 0%;
+  background: #d0b58e;
+  box-shadow: 0 0 12px rgba(208,181,142,.3);
+  transition: height .12s linear;
+}
+
+/* ETAPAS */
+
+.sms-jornada-etapa {
+  position: relative;
+  min-height: 220px;
+  padding: 28px 0 45px;
+}
+
+.sms-jornada-numero {
+  position: absolute;
+  top: 30px;
+  left: -67px;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+  border: 1px solid #bba583;
+  border-radius: 50%;
+  background: #34312e;
+  color: #d0b58e;
+
+  font-size: 11px;
+}
+
+.sms-jornada-texto {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sms-jornada.js-ativa .sms-jornada-texto {
+  opacity: .18;
+  transform: translateY(25px);
+  transition:
+    opacity .6s ease,
+    transform .6s ease;
+}
+
+.sms-jornada.js-ativa
+.sms-jornada-etapa.ativa
+.sms-jornada-texto {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sms-jornada-texto > span {
+  display: block;
+  margin-bottom: 13px;
+  color: #cbb89e;
+  font-size: 11px;
+  letter-spacing: 1.6px;
+}
+
+.sms-jornada-texto h3 {
+  margin-bottom: 15px;
+  font-family: Georgia, serif;
+  font-size: clamp(22px, 2.5vw, 29px);
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.sms-jornada-texto p {
+  max-width: 510px;
+  color: #d4cdc4;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   IMAGEM SOBRESSAINDO | ADICIONE AQUI
+========================================== */
+
+.sms-jornada-imagem {
+  position: absolute;
+  z-index: 3;
+
+  right: -35px;
+  bottom: -45px;
+
+  width: 350px;
+  height: 520px;
+
+  /* Imagem da seção: mantenha o arquivo como-funciona.png junto ao style.css */
+  background-size: contain;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-image: url("como-funciona.png");
+
+  pointer-events: none;
+}
+
+/* ==========================================
+   SMS ADVOCACIA | CTA DA JORNADA
+   DESTAQUE CHAMPAGNE + CONTRASTE GRAFITE
+========================================== */
+
+.sms-jornada-rodape {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  margin-top: 55px;
+}
+
+.sms-jornada-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  min-width: 315px;
+  padding: 20px 28px;
+  background-color: #d8c3a5;
+  border: 1px solid #d8c3a5;
+  border-radius: 2px;
+  color: #2e2b28;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .22);
+  transition: background-color .3s ease, border-color .3s ease,
+              color .3s ease, transform .3s ease, box-shadow .3s ease;
+}
+
+.sms-jornada-cta span {
+  color: #2e2b28;
+  font-size: 20px;
+  line-height: 1;
+  transition: transform .3s ease;
+}
+
+.sms-jornada-cta:hover {
+  background-color: #f0e1cb;
+  border-color: #f0e1cb;
+  color: #2e2b28;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, .3);
+}
+
+.sms-jornada-cta:hover span {
+  transform: translate(3px, -3px);
+}
+
+.sms-jornada-cta:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 5px;
+}
+
+@media (max-width: 600px) {
+  .sms-jornada-rodape { margin-top: 35px; }
+  .sms-jornada-cta {
+    width: 100%;
+    min-width: 0;
+    padding: 18px 22px;
+    gap: 15px;
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sms-jornada-cta, .sms-jornada-cta span { transition: none; }
+}
+
+/* TABLET E CELULAR */
+
+@media (max-width: 900px) {
+  .sms-jornada-composicao {
+    padding-right: 230px;
+  }
+
+  .sms-jornada-imagem {
+    width: 240px;
+    height: 370px;
+    right: -15px;
+  }
+}
+
+@media (max-width: 700px) {
+  .sms-jornada {
+    padding: 75px 20px;
+  }
+
+  .sms-jornada-composicao {
+    padding: 0 0 0 60px;
+  }
+
+  .sms-jornada-linha {
+    left: 14px;
+    top: 0;
+    bottom: 0;
+  }
+
+  .sms-jornada-numero {
+    left: -62px;
+  }
+
+  .sms-jornada-etapa {
+    min-height: 190px;
+  }
+
+  .sms-jornada-imagem {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sms-jornada-progresso,
+  .sms-jornada.js-ativa .sms-jornada-texto {
+    transition: none;
+  }
+}
+
+
+
+/* ==========================================
+   SMS | CORREÇÃO DO CABEÇALHO DA JORNADA
+========================================== */
+
+.sms-jornada {
+  background: #34312e;
+}
+
+.sms-jornada-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.sms-jornada-cabecalho {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto 75px;
+  padding: 0 20px;
+  background: transparent;
+  box-shadow: none;
+  text-align: center;
+}
+
+.sms-jornada-cabecalho h2 {
+  max-width: 800px;
+  margin: 0 auto 22px;
+  color: #fff;
+  font-size: clamp(32px, 4vw, 50px);
+  line-height: 1.18;
+}
+
+.sms-jornada-cabecalho p {
+  max-width: 690px;
+  margin: 0 auto;
+  color: #d4cdc4;
+  line-height: 1.8;
+}
+
+.sms-jornada-etiqueta {
+  margin-bottom: 18px;
+}
+
+/* EVITA QUE O CABEÇALHO FIQUE APAGADO */
+
+.sms-jornada-cabecalho,
+.sms-jornada-cabecalho * {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .sms-jornada-cabecalho {
+    padding: 0;
+    margin-bottom: 45px;
+  }
+}
+
+
+
+/* ==========================================
+   SMS ADVOCACIA | CORREÇÃO DA JORNADA
+   IMAGEM À ESQUERDA + TEXTOS À DIREITA
+========================================== */
+
+/* CABEÇALHO SEM SOBREPOSIÇÃO */
+
+.sms-jornada-cabecalho {
+  position: relative;
+  z-index: 4;
+
+  width: 100%;
+  max-width: 800px;
+
+  margin: 0 auto 100px;
+  padding: 0 20px;
+
+  text-align: center;
+  background: transparent;
+  box-shadow: none;
+}
+
+.sms-jornada-cabecalho h2 {
+  margin: 0 auto 22px;
+  max-width: 760px;
+  line-height: 1.2;
+}
+
+.sms-jornada-cabecalho p {
+  margin: 0 auto;
+  max-width: 680px;
+  line-height: 1.8;
+}
+
+/* GARANTE ESPAÇO ENTRE TÍTULO E ETAPAS */
+
+.sms-jornada-composicao {
+  position: relative;
+  margin-top: 0;
+  min-height: 660px;
+}
+
+/* DESKTOP */
+
+@media (min-width: 901px) {
+
+  .sms-jornada-composicao {
+    padding: 30px 35px 60px 48%;
+  }
+
+  /* LINHA À DIREITA */
+
+  .sms-jornada-linha {
+    left: calc(48% - 52px);
+    top: 30px;
+    bottom: 60px;
+  }
+
+  /* ETAPAS ALINHADAS À DIREITA */
+
+  .sms-jornada-etapa {
+    position: relative;
+    min-height: 220px;
+    padding: 25px 0 45px;
+  }
+
+  .sms-jornada-numero {
+    left: -69px;
+    top: 25px;
+  }
+
+  .sms-jornada-texto {
+    position: relative;
+    max-width: 540px;
+    text-align: left;
+  }
+
+  .sms-jornada-texto h3,
+  .sms-jornada-texto p {
+    max-width: 100%;
+  }
+
+  /* IMAGEM À ESQUERDA */
+
+  .sms-jornada-imagem {
+    left: -18px;
+    right: auto;
+    bottom: -45px;
+
+    width: 46%;
+    height: 670px;
+
+    background-position: left bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+/* TABLET */
+
+@media (min-width: 701px) and (max-width: 900px) {
+
+  .sms-jornada-cabecalho {
+    margin-bottom: 70px;
+  }
+
+  .sms-jornada-composicao {
+    padding: 20px 15px 35px 42%;
+    min-height: auto;
+  }
+
+  .sms-jornada-linha {
+    left: calc(42% - 45px);
+    top: 20px;
+    bottom: 35px;
+  }
+
+  .sms-jornada-numero {
+    left: -62px;
+  }
+
+  .sms-jornada-imagem {
+    left: -8px;
+    right: auto;
+    width: 39%;
+    height: 460px;
+  }
+}
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+  .sms-jornada-cabecalho {
+    margin-bottom: 55px;
+    padding: 0;
+  }
+
+  .sms-jornada-composicao {
+    min-height: auto;
+    padding: 0 0 0 65px;
+  }
+
+  .sms-jornada-linha {
+    left: 15px;
+    top: 0;
+    bottom: 0;
+  }
+
+  .sms-jornada-numero {
+    left: -67px;
+  }
+
+  .sms-jornada-texto {
+    text-align: left;
+  }
+
+  .sms-jornada-imagem {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMS ADVOCACIA | VOCÊ SABIA EDITORIAL | VERSÃO CONSOLIDADA
+   Mantém .vc-item, .vc-prev, .vc-next, .vc-dots do site atual.
+   FOTO: src="socios-recortados.png" no HTML.
+========================================================= */
+.sms-sabia-editorial.vc-sabia-fundo {
+  position:relative;
+  z-index:2;
+  isolation:isolate;
+  width:100%;
+  left:auto; right:auto;
+  margin:0;
+  min-height:0;
+  padding:90px 0 76px;
+  overflow:visible;
+  background: linear-gradient(to bottom, transparent 76%, #d8c9b8 100%), linear-gradient(112deg,#e6ddd1 0%,#eee6dc 53%,#d8c9b8 100%);
+  color:#352e29;
+  text-align:left;
+}
+.sms-sabia-editorial .sms-sabia-layout {
+  position:relative;
+  width:100%;
+  max-width:1380px;
+  min-height:370px;
+  margin:0 auto;
+  padding:0 clamp(24px,6vw,110px);
+}
+.sms-sabia-editorial .sms-sabia-conteudo {
+  position:relative;
+  z-index:3;
+  width:60%;
+  max-width:760px;
+}
+.sms-sabia-editorial .sms-sabia-sobretitulo {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:40px;
+  font-family:Arial,sans-serif;
+  color:#987a59;
+  font-size:11px;
+  letter-spacing:.18em;
+  font-weight:600;
+}
+.sms-sabia-editorial .sms-sabia-indice {white-space:nowrap; letter-spacing:.14em;}
+.sms-sabia-editorial .vc-card.sms-sabia-carousel-wrap {
+  display:block;
+  width:100%;
+  min-height:0;
+  margin:0;
+  padding:0;
+  background:transparent;
+  background-image:none;
+  backdrop-filter:none;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  transform:none;
+  text-align:left;
+}
+.sms-sabia-editorial .vc-card.sms-sabia-carousel-wrap:hover,
+.sms-sabia-editorial .vc-card.sms-sabia-carousel-wrap:focus-within {
+  transform:none; box-shadow:none; border-color:transparent;
+}
+.sms-sabia-editorial .sms-sabia-categoria {
+  display:block;
+  margin:0 0 19px;
+  font-size:11px;
+  letter-spacing:.15em;
+  font-weight:600;
+  color:#947453;
+}
+.sms-sabia-editorial .vc-sabia-carousel {
+  display:block;
+  width:100%;
+  min-height:204px;
+}
+.sms-sabia-editorial .vc-sabia-carousel .vc-item {
+  width:100%; max-width:none; margin:0; text-align:left;
+}
+.sms-sabia-editorial .vc-sabia-carousel .vc-item strong {
+  display:block;
+  width:100%; max-width:720px;
+  margin:0 0 20px;
+  color:#342b27;
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(27px,3.2vw,47px);
+  line-height:1.14;
+  letter-spacing:-.025em;
+  font-weight:400;
+  text-align:left;
+}
+.sms-sabia-editorial .vc-sabia-carousel .vc-item p {
+  width:100%; max-width:660px;
+  margin:0;
+  color:#625a52;
+  font-family:Arial,sans-serif;
+  font-size:clamp(14px,1.25vw,16px);
+  line-height:1.8;
+  text-align:left;
+}
+.sms-sabia-editorial .vc-item .destaque {color:inherit; font-weight:600;}
+.sms-sabia-editorial .vc-controls {
+  display:flex; justify-content:flex-start; gap:12px;
+  margin:32px 0 0;
+}
+.sms-sabia-editorial .vc-controls .vc-prev,
+.sms-sabia-editorial .vc-controls .vc-next {
+  position:static;
+  display:flex; align-items:center; justify-content:center;
+  width:48px;height:48px; padding:0;
+  font-size:30px;line-height:1;
+  background:transparent;color:#725b44;
+  border:1px solid #b69c7d;border-radius:50%;
+  box-shadow:none;
+  cursor:pointer;
+  transition:background .25s,color .25s,transform .25s;
+}
+.sms-sabia-editorial .vc-controls .vc-next {background:#37312c;color:#fff;border-color:#37312c;}
+.sms-sabia-editorial .vc-controls .vc-prev:hover,
+.sms-sabia-editorial .vc-controls .vc-next:hover {
+  transform:translateY(-2px);
+  background:#a58b6b;color:#fff;border-color:#a58b6b;
+  box-shadow:none;
+}
+.sms-sabia-editorial .vc-dots {justify-content:flex-start; margin-top:18px;}
+.sms-sabia-editorial .vc-dots button {background:#b9a998;opacity:.8;}
+.sms-sabia-editorial .vc-dots button.active {background:#947453;opacity:1;}
+/* A imagem deve possuir transparência real. Sem caixa, sombra ou moldura. */
+.sms-sabia-editorial .sms-sabia-socios {
+  position:absolute;
+  z-index:2;
+  right:0;
+  bottom:-76px;
+  width:43%;
+  height:calc(100% + 155px);
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  pointer-events:none;
+}
+.sms-sabia-editorial .sms-sabia-socios img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center bottom;
+}
+@media(max-width:980px) {
+  .sms-sabia-editorial.vc-sabia-fundo {padding:68px 0 50px;}
+  .sms-sabia-editorial .sms-sabia-conteudo {width:62%;}
+  .sms-sabia-editorial .sms-sabia-socios {width:43%;bottom:-50px;height:calc(100% + 115px);}
+  .sms-sabia-editorial .sms-sabia-layout {padding:0 34px;}
+}
+@media(max-width:700px) {
+  .sms-sabia-editorial.vc-sabia-fundo {padding:55px 0 0;}
+  .sms-sabia-editorial .sms-sabia-layout {padding:0 22px;min-height:0;}
+  .sms-sabia-editorial .sms-sabia-conteudo {width:100%;max-width:none;}
+  .sms-sabia-editorial .sms-sabia-sobretitulo {margin-bottom:30px;font-size:9px;}
+  .sms-sabia-editorial .vc-sabia-carousel {min-height:265px;}
+  .sms-sabia-editorial .vc-sabia-carousel .vc-item strong {font-size:clamp(25px,7.2vw,36px);}
+  .sms-sabia-editorial .vc-controls {margin-top:20px;}
+  .sms-sabia-editorial .sms-sabia-socios {
+    position:relative;right:auto;bottom:auto;
+    margin:18px auto 0;
+    width:min(94%,380px);height:310px;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .sms-sabia-editorial .vc-controls button {transition:none;}
+}
+
+/* =====================================================
+   SMS | TRANSIÇÃO DEFINITIVA ENTRE JORNADA E CARROSSEL
+   Remove conflito entre os antigos ajustes de z-index.
+   O CTA fica centralizado sobre a mudança de fundo.
+===================================================== */
+.sms-jornada {
+  position: relative;
+  z-index: 30 !important;
+  overflow: visible !important;
+  padding-bottom: 0 !important;
+}
+
+.sms-jornada-rodape {
+  position: relative;
+  z-index: 31;
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  margin-top: 25px !important;
+  margin-bottom: 0 !important;
+  transform: translateY(50%);
+  overflow: visible !important;
+}
+
+.sms-jornada-cta {
+  position: relative;
+  z-index: 32;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 340px;
+  padding: 22px 34px;
+  background: #d8c3a5 !important;
+  border: 1px solid #d8c3a5 !important;
+  color: #2e2b28 !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+
+/* A seção seguinte permanece abaixo do CTA.
+   Este seletor mais específico corrige o z-index:2 anterior. */
+.sms-sabia-editorial.vc-sabia-fundo {
+  position: relative;
+  z-index: 1 !important;
+  overflow: visible !important;
+  margin-top: 0 !important;
+  padding-top: 82px !important;
+}
+
+/* Caso a seção ainda esteja usando apenas a classe antiga. */
+.sms-jornada + .vc-sabia-fundo:not(.sms-sabia-editorial) {
+  position: relative;
+  z-index: 1 !important;
+  overflow: visible !important;
+  margin-top: 0 !important;
+  padding-top: 82px !important;
+}
+
+@media (max-width: 700px) {
+  .sms-jornada-rodape {
+    margin-top: 20px !important;
+  }
+
+  .sms-jornada-cta {
+    width: min(90%, 340px);
+    min-width: 0;
+    padding: 19px 24px;
+  }
+
+  .sms-sabia-editorial.vc-sabia-fundo,
+  .sms-jornada + .vc-sabia-fundo:not(.sms-sabia-editorial) {
+    padding-top: 72px !important;
+  }
+}
+
+
+
+
+/* ==========================================
+   SMS ADVOCACIA | AVALIAÇÕES DO GOOGLE
+========================================== */
+
+.sms-avaliacoes {
+  --avaliacoes-gap: 20px;
+
+  width: 100%;
+  padding: 90px 24px 85px;
+  /* A primeira cor coincide com a base do "Você Sabia". */
+  background: linear-gradient(
+    180deg,
+    #d8c9b8 0%,
+    #c4b5a4 14%,
+    #9c8e80 35%,
+    #655d55 62%,
+    #34312e 86%,
+    #34312e 100%
+  );
+  color: #39332e;
+}
+
+.sms-avaliacoes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* TÍTULO À DIREITA */
+
+.sms-avaliacoes-cabecalho {
+  max-width: 730px;
+  margin: 0 0 46px auto;
+  padding: 0;
+  text-align: right;
+  background: transparent;
+  box-shadow: none;
+}
+
+.sms-avaliacoes-cabecalho h2 {
+  margin: 0 0 12px;
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 3.6vw, 47px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #39332e;
+}
+
+.sms-avaliacoes-cabecalho p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #71665a;
+}
+
+/* JANELA DO CARROSSEL */
+
+.sms-avaliacoes-janela {
+  width: 100%;
+  overflow: hidden;
+}
+
+.sms-avaliacoes-trilho {
+  display: flex;
+  align-items: stretch;
+  gap: var(--avaliacoes-gap);
+  will-change: transform;
+}
+
+/* CARDS LADO A LADO */
+
+.sms-avaliacao-card {
+  flex: 0 0 calc(
+    (100% - 2 * var(--avaliacoes-gap)) / 3
+  );
+  min-width: 0;
+  min-height: 255px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 30px 27px;
+  background: #45413e;
+
+  border: 1px solid #7e7060;
+  border-radius: 4px;
+
+  box-shadow: 0 12px 32px rgba(25, 23, 21, .16);
+  transition: background .25s ease, border-color .25s ease;
+}
+
+.sms-avaliacao-card:hover {
+  background: #514b46;
+  border-color: #d3b58e;
+}
+
+.sms-avaliacao-estrelas {
+  color: #dfbd83;
+  font-size: 19px;
+  letter-spacing: 4px;
+  line-height: 1;
+}
+
+.sms-avaliacao-comentario {
+  flex: 1;
+  margin: 0;
+  color: #ece3d9;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.sms-avaliacao-autor {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  padding-top: 17px;
+  border-top: 1px solid rgba(217,190,156,.33);
+}
+
+.sms-avaliacao-autor strong {
+  color: #fffaf2;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sms-avaliacao-autor span {
+  color: #d7c7b6;
+  font-size: 12px;
+}
+
+/* LINK INFERIOR */
+
+.sms-avaliacoes-rodape {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+}
+
+.sms-avaliacoes-link {
+  padding-bottom: 7px;
+  border-bottom: 1px solid #e5c99f;
+
+  color: #f0d4a9;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  transition: color .3s ease;
+}
+
+.sms-avaliacoes-link:hover {
+  color: #ffffff;
+}
+
+/* TABLET: DOIS CARDS */
+
+@media (max-width: 900px) {
+  .sms-avaliacao-card {
+    flex-basis: calc(
+      (100% - var(--avaliacoes-gap)) / 2
+    );
+  }
+}
+
+/* CELULAR: UM CARD */
+
+@media (max-width: 600px) {
+  .sms-avaliacoes {
+    padding: 65px 18px;
+    --avaliacoes-gap: 14px;
+  }
+
+  .sms-avaliacoes-cabecalho {
+    margin-bottom: 30px;
+  }
+
+  .sms-avaliacoes-cabecalho h2 {
+    font-size: 32px;
+  }
+
+  .sms-avaliacoes-cabecalho p {
+    font-size: 14px;
+  }
+
+  .sms-avaliacao-card {
+    flex-basis: 100%;
+    min-height: 235px;
+    padding: 25px 22px;
+  }
+}
+
+
+
+
+/* ==========================================
+   SMS | AVALIAÇÕES SEM DEGRADÊ
+========================================== */
+
+.sms-avaliacoes {
+  background: #d1c2b1 !important;
+  background-image: none !important;
+}
+
+/* TÍTULO E DESCRIÇÃO */
+
+.sms-avaliacoes-cabecalho h2 {
+  color: #39332e;
+  text-shadow: none;
+}
+
+.sms-avaliacoes-cabecalho p {
+  color: #62574c;
+}
+
+/* CARDS CLAROS PARA CONTRASTAR */
+
+.sms-avaliacao-card {
+  background: #f7f3ed;
+  border: 1px solid #b9a994;
+  box-shadow: 0 10px 28px rgba(55, 45, 35, .10);
+}
+
+.sms-avaliacao-estrelas {
+  color: #a67f48;
+}
+
+.sms-avaliacao-comentario {
+  color: #51483f;
+}
+
+.sms-avaliacao-autor {
+  border-top-color: #dbd0c2;
+}
+
+.sms-avaliacao-autor strong {
+  color: #39332e;
+}
+
+.sms-avaliacao-autor span {
+  color: #796b5a;
+}
+
+.sms-avaliacoes-link {
+  color: #594632;
+  border-bottom-color: #594632;
+}
+
+
+
+/* ==========================================
+   SMS | AVALIAÇÕES DO GOOGLE
+   CARDS SEM EFEITO DE HOVER
+========================================== */
+
+.sms-avaliacoes {
+  background: #d1c2b1 !important;
+  background-image: none !important;
+}
+
+.sms-avaliacao-card,
+.sms-avaliacao-card:hover {
+  background: #f7f3ed !important;
+  border: 1px solid #b9a994 !important;
+  box-shadow: 0 10px 28px rgba(55,45,35,.10) !important;
+
+  transform: none !important;
+  scale: 1 !important;
+  transition: none !important;
+  cursor: default;
+}
+
+/* O movimento será somente no trilho */
+
+.sms-avaliacoes-janela {
+  overflow: hidden;
+  width: 100%;
+}
+
+.sms-avaliacoes-trilho {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  width: 100%;
+  will-change: transform;
+}
+
+.sms-avaliacao-card {
+  flex: 0 0 calc((100% - 40px) / 3);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .sms-avaliacao-card {
+    flex-basis: calc((100% - 20px) / 2);
+  }
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+  .sms-avaliacao-card {
+    flex-basis: 100%;
+  }
+}
+
+
+
+
+
+/* ==========================================
+   SMS | AVALIAÇÕES MAIS COMPACTAS
+========================================== */
+
+/* SEÇÃO MAIS FINA */
+
+.sms-avaliacoes {
+  padding: 45px 24px 42px !important;
+  background: #d1c2b1 !important;
+  background-image: none !important;
+}
+
+/* FRASE À DIREITA */
+
+.sms-avaliacoes-cabecalho {
+  max-width: 900px;
+  margin: 0 0 25px auto !important;
+  padding: 0;
+  text-align: right;
+}
+
+.sms-avaliacoes-cabecalho h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(23px, 2.5vw, 32px);
+  font-weight: 400;
+  line-height: 1.3;
+  color: #39332e;
+}
+
+/* CARDS MAIS BAIXOS */
+
+.sms-avaliacao-card {
+  min-height: 190px !important;
+  padding: 20px 23px !important;
+  gap: 12px !important;
+}
+
+/* COMENTÁRIOS */
+
+.sms-avaliacao-comentario {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ESTRELAS */
+
+.sms-avaliacao-estrelas {
+  font-size: 16px;
+}
+
+/* RODAPÉ */
+
+.sms-avaliacao-autor {
+  padding-top: 10px;
+}
+
+/* LINK MAIS PRÓXIMO DOS CARDS */
+
+.sms-avaliacoes-rodape {
+  margin-top: 18px !important;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+  .sms-avaliacoes {
+    padding: 35px 18px !important;
+  }
+
+  .sms-avaliacoes-cabecalho {
+    margin-bottom: 20px !important;
+  }
+
+  .sms-avaliacoes-cabecalho h2 {
+    font-size: 24px;
+  }
+
+  .sms-avaliacao-card {
+    min-height: 185px !important;
+    padding: 19px !important;
+  }
+}
+
+
+
+
+/* ==========================================
+   SMS | IMAGEM SUAVE NAS AVALIAÇÕES
+========================================== */
+
+.sms-avaliacoes {
+  position: relative;
+  isolation: isolate;
+
+  /* IMAGEM DE FUNDO: ALTERE O NOME AQUI */
+  background-image:
+    linear-gradient(
+      rgba(209, 194, 177, 0.92),
+      rgba(209, 194, 177, 0.92)
+    ),
+    url("fundo-avaliacoes.jpg") !important;
+
+  background-color: #d1c2b1 !important;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* MANTÉM OS TEXTOS E CARDS LEGÍVEIS */
+
+.sms-avaliacoes-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* CARDS SEM INTERAÇÃO AO PASSAR O MOUSE */
+
+.sms-avaliacao-card,
+.sms-avaliacao-card:hover {
+  transform: none !important;
+  background: #f7f3ed !important;
+  transition: none !important;
+}
+
+
+
+
+
+
+
+
+/* ==========================================
+   SMS ADVOCACIA | BLOG COMPACTO
+   VERSÃO CORRIGIDA
+========================================== */
+
+/* SEÇÃO */
+
+.sms-blog {
+  width: 100%;
+  margin: 0;
+  padding: 50px 24px 55px;
+  background: #eae4da;
+  color: #34312e;
+}
+
+.sms-blog-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   CABEÇALHO E CTA
+   ISOLADO DO HEADER GERAL DO SITE
+========================================== */
+
+.sms-blog .sms-blog-cabecalho {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  gap: 24px;
+  margin: 0 0 24px;
+  padding: 0;
+
+  background: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+
+  text-align: left;
+  z-index: auto;
+}
+
+/* TÍTULO */
+
+.sms-blog .sms-blog-cabecalho h2 {
+  margin: 0;
+  padding: 0;
+
+  font-family: Georgia, serif;
+  font-size: clamp(29px, 3vw, 40px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
+
+  color: #34312e;
+  text-transform: none;
+  text-shadow: none;
+}
+
+/* CTA À DIREITA */
+
+.sms-blog .sms-blog-cabecalho .sms-blog-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+  gap: 12px;
+
+  margin: 0;
+  padding: 0 0 7px;
+
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #776655;
+  border-radius: 0;
+  box-shadow: none;
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1.4;
+
+  color: #594c40;
+  text-decoration: none;
+  text-transform: none;
+  text-shadow: none;
+
+  transition: color .25s ease,
+              border-color .25s ease;
+}
+
+.sms-blog .sms-blog-cta span {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.sms-blog .sms-blog-cta:hover {
+  color: #34312e;
+  border-bottom-color: #34312e;
+}
+
+/* ==========================================
+   MOSAICO ASSIMÉTRICO COMPACTO
+========================================== */
+
+.sms-blog-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1.18fr;
+  grid-template-rows: 145px 145px;
+  gap: 14px;
+}
+
+/* CARDS CLICÁVEIS */
+
+.sms-blog-card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+
+  min-width: 0;
+  padding: 22px;
+  overflow: hidden;
+
+  border: none;
+  border-radius: 3px;
+
+  text-decoration: none;
+  cursor: pointer;
+  isolation: isolate;
+}
+
+/* CARD 01 | ESQUERDA */
+
+.sms-blog-card-1 {
+  grid-column: 1;
+  grid-row: 1 / 3;
+
+  background: linear-gradient(180deg, rgba(20,18,16,.22) 0%, rgba(20,18,16,.40) 45%, rgba(20,18,16,.82) 100%), url('advogado-divorcio-goiania.png') center / cover no-repeat;
+}
+
+/* CARD 02 | SUPERIOR DIREITO */
+
+.sms-blog-card-2 {
+  grid-column: 2 / 4;
+  grid-row: 1;
+
+  background: linear-gradient(180deg, rgba(20,18,16,.22) 0%, rgba(20,18,16,.40) 45%, rgba(20,18,16,.82) 100%), url('advogado-defesa-criminal-goiania.png') center / cover no-repeat;
+}
+
+/* CARD 03 | INFERIOR CENTRAL */
+
+.sms-blog-card-3 {
+  grid-column: 2;
+  grid-row: 2;
+
+  background: linear-gradient(180deg, rgba(20,18,16,.22) 0%, rgba(20,18,16,.40) 45%, rgba(20,18,16,.82) 100%), url('advogado-negativa-sus-goiania.png') center / cover no-repeat;
+}
+
+/* CARD 04 | INFERIOR DIREITO */
+
+.sms-blog-card-4 {
+  grid-column: 3;
+  grid-row: 2;
+
+  background: linear-gradient(180deg, rgba(20,18,16,.22) 0%, rgba(20,18,16,.40) 45%, rgba(20,18,16,.82) 100%), url('advogado-fraude-bancaria-goiania.png') center / cover no-repeat;
+}
+
+/* DETALHE DE LUZ DISCRETO */
+
+.sms-blog-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, .06),
+    transparent 45%,
+    rgba(0, 0, 0, .12)
+  );
+
+  pointer-events: none;
+}
+
+/* ==========================================
+   CONTEÚDO DOS CARDS
+========================================== */
+
+.sms-blog-conteudo {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.sms-blog-categoria {
+  display: block;
+  margin-bottom: 7px;
+
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+
+  color: #e9ded0;
+}
+
+.sms-blog-card h3 {
+  margin: 0 0 10px;
+
+  font-family: Georgia, serif;
+  font-size: clamp(20px, 2vw, 27px);
+  font-weight: 400;
+  line-height: 1.2;
+
+  color: #ffffff;
+  text-shadow: none;
+}
+
+.sms-blog-card-3 h3,
+.sms-blog-card-4 h3 {
+  font-size: clamp(18px, 1.7vw, 23px);
+}
+
+/* INDICADOR DE LEITURA */
+
+.sms-blog-indicador {
+  display: inline-block;
+  padding-bottom: 4px;
+
+  border-bottom: 1px solid #d8c3a5;
+
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  color: #e9ded0;
+}
+
+/* CARDS SEM ANIMAÇÕES */
+
+.sms-blog-card,
+.sms-blog-card:hover {
+  transform: none;
+  scale: 1;
+  transition: none;
+}
+
+/* ACESSIBILIDADE */
+
+.sms-blog-card:focus-visible,
+.sms-blog-cta:focus-visible {
+  outline: 2px solid #a98963;
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+  .sms-blog {
+    padding: 45px 20px 50px;
+  }
+
+  .sms-blog-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 160px 160px 130px;
+    gap: 12px;
+  }
+
+  .sms-blog-card-1 {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+
+  .sms-blog-card-2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .sms-blog-card-3 {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .sms-blog-card-4 {
+    grid-column: 1 / 3;
+    grid-row: 3;
+  }
+}
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 600px) {
+
+  .sms-blog {
+    padding: 38px 18px 43px;
+  }
+
+  .sms-blog .sms-blog-cabecalho {
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .sms-blog .sms-blog-cabecalho h2 {
+    font-size: clamp(22px, 5vw, 28px);
+  }
+
+  .sms-blog .sms-blog-cabecalho .sms-blog-cta {
+    font-size: 10px;
+    white-space: nowrap;
+    gap: 6px;
+  }
+
+  .sms-blog-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 190px 135px 135px;
+    gap: 10px;
+  }
+
+  .sms-blog-card {
+    padding: 16px;
+  }
+
+  .sms-blog-card-1 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  .sms-blog-card-2 {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+
+  .sms-blog-card-3 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .sms-blog-card-4 {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .sms-blog-card h3 {
+    font-size: 20px;
+  }
+
+  .sms-blog-card-3 h3,
+  .sms-blog-card-4 h3 {
+    font-size: 17px;
+  }
+
+  .sms-blog-categoria {
+    font-size: 8px;
+  }
+
+  .sms-blog-indicador {
+    font-size: 8px;
+  }
+}
+
+
+
+
+
+
+
+/* ==========================================
+   SMS ADVOCACIA | REDES SOCIAIS
+   FAIXA COMPACTA + LEQUE INTERATIVO
+========================================== */
+
+.sms-redes {
+  --sms-redes-cor: #eee8df;
+  --sms-redes-sobreposicao: 42px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0;
+  padding: 26px 24px 0;
+  background: var(--sms-redes-cor);
+  color: #34312e;
+  overflow: visible;
+}
+
+.sms-redes-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Título e descrição sem influência do header global */
+.sms-redes .sms-redes-cabecalho {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: center;
+}
+
+.sms-redes-etiqueta {
+  display: block;
+  margin-bottom: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #8b7560;
+}
+
+.sms-redes-cabecalho h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 3.5vw, 45px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #34312e;
+}
+
+.sms-redes-cabecalho p {
+  max-width: 600px;
+  margin: 8px auto 0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #6e6257;
+}
+
+/* Ícones */
+.sms-redes-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 13px;
+}
+
+.sms-redes-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 41px;
+  height: 41px;
+  background: transparent;
+  border: 1px solid #a9927b;
+  border-radius: 50%;
+  color: #80674f;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background .25s ease, color .25s ease;
+}
+
+.sms-redes-links a:hover {
+  background: #80674f;
+  color: #fff;
+}
+
+/* Leque mais próximo do cabeçalho */
+.sms-redes-leque {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: min(100%, 1080px);
+  margin: 4px auto 0;
+  padding: 0 35px;
+  transform: translateY(var(--sms-redes-sobreposicao));
+}
+
+.sms-redes-post {
+  position: relative;
+  display: block;
+  flex: 0 0 24%;
+  width: 24%;
+  aspect-ratio: 4 / 4.5;
+  min-width: 0;
+  background: #d6c8b8;
+  border: 5px solid #fbf8f3;
+  border-radius: 11px;
+  box-shadow: 0 16px 32px rgba(38,31,25,.18);
+  overflow: hidden;
+  text-decoration: none;
+  transform-origin: center bottom;
+  transition: transform .35s cubic-bezier(.2,.7,.2,1),
+              box-shadow .35s ease, border-color .35s ease;
+  will-change: transform;
+}
+
+.sms-redes-post + .sms-redes-post { margin-left: -30px; }
+
+.sms-redes-post img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+  transition: filter .35s ease;
+}
+
+/* A inclinação original permanece quando não está em destaque */
+.sms-redes-post:nth-child(1) {
+  z-index: 1;
+  transform: rotate(-10deg) translateY(17px);
+}
+.sms-redes-post:nth-child(2) {
+  z-index: 3;
+  transform: rotate(-3deg);
+}
+.sms-redes-post:nth-child(3) {
+  z-index: 4;
+  transform: rotate(4deg);
+}
+.sms-redes-post:nth-child(4) {
+  z-index: 2;
+  transform: rotate(10deg) translateY(17px);
+}
+
+/* Destaque: card fica por cima e se aproxima suavemente */
+@media (hover: hover) and (pointer: fine) {
+  .sms-redes-leque .sms-redes-post:hover {
+    z-index: 15;
+    transform: rotate(0deg) translateY(-19px) scale(1.075);
+    border-color: #fffdf9;
+    box-shadow: 0 27px 52px rgba(38,31,25,.32);
+  }
+  .sms-redes-post:hover img { filter: saturate(1.07) brightness(1.035); }
+}
+
+.sms-redes-post:focus-visible {
+  z-index: 15;
+  transform: rotate(0deg) translateY(-12px) scale(1.045);
+}
+.sms-redes-post:focus-visible,
+.sms-redes-links a:focus-visible {
+  outline: 3px solid #94765a;
+  outline-offset: 5px;
+}
+
+/* Evita que os posts sobrepostos encubram o conteúdo seguinte */
+.sms-redes + section { padding-top: 95px; }
+
+@media (max-width: 900px) {
+  .sms-redes {
+    --sms-redes-sobreposicao: 34px;
+    padding: 26px 20px 0;
+  }
+  .sms-redes-leque { width: 100%; padding: 0 15px; }
+  .sms-redes-post { flex-basis: 25%; }
+  .sms-redes-post + .sms-redes-post { margin-left: -22px; }
+  .sms-redes + section { padding-top: 75px; }
+}
+
+@media (max-width: 600px) {
+  .sms-redes {
+    --sms-redes-sobreposicao: 23px;
+    padding: 23px 16px 0;
+  }
+  .sms-redes-cabecalho h2 { font-size: 30px; }
+  .sms-redes-cabecalho p {
+    max-width: 320px;
+    margin-top: 7px;
+    font-size: 13px;
+  }
+  .sms-redes-etiqueta { font-size: 9px; letter-spacing: 2px; }
+  .sms-redes-links { margin-top: 11px; gap: 11px; }
+  .sms-redes-links a { width: 37px; height: 37px; font-size: 16px; }
+  .sms-redes-leque { margin-top: 3px; padding: 0 6px; }
+  .sms-redes-post {
+    flex-basis: 28%;
+    width: 28%;
+    border-width: 3px;
+    border-radius: 7px;
+  }
+  .sms-redes-post + .sms-redes-post { margin-left: -13px; }
+  .sms-redes-post:nth-child(1) { transform: rotate(-9deg) translateY(9px); }
+  .sms-redes-post:nth-child(2) { transform: rotate(-3deg); }
+  .sms-redes-post:nth-child(3) { transform: rotate(4deg); }
+  .sms-redes-post:nth-child(4) { transform: rotate(9deg) translateY(9px); }
+  .sms-redes + section { padding-top: 60px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sms-redes-post,
+  .sms-redes-post img { transition: none; }
+}
+
+
+
+
+
+
+/* ==========================================
+   SMS | FECHAMENTO PREMIUM E COMPACTO
+========================================== */
+
+.sms-fechamento {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  padding: 60px 24px 53px;
+  overflow: hidden;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(57,54,49,.64) 0%,
+      rgba(57,54,49,.72) 35%,
+      rgba(42,39,36,.88) 75%,
+      rgba(42,39,36,.96) 100%
+    ),
+    url("LOGO\ DO\ ZAP\ INICIAL.jpg");
+
+  background-color: #393631;
+  background-size: cover;
+  background-position: center, center 35%;
+  background-repeat: no-repeat;
+  color: #f5f0e9;
+}
+
+.sms-fechamento-container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+/* FRASE SUPERIOR MAIS COMPACTA */
+
+.sms-fechamento-frase {
+  max-width: 870px;
+  margin: 0 auto 29px;
+  text-align: center;
+}
+
+.sms-fechamento-frase h2 {
+  margin: 0 0 9px;
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 2.5vw, 36px);
+  font-weight: 400;
+  line-height: 1.22;
+  color: #f6f0e8;
+}
+
+.sms-fechamento-frase h2 strong {
+  font-weight: 500;
+  color: #d8c3a5;
+}
+
+.sms-fechamento-frase p {
+  max-width: 730px;
+  margin: 0 auto 15px;
+  font-family: Arial, sans-serif;
+  font-size: clamp(14px, 1.2vw, 17px);
+  font-weight: 300;
+  line-height: 1.5;
+  color: #ded5ca;
+}
+
+.sms-fechamento-assinatura {
+  display: inline-block;
+  padding-top: 12px;
+  border-top: 1px solid #bea483;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #dcc6aa;
+}
+
+/* GRID DOS CARDS */
+
+.sms-fechamento-grid {
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  align-items: stretch;
+  gap: 18px;
+}
+
+/* CARD CONTATO */
+
+.sms-fechamento-contato {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 30px 32px;
+
+  background: #e6dcd0;
+  border: 1px solid #cdbfae;
+  border-radius: 4px;
+  box-shadow: 0 14px 35px rgba(0,0,0,.12);
+  color: #34312e;
+}
+
+.sms-contato-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.sms-contato-etiqueta,
+.sms-faq-etiqueta {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  color: #94785d;
+}
+
+.sms-contato-simbolo {
+  color: #94785d;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.sms-fechamento-contato h3 {
+  max-width: 390px;
+  margin: 0 0 12px;
+  font-family: Georgia, serif;
+  font-size: clamp(27px, 2.5vw, 35px);
+  font-weight: 400;
+  line-height: 1.18;
+  color: #34312e;
+}
+
+.sms-fechamento-contato p {
+  max-width: 410px;
+  margin: 0 0 23px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: #66594d;
+}
+
+.sms-contato-botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: auto;
+  padding: 12px 20px;
+
+  background: #bda487;
+  border: 1px solid #bda487;
+  border-radius: 3px;
+
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #292622;
+  transition: background .25s ease, border-color .25s ease;
+}
+
+.sms-contato-botao:hover {
+  background: #cdb89d;
+  border-color: #cdb89d;
+}
+
+.sms-contato-botao span {
+  font-size: 17px;
+}
+
+/* CARD FAQ */
+
+.sms-fechamento-faq {
+  min-width: 0;
+  padding: 28px 34px;
+
+  background: #e6dcd0;
+  border: 1px solid #cdbfae;
+  border-radius: 4px;
+  box-shadow: 0 14px 35px rgba(0,0,0,.12);
+
+  color: #34312e;
+}
+
+.sms-fechamento-faq .sms-faq-etiqueta {
+  display: block;
+  margin-bottom: 10px;
+  color: #967a5b;
+}
+
+.sms-fechamento-faq h3 {
+  margin: 0 0 14px;
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 2.1vw, 31px);
+  font-weight: 400;
+  color: #34312e;
+}
+
+.sms-faq-lista {
+  border-top: 1px solid #cdbfae;
+}
+
+.sms-faq-item {
+  border-bottom: 1px solid #cdbfae;
+}
+
+.sms-faq-item summary {
+  position: relative;
+  display: block;
+  padding: 13px 30px 13px 0;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+  list-style: none;
+  cursor: pointer;
+  color: #4e4338;
+}
+
+.sms-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.sms-faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  font-weight: 300;
+  color: #967a5b;
+}
+
+.sms-faq-item[open] summary::after {
+  content: "−";
+}
+
+.sms-faq-item p {
+  margin: 0;
+  padding: 0 15px 14px 0;
+  font-size: 13px;
+  line-height: 1.65;
+  color: #66594d;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .sms-fechamento {
+    padding: 55px 20px 48px;
+  }
+
+  .sms-fechamento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sms-fechamento-frase {
+    margin-bottom: 30px;
+  }
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+  .sms-fechamento {
+    padding: 48px 16px 36px;
+  }
+
+  .sms-fechamento-frase h2 {
+    font-size: 26px;
+  }
+
+  .sms-fechamento-frase p {
+    font-size: 14px;
+  }
+
+  .sms-fechamento-grid {
+    gap: 12px;
+  }
+
+  .sms-fechamento-contato,
+  .sms-fechamento-faq {
+    padding: 25px 23px;
+  }
+
+  .sms-fechamento-contato h3 {
+    font-size: 28px;
+  }
+
+  .sms-fechamento-faq h3 {
+    font-size: 27px;
+  }
+}
+
+
+/* ===================================================
+   SMS ADVOCACIA | LOGO TIPOGRÁFICA DO RODAPÉ
+   Centralizada na primeira coluna, sem alterar o HTML
+=================================================== */
+
+footer .logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  min-width: 0;
+  width: 100%;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+/* Oculta apenas a imagem antiga da marca no rodapé. */
+footer .logo-section img.logo {
+  display: none !important;
+}
+
+footer .logo-section::before {
+  content: "SMS";
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 110px;
+  font-weight: 400;
+  letter-spacing: -6px;
+  line-height: 1;
+  color: #d8c3a5;
+}
+
+@media (max-width: 600px) {
+  footer .logo-section {
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  footer .logo-section::before {
+    font-size: 76px;
+    letter-spacing: -4px;
+  }
+}
+
+
+/* ====================================================
+   SMS ADVOCACIA | JORNADA MAIS EQUILIBRADA
+   Título um pouco mais baixo e menos espaço até as etapas.
+   Não altera a posição nem o tamanho da foto.
+==================================================== */
+@media (min-width: 901px) {
+  .sms-jornada {
+    padding-top: 170px; /* antes 110px: título 60px mais abaixo */
+  }
+
+  .sms-jornada .sms-jornada-cabecalho {
+    margin-bottom: 35px; /* antes 100px: aproxima as etapas 65px */
+  }
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+  .sms-jornada {
+    padding-top: 125px;
+  }
+  .sms-jornada .sms-jornada-cabecalho {
+    margin-bottom: 35px;
+  }
+}
+
+/* ============================================================
+   SMS ADVOCACIA | CORREÇÃO DE VISIBILIDADE DO GOOGLE MAPS
+   Aplicado apenas ao mapa da seção de localização.
+   IMPORTANTE: o iframe também precisa usar um URL de incorporação
+   válido, de preferência https://www.google.com/maps/embed?pb=...
+   ============================================================ */
+.sms-localizacao-mapa {
+  display: block !important;
+  position: relative;
+  width: 100%;
+  height: 450px;
+  min-height: 450px;
+  overflow: hidden;
+  background: #e8e2d8;
+  border-top: 1px solid rgba(160,139,100,.45);
+}
+.sms-localizacao-mapa iframe {
+  display: block !important;
+  position: relative;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 450px;
+  border: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+  transform: none !important;
+}
+@media (max-width: 700px) {
+  .sms-localizacao-mapa {
+    height: 360px;
+    min-height: 360px;
+  }
+  .sms-localizacao-mapa iframe {
+    min-height: 360px;
+  }
 }
