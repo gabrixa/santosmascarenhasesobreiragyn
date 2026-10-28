@@ -99,6 +99,12 @@
       background-color: #6e6b5c;
     }
 
+
+
+
+
+
+    
     /* =====================================================
        NAVEGAÇÃO PADRONIZADA - VOLTAR AO INÍCIO
        ===================================================== */
@@ -207,6 +213,116 @@
     }
     .separador-equipe { width:80px; height:2px; background-color:#918e7d; margin:45px auto 30px; }
     .equipe-container.socios { justify-content:center; margin-bottom:10px; }
+
+/* ===== SMS ADVOCACIA: MENU + RODAPÉ INTEGRADOS ===== */
+*, *::before, *::after { box-sizing: border-box; }
+.sms-header {
+  position: fixed; inset: 0 0 auto; width: 100%; z-index: 9999;
+  background: transparent; box-shadow: none;
+  transition: background-color .4s ease, box-shadow .4s ease;
+}
+.sms-header-container {
+  width:100%; max-width:1440px; min-height:94px; padding:0 48px;
+  margin:0 auto; display:flex; align-items:center; justify-content:space-between;
+  gap:35px; transition:min-height .35s ease;
+}
+.sms-header.scrolled .sms-header-container { min-height:74px; }
+.sms-header.scrolled, .sms-header.menu-open {
+  background:#222222; box-shadow:0 5px 22px rgba(0,0,0,.24);
+}
+.sms-header-logo {
+  display:flex; align-items:center; gap:14px; flex-shrink:0;
+  text-decoration:none; color:#fff;
+}
+.sms-logo-sigla { font:400 34px/1 Georgia,serif; letter-spacing:-2px; color:#e0d0ba; }
+.sms-logo-nome { display:flex; flex-direction:column; font:400 12px/1.45 Georgia,serif; letter-spacing:1.2px; color:#fff; }
+.sms-logo-nome small { font-size:10px; letter-spacing:1.6px; color:#e0d0ba; }
+.sms-header-nav { display:flex; align-items:center; justify-content:flex-end; gap:30px; flex-wrap:nowrap; }
+.sms-header-nav a {
+  position:relative; padding:12px 0; font:500 12px/1.4 Arial,sans-serif;
+  letter-spacing:1.1px; white-space:nowrap; color:#fff;
+  text-decoration:none; transition:color .3s ease;
+}
+.sms-header-nav a:not(.sms-header-contato)::after {
+  content:""; position:absolute; bottom:5px; left:0; height:1px; width:0;
+  background:#d8cbb7; transition:width .3s ease;
+}
+.sms-header-nav a:not(.sms-header-contato):hover::after,
+.sms-header-nav a[aria-current="page"]::after { width:100%; }
+.sms-header-nav a:hover, .sms-header-nav a[aria-current="page"] { color:#e0d0ba; }
+.sms-header-nav .sms-header-contato {
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:13px 22px; border:1px solid #d8cbb7; border-radius:2px;
+  color:#fff; font-size:11px; letter-spacing:1.3px;
+  transition:background-color .3s ease,color .3s ease;
+}
+.sms-header-nav .sms-header-contato:hover { background:#d8cbb7; color:#222; }
+.sms-menu-toggle { display:none; }
+/* espaço do cabeçalho fixo, para não cobrir o conteúdo */
+.navegacao-topo { padding-top:122px; }
+/* RODAPÉ */
+footer.sms-rodape { padding:48px 24px 40px; background:#222; color:#d3cdc5; font-family:Arial,sans-serif; }
+footer.sms-rodape .container-footer {
+  max-width:1200px; margin:0 auto; display:grid;
+  grid-template-columns:1fr .9fr 1.1fr; gap:clamp(28px,5vw,75px); align-items:start;
+}
+footer.sms-rodape .logo-section { text-align:center; align-self:center; min-width:0; }
+footer.sms-rodape .sms-rodape-marca { display:block; color:#d8c3a5; font:400 110px/1 Georgia,serif; letter-spacing:-6px; text-decoration:none; }
+footer.sms-rodape .sms-rodape-nome { font-size:10px; letter-spacing:1.45px; line-height:1.55; color:#ded3c6; margin:14px 0 8px; }
+footer.sms-rodape .sms-rodape-apresentacao { font-size:12px; line-height:1.7; color:#afa59a; margin:0; }
+footer.sms-rodape h3 { font:400 19px/1.4 Georgia,serif; margin:0 0 18px; padding:0 0 12px; border-bottom:1px solid #49423b; color:#d8c3a5; }
+footer.sms-rodape ul { list-style:none; margin:0; padding:0; }
+footer.sms-rodape li { margin-bottom:10px; }
+footer.sms-rodape a:not(.sms-rodape-marca) { font-size:14px; text-decoration:none; color:#d3cdc5; }
+footer.sms-rodape a:hover { color:#e4c8a5; }
+footer.sms-rodape .contato-section p { font-size:14px; line-height:1.7; margin:0 0 12px; color:#d3cdc5; }
+footer.sms-rodape strong { font-weight:500; color:#e8dfd4; }
+footer.sms-rodape .social-icons { display:flex; gap:18px; align-items:center; margin-top:14px; }
+footer.sms-rodape .social-icons a { font-size:21px; }
+.rodape-inferior { padding:18px 20px; background:#222; border-top:1px solid #403c38; color:#aaa39b; text-align:center; font:400 11px/1.5 Arial,sans-serif; letter-spacing:.35px; }
+@media(max-width:1100px) {
+  .sms-header-container {padding:0 25px;gap:18px}
+  .sms-header-nav {gap:16px}
+  .sms-header-nav a {font-size:10px;letter-spacing:.5px}
+}
+@media(max-width:900px) {
+  .sms-header-container {min-height:75px;padding:0 20px}
+  .sms-header.scrolled .sms-header-container {min-height:68px}
+  .sms-logo-sigla {font-size:30px}
+  .sms-logo-nome {font-size:10px}
+  .sms-menu-toggle {
+    display:flex; flex-direction:column; justify-content:center; gap:6px;
+    width:42px;height:42px;padding:10px; background:transparent;
+    border:1px solid rgba(255,255,255,.45);border-radius:3px;cursor:pointer;
+  }
+  .sms-menu-toggle span {display:block;width:100%;height:2px;background:#fff}
+  .sms-header-nav {
+    display:none;position:absolute;top:100%;left:0;width:100%;padding:25px 22px 30px;
+    background:#222;box-shadow:0 15px 25px rgba(0,0,0,.2);
+    flex-direction:column;align-items:stretch;gap:10px;
+  }
+  .sms-header.menu-open .sms-header-nav {display:flex}
+  .sms-header-nav a {padding:14px 0;font-size:12px;letter-spacing:1px}
+  .sms-header-nav .sms-header-contato {margin-top:15px;padding:15px;text-align:center}
+  .navegacao-topo {padding-top:103px}
+  footer.sms-rodape .container-footer {grid-template-columns:repeat(2,minmax(0,1fr))}
+  footer.sms-rodape .contato-section {grid-column:1/-1}
+}
+@media(max-width:600px) {
+  footer.sms-rodape {padding:40px 22px 32px}
+  footer.sms-rodape .container-footer {grid-template-columns:1fr;gap:30px}
+  footer.sms-rodape .contato-section {grid-column:auto}
+  footer.sms-rodape .sms-rodape-marca {font-size:76px}
+}
+@media(max-width:430px) {
+  .sms-logo-nome {font-size:9px;letter-spacing:.5px}
+  .sms-logo-nome small {font-size:8px;letter-spacing:.6px}
+  .sms-header-logo {gap:9px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .sms-header,.sms-header-container,.sms-header-nav a {transition:none}
+}
+
 </style>
 
   <script type="application/ld+json">
@@ -324,6 +440,53 @@
 
 </head>
 <body>
+
+
+  
+<!-- MENU PRINCIPAL SMS ADVOCACIA -->
+<header class="sms-header" id="sms-header">
+  <div class="sms-header-container">
+
+    <!-- LOGO / NOME DO ESCRITÓRIO -->
+    <a href="index.html" class="sms-header-logo" aria-label="Página inicial SMS Advocacia">
+      <span class="sms-logo-sigla">SMS</span>
+
+      <span class="sms-logo-nome">
+        SANTOS MASCARENHAS
+        <small>&amp; SOBREIRA ADVOCACIA</small>
+      </span>
+    </a>
+
+    <!-- BOTÃO MENU MOBILE -->
+    <button
+      class="sms-menu-toggle"
+      id="sms-menu-toggle"
+      type="button"
+      aria-label="Abrir menu"
+      aria-controls="sms-menu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- LINKS DO MENU -->
+    <nav class="sms-header-nav" id="sms-menu" aria-label="Menu principal">
+      <a href="index.html">INÍCIO</a>
+      <a href="equipe.html" aria-current="page">NOSSA EQUIPE</a>
+      <a href="areas.html">ÁREAS DE ATUAÇÃO</a>
+      <a href="artigos.html">NOSSA HISTÓRIA</a>
+      <a href="contato.html" class="sms-header-contato">
+        FALE CONOSCO
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+
+
 
   <!-- =====================================================
        NAVEGAÇÃO - PÁGINA EQUIPE
@@ -494,6 +657,41 @@
   
   </main>
 
+<!-- RODAPÉ PRINCIPAL SMS ADVOCACIA -->
+<footer class="sms-rodape" aria-label="Informações do escritório">
+  <div class="container-footer">
+    <div class="logo-section sms-rodape-identidade">
+      <a class="sms-rodape-marca" href="index.html" aria-label="SMS Advocacia, início">SMS<span>.</span></a>
+      <p class="sms-rodape-nome">SANTOS, MASCARENHAS<br>&amp; SOBREIRA ADVOCACIA</p>
+      <p class="sms-rodape-apresentacao">Atuação jurídica com técnica, estratégia e humanidade.</p>
+    </div>
+    <nav class="info-section" aria-label="Navegação do rodapé">
+      <h3>INFORMAÇÕES</h3>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="equipe.html">Nossa equipe</a></li>
+        <li><a href="areas.html">Áreas de atuação</a></li>
+        <li><a href="casos.html">Blog jurídico</a></li>
+        <li><a href="artigos.html">Nossa história</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="contato-section">
+      <h3>CONTATO</h3>
+      <p><strong>Atendimento em Goiânia e online</strong></p>
+      <p>Para informações sobre consultas e agendamentos, entre em contato com nossa equipe.</p>
+      <p><a href="https://wa.me/556282125318" target="_blank" rel="noopener noreferrer">WhatsApp: (62) 8212-5318</a></p>
+      <p><a href="mailto:santosmacarenhasesobreiro@gmail.com">santosmacarenhasesobreiro@gmail.com</a></p>
+      <div class="social-icons" aria-label="Redes sociais">
+        <a href="https://www.instagram.com/smsadvocaciaoficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram SMS Advocacia"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://wa.me/556282125318" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp SMS Advocacia"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="rodape-inferior">SANTOS MASCARENHAS E SOBREIRA ADVOCACIA &nbsp;·&nbsp; CNPJ: 52.846.343/0001-75 &nbsp;·&nbsp; © 2026</div>
+
+
 
   <!-- WHATSAPP FLUTUANTE -->
   <a href="https://wa.me/556282125318?text=Ol%C3%A1%21%20Preciso%20de%20ajuda%20jur%C3%ADdica."
@@ -506,6 +704,41 @@
       <i class="fa-brands fa-whatsapp"></i>
     </span>
   </a>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const header = document.getElementById('sms-header');
+  const toggle = document.getElementById('sms-menu-toggle');
+  const nav = document.getElementById('sms-menu');
+  if (!header) return;
+
+  function atualizarMenu() {
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  }
+  atualizarMenu();
+  window.addEventListener('scroll', atualizarMenu, { passive: true });
+
+  if (!toggle || !nav) return;
+  function fecharMenu() {
+    header.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Abrir menu');
+  }
+  toggle.addEventListener('click', function () {
+    const aberto = header.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', String(aberto));
+    toggle.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+  });
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', fecharMenu));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') fecharMenu();
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) fecharMenu();
+  });
+});
+</script>
 
 </body>
 </html>
