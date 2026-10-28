@@ -528,10 +528,239 @@ footer a {
 }
 </style>
 
+
+
+<!-- ESTILOS EXCLUSIVOS | CARROSSEL EDITORIAL COM SÓCIOS -->
+<style>
+
+/* =========================================================
+   SMS ADVOCACIA | VOCÊ SABIA EDITORIAL | VERSÃO CONSOLIDADA
+   Mantém .sms-sabia-slide, .sms-sabia-prev, .sms-sabia-next, .sms-sabia-pontos do site atual.
+   FOTO: src="socios-recortados.png" no HTML.
+========================================================= */
+.sms-sabia-editorial {
+  position:relative;
+  z-index:2;
+  isolation:isolate;
+  width:100%;
+  left:auto; right:auto;
+  margin:0;
+  min-height:0;
+  padding:90px 0 76px;
+  overflow:visible;
+  background:linear-gradient(112deg,#e6ddd1 0%,#eee6dc 53%,#d8c9b8 100%);
+  color:#352e29;
+  text-align:left;
+}
+.sms-sabia-editorial .sms-sabia-layout {
+  position:relative;
+  width:100%;
+  max-width:1380px;
+  min-height:370px;
+  margin:0 auto;
+  padding:0 clamp(24px,6vw,110px);
+}
+.sms-sabia-editorial .sms-sabia-conteudo {
+  position:relative;
+  z-index:3;
+  width:60%;
+  max-width:760px;
+}
+.sms-sabia-editorial .sms-sabia-sobretitulo {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:40px;
+  font-family:Arial,sans-serif;
+  color:#987a59;
+  font-size:11px;
+  letter-spacing:.18em;
+  font-weight:600;
+}
+.sms-sabia-editorial .sms-sabia-indice {white-space:nowrap; letter-spacing:.14em;}
+.sms-sabia-editorial .sms-sabia-carousel-wrap {
+  display:block;
+  width:100%;
+  min-height:0;
+  margin:0;
+  padding:0;
+  background:transparent;
+  background-image:none;
+  backdrop-filter:none;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  transform:none;
+  text-align:left;
+}
+.sms-sabia-editorial .sms-sabia-carousel-wrap:hover,
+.sms-sabia-editorial .sms-sabia-carousel-wrap:focus-within {
+  transform:none; box-shadow:none; border-color:transparent;
+}
+.sms-sabia-editorial .sms-sabia-categoria {
+  display:block;
+  margin:0 0 19px;
+  font-size:11px;
+  letter-spacing:.15em;
+  font-weight:600;
+  color:#947453;
+}
+.sms-sabia-editorial .sms-sabia-slides {
+  display:block;
+  width:100%;
+  min-height:204px;
+}
+.sms-sabia-editorial .sms-sabia-slides .sms-sabia-slide {
+  width:100%; max-width:none; margin:0; text-align:left;
+}
+.sms-sabia-editorial .sms-sabia-slides .sms-sabia-slide strong {
+  display:block;
+  width:100%; max-width:720px;
+  margin:0 0 20px;
+  color:#342b27;
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(27px,3.2vw,47px);
+  line-height:1.14;
+  letter-spacing:-.025em;
+  font-weight:400;
+  text-align:left;
+}
+.sms-sabia-editorial .sms-sabia-slides .sms-sabia-slide p {
+  width:100%; max-width:660px;
+  margin:0;
+  color:#625a52;
+  font-family:Arial,sans-serif;
+  font-size:clamp(14px,1.25vw,16px);
+  line-height:1.8;
+  text-align:left;
+}
+.sms-sabia-editorial .sms-sabia-slide .destaque {color:inherit; font-weight:600;}
+.sms-sabia-editorial .sms-sabia-controles {
+  display:flex; justify-content:flex-start; gap:12px;
+  margin:32px 0 0;
+}
+.sms-sabia-editorial .sms-sabia-controles .sms-sabia-prev,
+.sms-sabia-editorial .sms-sabia-controles .sms-sabia-next {
+  position:static;
+  display:flex; align-items:center; justify-content:center;
+  width:48px;height:48px; padding:0;
+  font-size:30px;line-height:1;
+  background:transparent;color:#725b44;
+  border:1px solid #b69c7d;border-radius:50%;
+  box-shadow:none;
+  cursor:pointer;
+  transition:background .25s,color .25s,transform .25s;
+}
+.sms-sabia-editorial .sms-sabia-controles .sms-sabia-next {background:#37312c;color:#fff;border-color:#37312c;}
+.sms-sabia-editorial .sms-sabia-controles .sms-sabia-prev:hover,
+.sms-sabia-editorial .sms-sabia-controles .sms-sabia-next:hover {
+  transform:translateY(-2px);
+  background:#a58b6b;color:#fff;border-color:#a58b6b;
+  box-shadow:none;
+}
+.sms-sabia-editorial .sms-sabia-pontos {justify-content:flex-start; margin-top:18px;}
+.sms-sabia-editorial .sms-sabia-pontos button {background:#b9a998;opacity:.8;}
+.sms-sabia-editorial .sms-sabia-pontos button.active {background:#947453;opacity:1;}
+/* A imagem deve possuir transparência real. Sem caixa, sombra ou moldura. */
+.sms-sabia-editorial .sms-sabia-socios {
+  position:absolute;
+  z-index:2;
+  right:0;
+  bottom:-76px;
+  width:43%;
+  height:calc(100% + 155px);
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  pointer-events:none;
+}
+.sms-sabia-editorial .sms-sabia-socios img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center bottom;
+}
+@media(max-width:980px) {
+  .sms-sabia-editorial {padding:68px 0 50px;}
+  .sms-sabia-editorial .sms-sabia-conteudo {width:62%;}
+  .sms-sabia-editorial .sms-sabia-socios {width:43%;bottom:-50px;height:calc(100% + 115px);}
+  .sms-sabia-editorial .sms-sabia-layout {padding:0 34px;}
+}
+@media(max-width:700px) {
+  .sms-sabia-editorial {padding:55px 0 0;}
+  .sms-sabia-editorial .sms-sabia-layout {padding:0 22px;min-height:0;}
+  .sms-sabia-editorial .sms-sabia-conteudo {width:100%;max-width:none;}
+  .sms-sabia-editorial .sms-sabia-sobretitulo {margin-bottom:30px;font-size:9px;}
+  .sms-sabia-editorial .sms-sabia-slides {min-height:265px;}
+  .sms-sabia-editorial .sms-sabia-slides .sms-sabia-slide strong {font-size:clamp(25px,7.2vw,36px);}
+  .sms-sabia-editorial .sms-sabia-controles {margin-top:20px;}
+  .sms-sabia-editorial .sms-sabia-socios {
+    position:relative;right:auto;bottom:auto;
+    margin:18px auto 0;
+    width:min(94%,380px);height:310px;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .sms-sabia-editorial .sms-sabia-controles button {transition:none;}
+}
+
+
+/* Mostrar um slide por vez sem depender do carrossel antigo */
+.sms-sabia-editorial .sms-sabia-slide { display: none; opacity: 0; }
+.sms-sabia-editorial .sms-sabia-slide.active { display: block; opacity: 1; animation: smsSabiaEntrada .45s ease both; }
+@keyframes smsSabiaEntrada { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
+.sms-sabia-editorial .sms-sabia-pontos { display:flex; gap:9px; align-items:center; }
+.sms-sabia-editorial .sms-sabia-pontos button { width:9px;height:9px;border:0;border-radius:99px;background:#b9a998;cursor:pointer;opacity:.75;transition:width .2s,background .2s; }
+.sms-sabia-editorial .sms-sabia-pontos button.active { width:23px;background:#947453;opacity:1; }
+@media (prefers-reduced-motion: reduce) { .sms-sabia-editorial .sms-sabia-slide.active { animation:none; } }
+</style>
 </head>
 <body>
 
 
+<!-- MENU PRINCIPAL SMS ADVOCACIA -->
+<header class="sms-header" id="sms-header">
+  <div class="sms-header-container">
+
+    <!-- LOGO / NOME DO ESCRITÓRIO -->
+    <a href="index.html" class="sms-header-logo" aria-label="Página inicial SMS Advocacia">
+      <span class="sms-logo-sigla">SMS</span>
+
+      <span class="sms-logo-nome">
+        SANTOS MASCARENHAS
+        <small>& SOBREIRA ADVOCACIA</small>
+      </span>
+    </a>
+
+    <!-- BOTÃO MENU MOBILE -->
+    <button
+      class="sms-menu-toggle"
+      id="sms-menu-toggle"
+      type="button"
+      aria-label="Abrir menu"
+      aria-controls="sms-menu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- LINKS DO MENU -->
+    <nav class="sms-header-nav" id="sms-menu" aria-label="Menu principal">
+      <a href="index.html">INÍCIO</a>
+      <a href="equipe.html">NOSSA EQUIPE</a>
+      <a href="areas.html">ÁREAS DE ATUAÇÃO</a>
+      <a href="artigos.html">NOSSA HISTÓRIA</a>
+      <a href="contato.html" class="sms-header-contato">
+        FALE CONOSCO
+      </a>
+    </nav>
+
+  </div>
+</header>
 
   <!-- VÍDEO LOGO NO TOPO -->
   <section class="video-topo">
@@ -541,26 +770,6 @@ footer a {
     </video>
   </section>
 
-
-<!-- SEÇÃO DE DESTAQUES -->
-<!-- SEÇÃO DE DESTAQUES -->
-<!-- SEÇÃO DE CONVERSÃO / ATENDIMENTO RÁPIDO -->
-<section class="sms-atendimento-rapido" aria-labelledby="sms-atendimento-titulo">
-  <div class="sms-atendimento-inner">
-
-    <div class="sms-atendimento-cabecalho">
-      <span class="sms-atendimento-etiqueta">ATENDIMENTO ESPECIALIZADO</span>
-      <h2 id="sms-atendimento-titulo">Como podemos ajudar você?</h2>
-    </div>
-
-    <nav class="sms-areas-rapidas" aria-label="Áreas de atendimento jurídico">
-      <a href="https://wa.me/556282125318?text=Ol%C3%A1%21%20Preciso%20de%20ajuda%20jur%C3%ADdica%20na%20%C3%A1rea%20de%20Direito%20de%20Fam%C3%ADlia." target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp sobre Direito de Família">Direito de Família</a>
-      <a href="https://wa.me/556282125318?text=Ol%C3%A1%21%20Preciso%20de%20ajuda%20jur%C3%ADdica%20na%20%C3%A1rea%20de%20Direito%20Criminal." target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp sobre Direito Criminal">Direito Criminal</a>
-      <a href="https://wa.me/556282125318?text=Ol%C3%A1%21%20Preciso%20de%20ajuda%20jur%C3%ADdica%20na%20%C3%A1rea%20de%20Direito%20da%20Sa%C3%BAde." target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp sobre Direito da Saúde">Direito da Saúde</a>
-      <a href="https://wa.me/556282125318?text=Ol%C3%A1%21%20Preciso%20de%20ajuda%20jur%C3%ADdica%20na%20%C3%A1rea%20de%20Direito%20do%20Consumidor." target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp sobre Direito do Consumidor">Direito do Consumidor</a>
-    </nav>
-</div>
-</section>
 
 <!-- SEÇÃO DE DESTAQUES -->
 <section class="destaques" id="destaques">
@@ -600,326 +809,172 @@ footer a {
 </section>
 
 
-<!-- SEÇÃO ATUAÇÃO JURÍDICA -->
-<section class="contato atuacao-juridica-home" aria-labelledby="titulo-atuacao">
-  <div class="atuacao-inner">
 
-    <div class="atuacao-cabecalho">
-      <h2 id="titulo-atuacao">Atuação Jurídica</h2>
-      <p class="subtitulo-contato">
-        Conheça mais sobre nossa atuação no Direito.
-      </p>
-    </div>
 
-    <div class="contato-grid">
 
-      <div class="contato-card">
-        <a href="equipe.html">
-          <span class="atuacao-mini-foto atuacao-mini-equipe" aria-hidden="true" style="background-image:url('EQUIPE.jpg') !important;"></span>
-          <h3>Nossa Equipe</h3>
-          <span class="cargo"></span>
-          <p>Conheça os advogados do nosso escritório.</p>
-          <span class="atuacao-link">VER EQUIPE <b>→</b></span>
-        </a>
+
+
+
+<!-- ==========================================
+     SMS ADVOCACIA | ÁREAS DE ATUAÇÃO
+     SEÇÃO NOVA - ABAIXO DAS MÉTRICAS
+========================================== -->
+
+<section class="sms-areas-vitrine" id="areas-atuacao">
+
+  <div class="sms-areas-container">
+
+    <!-- CABEÇALHO -->
+    <div class="sms-areas-cabecalho">
+
+      <div class="sms-areas-titulos">
+        <span class="sms-areas-etiqueta">
+          SMS ADVOCACIA | ESPECIALIDADES
+        </span>
+
+        <h2>Nossas áreas de atuação</h2>
+
+        <p>
+          Atuação jurídica especializada, com atenção
+          às particularidades de cada demanda.
+        </p>
       </div>
 
-      <div class="contato-card">
-        <a href="areas.html">
-          <span class="atuacao-mini-foto atuacao-mini-areas" aria-hidden="true" style="background-image:url('CAUSAS.jpg') !important;"></span>
-          <h3>Áreas que Atuamos</h3>
-          <span class="cargo"></span>
-          <p>Veja em quais áreas jurídicas podemos ajudar você.</p>
-          <span class="atuacao-link">VER ÁREAS <b>→</b></span>
-        </a>
-      </div>
-
-      <div class="contato-card">
-        <a href="casos.html">
-          <span class="atuacao-mini-foto atuacao-mini-blog" aria-hidden="true" style="background-image:url('4.png') !important;"></span>
-          <h3>Blog jurídico</h3>
-          <span class="cargo"></span>
-          <p>Acesse conteúdos e casos publicados pelo escritório.</p>
-          <span class="atuacao-link">VER BLOG <b>→</b></span>
-        </a>
-      </div>
-
-      <div class="contato-card">
-        <a href="artigos.html">
-          <span class="atuacao-mini-foto atuacao-mini-artigos" aria-hidden="true" style="background-image:url('Design\ sem\ nome\ \(15\).png') !important;"></span>
-          <h3>Artigos Jurídicos</h3>
-          <span class="cargo"></span>
-          <p>Conteúdos para entender melhor seus direitos.</p>
-          <span class="atuacao-link">LER ARTIGOS <b>→</b></span>
-        </a>
-      </div>
-
-      <div class="contato-card">
-        <a href="contato.html">
-          <span class="atuacao-mini-foto atuacao-mini-contato" aria-hidden="true" style="background-image:url('Design\ sem\ nome\ \(16\).png') !important;"></span>
-          <h3>Fale Conosco</h3>
-          <span class="cargo"></span>
-          <p>WhatsApp, telefone, e-mail e outros canais de atendimento.</p>
-          <span class="atuacao-link">FALE CONOSCO <b>→</b></span>
-        </a>
-      </div>
+      <!-- CTA GERAL: SEMPRE VISÍVEL -->
+      <a href="areas.html" class="sms-areas-cta-geral">
+        VER TODOS OS SERVIÇOS
+        <span aria-hidden="true">↗</span>
+      </a>
 
     </div>
 
-    <div class="atuacao-assinatura" aria-hidden="true">
-      <span></span>
-      <strong>⚖</strong>
-      <p>DIREITO COM PROPÓSITO, PESSOAS EM PRIMEIRO LUGAR.</p>
-      <span></span>
+    <!-- MOSAICO ASSIMÉTRICO -->
+    <div class="sms-areas-composicao">
+
+      <div class="sms-areas-grid">
+
+        <!-- CARD 01: FAMÍLIA -->
+        <article class="sms-area-card sms-area-familia">
+
+          <div class="sms-area-imagem"></div>
+
+          <div class="sms-area-conteudo">
+            <span class="sms-area-numero">01 / FAMÍLIA</span>
+
+            <h3>Direito de Família</h3>
+
+            <p>
+              Divórcio, guarda, alimentos e
+              questões patrimoniais familiares.
+            </p>
+
+            <a href="areas.html" class="sms-area-link">
+              CONHECER ÁREA <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- CARD 02: CRIMINAL -->
+        <article class="sms-area-card sms-area-criminal">
+
+          <div class="sms-area-imagem"></div>
+
+          <div class="sms-area-conteudo">
+            <span class="sms-area-numero">02 / CRIMINAL</span>
+
+            <h3>Direito Criminal</h3>
+
+            <p>
+              Defesa técnica em investigações,
+              procedimentos e processos criminais.
+            </p>
+
+            <a href="areas.html" class="sms-area-link">
+              CONHECER ÁREA <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- CARD 03: SAÚDE -->
+        <article class="sms-area-card sms-area-saude">
+
+          <div class="sms-area-imagem"></div>
+
+          <div class="sms-area-conteudo">
+            <span class="sms-area-numero">03 / SAÚDE</span>
+
+            <h3>Direito da Saúde</h3>
+
+            <p>
+              Direitos dos pacientes, tratamentos
+              e responsabilidade médica.
+            </p>
+
+            <a href="areas.html" class="sms-area-link">
+              CONHECER ÁREA <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- CARD 04: CONSUMIDOR -->
+        <article class="sms-area-card sms-area-consumidor">
+
+          <div class="sms-area-imagem"></div>
+
+          <div class="sms-area-conteudo">
+            <span class="sms-area-numero">04 / CONSUMIDOR</span>
+
+            <h3>Direito do Consumidor</h3>
+
+            <p>
+              Orientação jurídica em relações de
+              consumo e conflitos contratuais.
+            </p>
+
+            <a href="areas.html" class="sms-area-link">
+              CONHECER ÁREA <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+        </article>
+
+      </div>
+
+      <!-- BALANÇA DA JUSTIÇA -->
+      <div class="sms-areas-balanca" aria-hidden="true">
+
+        <!--
+          ADICIONAR IMAGEM DA BALANÇA AQUI PELO CSS
+
+          Nome sugerido:
+          balanca-justica-sms.png
+
+          Preferencialmente PNG ou WebP
+          COM FUNDO TRANSPARENTE.
+        -->
+
+      </div>
+
+    </div>
+
+    <div class="sms-areas-rodape">
+      <span>
+        SANTOS MASCARENHAS & SOBREIRA ADVOCACIA
+      </span>
+
+      <span>
+        CONHECIMENTO • ÉTICA • COMPROMISSO
+      </span>
     </div>
 
   </div>
+
 </section>
 
 
-
-
-<style>
-/* ===== ATUAÇÃO JURÍDICA: MINI IMAGENS + DEGRADÊ =====
-   Isolado para não interferir no restante do site. */
-
-.atuacao-juridica-home{
-  position:relative !important;
-  overflow:hidden !important;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(241,223,199,.42) 0%,
-      rgba(232,224,212,.62) 58%,
-      rgba(220,211,198,.88) 100%
-    ),
-    url('foto equipe3.png') center/cover no-repeat !important;
-}
-
-.atuacao-juridica-home .contato-grid{
-  gap:14px !important;
-}
-
-.atuacao-juridica-home .contato-card{
-  min-height:0 !important;
-  overflow:hidden !important;
-  background:rgba(255,249,232,.72) !important;
-}
-
-.atuacao-juridica-home .contato-card > a{
-  min-height:242px !important;
-  padding:0 16px 17px !important;
-  display:flex !important;
-  flex-direction:column !important;
-  align-items:center !important;
-}
-
-/* Foto pequena no lugar do símbolo */
-.atuacao-juridica-home .atuacao-mini-foto{
-  display:block !important;
-  position:relative !important;
-  width:calc(100% + 32px) !important;
-  height:72px !important;
-  min-height:72px !important;
-  margin:0 -16px 13px !important;
-  background-image:url('foto equipe3.png') !important;
-  background-size:cover !important;
-  filter:saturate(.72) contrast(.94) !important;
-}
-
-/* Degradê da foto para o próprio card */
-.atuacao-juridica-home .atuacao-mini-foto::after{
-  content:"" !important;
-  position:absolute !important;
-  inset:0 !important;
-  background:linear-gradient(
-    to bottom,
-    rgba(255,249,232,0) 10%,
-    rgba(255,249,232,.16) 48%,
-    rgba(255,249,232,.94) 100%
-  ) !important;
-}
-
-.atuacao-juridica-home .atuacao-mini-equipe{background-position:15% 38% !important;}
-.atuacao-juridica-home .atuacao-mini-areas{background-position:33% 42% !important;}
-.atuacao-juridica-home .atuacao-mini-blog{background-position:50% 38% !important;}
-.atuacao-juridica-home .atuacao-mini-artigos{background-position:68% 42% !important;}
-.atuacao-juridica-home .atuacao-mini-contato{background-position:86% 38% !important;}
-
-.atuacao-juridica-home .contato-card h3{
-  margin:0 0 8px !important;
-  line-height:1.2 !important;
-}
-
-.atuacao-juridica-home .contato-card p{
-  margin:0 auto 15px !important;
-  max-width:205px !important;
-  line-height:1.42 !important;
-}
-
-.atuacao-juridica-home .atuacao-link{
-  margin-top:auto !important;
-  display:inline-flex !important;
-  align-items:center !important;
-  gap:8px !important;
-  padding-top:9px !important;
-  border-top:1px solid rgba(93,76,56,.16) !important;
-  font-size:.72rem !important;
-  font-weight:700 !important;
-  letter-spacing:.35px !important;
-  line-height:1 !important;
-}
-
-.atuacao-juridica-home .atuacao-assinatura{
-  margin-top:25px !important;
-}
-
-@media(max-width:720px){
-  .atuacao-juridica-home .contato-card > a{
-    min-height:215px !important;
-    padding:0 14px 15px !important;
-  }
-
-  .atuacao-juridica-home .atuacao-mini-foto{
-    width:calc(100% + 28px) !important;
-    height:64px !important;
-    min-height:64px !important;
-    margin:0 -14px 12px !important;
-  }
-}
-</style>
-
-<!-- SEÇÃO "VOCÊ SABIA?" -->
-<section class="vc-sabia-fundo" aria-label="Você Sabia?">
-  <div class="vc-sabia-inner">
-
-    <div class="vc-card" role="group" aria-labelledby="vc-titulo">
-
-      <h2 id="vc-titulo">VOCÊ SABIA?</h2>
-
-      <div class="vc-sabia-carousel" role="region" aria-live="polite">
-
-        <div class="vc-item active">
-          <strong>Você não precisa da autorização do ex-cônjuge para se divorciar.</strong>
-          <p>
-            O divórcio é um <span class="destaque">direito potestativo</span> e pode ser decretado judicialmente
-            mesmo sem a concordância da outra parte, inclusive antes da discussão
-            sobre outros pedidos.
-          </p>
-        </div>
-
-        <div class="vc-item">
-          <strong>Você pode se divorciar antes de concluir a partilha dos bens.</strong>
-          <p>
-            A existência de patrimônio a ser dividido <span class="destaque">não impede a decretação do divórcio</span>.
-            A partilha dos bens pode prosseguir posteriormente.
-          </p>
-        </div>
-
-        <div class="vc-item">
-          <strong>Uma medida protetiva pode ser revista ou revogada judicialmente.</strong>
-          <p>
-            Quando os fundamentos que justificaram sua concessão deixam de existir
-            ou se modificam, é possível requerer sua
-            <span class="destaque">revisão ou revogação</span>,
-            conforme as circunstâncias do caso.
-          </p>
-        </div>
-
-        <div class="vc-item">
-          <strong>A defesa criminal começa antes do processo.</strong>
-          <p>
-            O <span class="destaque">acompanhamento de um advogado ainda na delegacia e durante o inquérito</span>
-            pode ser fundamental para a definição da estratégia defensiva e para
-            a proteção dos direitos do investigado.
-          </p>
-        </div>
-
-        <div class="vc-item">
-          <strong>A audiência de custódia não é mera formalidade.</strong>
-          <p>
-            Nesse momento são analisadas a
-            <span class="destaque">legalidade da prisão e a necessidade de sua manutenção</span>.
-            Uma defesa técnica pode ser essencial desde as primeiras horas.
-          </p>
-        </div>
-
-        <div class="vc-item">
-          <strong>A falta de pagamento da pensão não autoriza impedir a convivência com os filhos.</strong>
-          <p>
-            <span class="destaque">Alimentos e convivência são questões juridicamente distintas</span>.
-            O inadimplemento da pensão deve ser tratado pelos meios legais adequados.
-          </p>
-        </div>
-
-        <div class="vc-item">
-          <strong>Uma cirurgia urgente não deve esperar quando a demora coloca a saúde em risco.</strong>
-          <p>
-            Diante de <span class="destaque">indicação médica e urgência comprovada</span>,
-            é possível buscar judicialmente a realização do procedimento,
-            inclusive por meio de <span class="destaque">pedido de liminar</span>.
-          </p>
-        </div>
-
-        <div class="vc-item">
-          <strong>Medicamento de alto custo foi negado ou está em falta no SUS?</strong>
-          <p>
-            Em determinadas situações, é possível buscar judicialmente o
-            <span class="destaque">fornecimento do medicamento</span>, inclusive por meio de
-            <span class="destaque">liminar</span>, quando demonstradas a necessidade
-            e a urgência do tratamento.
-          </p>
-        </div>
-
-        <div class="vc-item">
-          <strong>A falta de leito de UTI não encerra o direito ao tratamento.</strong>
-          <p>
-            Em situações de urgência, é possível buscar judicialmente a
-            <span class="destaque">disponibilização de leito adequado</span>
-            para assegurar a continuidade do tratamento médico prescrito.
-          </p>
-        </div>
-
-        <div class="vc-item">
-          <strong>Paciente aguardando internação em CAIS ou UPA?</strong>
-          <p>
-            A demora injustificada na transferência para uma unidade hospitalar
-            adequada pode justificar <span class="destaque">medida judicial urgente</span>
-            para garantir a continuidade do tratamento.
-          </p>
-        </div>
-
-        <div class="vc-item">
-          <strong>Distrato de imóvel exige atenção.</strong>
-          <p>
-            <span class="destaque">Percentuais de retenção, forma de devolução e prazos para restituição</span>
-            devem observar a legislação aplicável e as condições do contrato.
-            Retenções excessivas podem ser discutidas judicialmente conforme o caso.
-          </p>
-        </div>
-
-        <div class="vc-item">
-          <strong>Foi vítima de fraude bancária?</strong>
-          <p>
-            Dependendo das circunstâncias e da existência de
-            <span class="destaque">falha na prestação do serviço</span>,
-            pode haver direito à <span class="destaque">restituição dos valores e à indenização</span>
-            pelos danos sofridos.
-          </p>
-        </div>
-
-      </div>
-
-      <div class="vc-controls">
-        <button class="vc-prev" aria-label="Informação anterior">‹</button>
-        <button class="vc-next" aria-label="Próxima informação">›</button>
-      </div>
-
-      <div class="vc-dots" aria-label="Navegação do carrossel"></div>
-
-    </div>
-  </div>
-</section>
- 
 
 
 <!-- BIOGRAFIA DOS SÓCIOS -->
@@ -1091,50 +1146,1053 @@ footer a {
 
 
 
+
+
+
+
+<!-- ==========================================
+     SMS ADVOCACIA | NOSSA EQUIPE
+     QUATRO CARDS FIXOS + CTA CENTRALIZADO
+========================================== -->
+
+<section class="sms-equipe-home" id="nossa-equipe">
+
+<!-- CABEÇALHO COMPACTO -->
+<div class="sms-equipe-cabecalho">
+  <span class="sms-equipe-etiqueta">QUEM FAZ PARTE DA SMS</span>
+  <h2>Conheça nossa equipe</h2>
+</div>
+
+    <!-- COMPOSIÇÃO DOS QUATRO CARDS -->
+    <div class="sms-equipe-composicao">
+
+      <div class="sms-equipe-grid">
+
+        <!-- PROFISSIONAL 01 -->
+        <article class="sms-equipe-card">
+
+          <img
+            src="gessica-profissional-sms-advocacia.jpg"
+            alt="Fotografia do profissional 01"
+            loading="lazy"
+          >
+
+          <div class="sms-equipe-info">
+            <h3>Dra. Géssica Gonçalves</h3>
+            <p>Advogada/Gerente</p>
+          </div>
+
+        </article>
+
+        <!-- PROFISSIONAL 02 -->
+        <article class="sms-equipe-card">
+
+          <img
+            src="kelsto-profissional-advocacia-goiania.jpg"
+            alt="Fotografia do profissional 02"
+            loading="lazy"
+          >
+
+          <div class="sms-equipe-info">
+            <h3>Dr. Kelsto Marques</h3>
+            <p>Advogado</p>
+          </div>
+
+        </article>
+
+        <!-- PROFISSIONAL 03 -->
+        <article class="sms-equipe-card">
+
+          <img
+            src="sarah-profissional-advocacia-goiania.jpg"
+            alt="Fotografia do profissional 03"
+            loading="lazy"
+          >
+
+          <div class="sms-equipe-info">
+            <h3>Sarah Vitória</h3>
+            <p>Assistente jurídica</p>
+          </div>
+
+        </article>
+
+        <!-- PROFISSIONAL 04 -->
+        <article class="sms-equipe-card">
+
+          <img
+            src="adriana-santos-mascarenhas-sobreira.jpg"
+            alt="Fotografia do profissional 04"
+            loading="lazy"
+          >
+
+          <div class="sms-equipe-info">
+            <h3>Adriana Matias</h3>
+            <p>RH/Financeiro</p>
+          </div>
+
+        </article>
+
+      </div>
+
+      <!-- CTA CENTRALIZADO E SOBREPOSTO -->
+      <div class="sms-equipe-cta-container">
+
+        <a href="equipe.html" class="sms-equipe-cta">
+          VER EQUIPE COMPLETA
+          <span aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ==========================================
+     SMS ADVOCACIA | JORNADA DE ATENDIMENTO
+     LINHA ANIMADA + IMAGEM DECORATIVA
+========================================== -->
+
+<section class="sms-jornada" id="nosso-atendimento">
+
+  <div class="sms-jornada-container">
+
+    <header class="sms-jornada-cabecalho">
+      <span class="sms-jornada-etiqueta">
+        SMS ADVOCACIA | NOSSO ATENDIMENTO
+      </span>
+
+      <h2>
+        Atuação jurídica estratégica
+        em cada etapa.
+      </h2>
+
+      <p>
+        Escritório de advocacia em Goiânia com atuação
+        multidisciplinar, atendimento individualizado
+        e compromisso com a análise de cada demanda.
+      </p>
+    </header>
+
+    <div class="sms-jornada-composicao">
+
+      <!-- LINHA DO TEMPO -->
+      <div class="sms-jornada-linha">
+        <div class="sms-jornada-progresso"></div>
+      </div>
+
+      <!-- ETAPA 01 -->
+      <article class="sms-jornada-etapa">
+
+        <span class="sms-jornada-numero">01</span>
+
+        <div class="sms-jornada-texto">
+          <span>PRIMEIRO CONTATO</span>
+
+          <h3>Atendimento jurídico individualizado</h3>
+
+          <p>
+            Nossa equipe recebe sua solicitação,
+            identifica a necessidade apresentada e orienta
+            sobre o encaminhamento inicial.
+          </p>
+        </div>
+
+      </article>
+
+      <!-- ETAPA 02 -->
+      <article class="sms-jornada-etapa">
+
+        <span class="sms-jornada-numero">02</span>
+
+        <div class="sms-jornada-texto">
+          <span>AVALIAÇÃO JURÍDICA</span>
+
+          <h3>Análise técnica e multidisciplinar</h3>
+
+          <p>
+            Cada demanda é avaliada considerando suas
+            particularidades, os direitos envolvidos e
+            os caminhos jurídicos aplicáveis.
+          </p>
+        </div>
+
+      </article>
+
+      <!-- ETAPA 03 -->
+      <article class="sms-jornada-etapa">
+
+        <span class="sms-jornada-numero">03</span>
+
+        <div class="sms-jornada-texto">
+          <span>ORIENTAÇÃO E ACOMPANHAMENTO</span>
+
+          <h3>Estratégia jurídica com responsabilidade</h3>
+
+          <p>
+            Esclarecemos os próximos procedimentos,
+            com orientação profissional e acompanhamento
+            conforme as necessidades da demanda.
+          </p>
+        </div>
+
+      </article>
+
+      <!-- IMAGEM QUE SOBRESSAI -->
+      <div
+        class="sms-jornada-imagem"
+        aria-hidden="true">
+        
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="sms-jornada-rodape">
+      <a href="contato.html" class="sms-jornada-cta">
+        FALE COM NOSSA EQUIPE
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+<!-- ================================================
+     SMS ADVOCACIA | CONHECIMENTO JURÍDICO
+     SEÇÃO FULL-WIDTH COM SÓCIOS RECORTADOS À DIREITA
+     A FOTO É INSERIDA NO src INDICADO ABAIXO
+================================================ -->
+<section class="sms-sabia-editorial" aria-label="Conhecimento jurídico SMS Advocacia">
+  <div class="vc-sabia-inner sms-sabia-layout">
+    <div class="sms-sabia-conteudo">
+      <div class="sms-sabia-sobretitulo">
+        <span>SMS ADVOCACIA / CONHECIMENTO JURÍDICO</span>
+        <span class="sms-sabia-indice" aria-hidden="true">01 / 12</span>
+      </div>
+
+      <div class="sms-sabia-carousel-wrap" role="group" aria-label="Informações jurídicas">
+        <span class="sms-sabia-categoria">INFORMAÇÕES QUE FAZEM DIFERENÇA</span>
+        <div class="sms-sabia-slides" role="region" aria-live="off">
+        
+                <div class="sms-sabia-slide active">
+                  <strong>Você não precisa da autorização do ex-cônjuge para se divorciar.</strong>
+                  <p>
+                    O divórcio é um <span class="destaque">direito potestativo</span> e pode ser decretado judicialmente
+                    mesmo sem a concordância da outra parte, inclusive antes da discussão
+                    sobre outros pedidos.
+                  </p>
+                </div>
+        
+                <div class="sms-sabia-slide">
+                  <strong>Você pode se divorciar antes de concluir a partilha dos bens.</strong>
+                  <p>
+                    A existência de patrimônio a ser dividido <span class="destaque">não impede a decretação do divórcio</span>.
+                    A partilha dos bens pode prosseguir posteriormente.
+                  </p>
+                </div>
+        
+                <div class="sms-sabia-slide">
+                  <strong>Uma medida protetiva pode ser revista ou revogada judicialmente.</strong>
+                  <p>
+                    Quando os fundamentos que justificaram sua concessão deixam de existir
+                    ou se modificam, é possível requerer sua
+                    <span class="destaque">revisão ou revogação</span>,
+                    conforme as circunstâncias do caso.
+                  </p>
+                </div>
+        
+                <div class="sms-sabia-slide">
+                  <strong>A defesa criminal começa antes do processo.</strong>
+                  <p>
+                    O <span class="destaque">acompanhamento de um advogado ainda na delegacia e durante o inquérito</span>
+                    pode ser fundamental para a definição da estratégia defensiva e para
+                    a proteção dos direitos do investigado.
+                  </p>
+                </div>
+        
+                <div class="sms-sabia-slide">
+                  <strong>A audiência de custódia não é mera formalidade.</strong>
+                  <p>
+                    Nesse momento são analisadas a
+                    <span class="destaque">legalidade da prisão e a necessidade de sua manutenção</span>.
+                    Uma defesa técnica pode ser essencial desde as primeiras horas.
+                  </p>
+                </div>
+        
+                <div class="sms-sabia-slide">
+                  <strong>A falta de pagamento da pensão não autoriza impedir a convivência com os filhos.</strong>
+                  <p>
+                    <span class="destaque">Alimentos e convivência são questões juridicamente distintas</span>.
+                    O inadimplemento da pensão deve ser tratado pelos meios legais adequados.
+                  </p>
+                </div>
+        
+                <div class="sms-sabia-slide">
+                  <strong>Uma cirurgia urgente não deve esperar quando a demora coloca a saúde em risco.</strong>
+                  <p>
+                    Diante de <span class="destaque">indicação médica e urgência comprovada</span>,
+                    é possível buscar judicialmente a realização do procedimento,
+                    inclusive por meio de <span class="destaque">pedido de liminar</span>.
+                  </p>
+                </div>
+        
+                <div class="sms-sabia-slide">
+                  <strong>Medicamento de alto custo foi negado ou está em falta no SUS?</strong>
+                  <p>
+                    Em determinadas situações, é possível buscar judicialmente o
+                    <span class="destaque">fornecimento do medicamento</span>, inclusive por meio de
+                    <span class="destaque">liminar</span>, quando demonstradas a necessidade
+                    e a urgência do tratamento.
+                  </p>
+                </div>
+        
+                <div class="sms-sabia-slide">
+                  <strong>A falta de leito de UTI não encerra o direito ao tratamento.</strong>
+                  <p>
+                    Em situações de urgência, é possível buscar judicialmente a
+                    <span class="destaque">disponibilização de leito adequado</span>
+                    para assegurar a continuidade do tratamento médico prescrito.
+                  </p>
+                </div>
+        
+                <div class="sms-sabia-slide">
+                  <strong>Paciente aguardando internação em CAIS ou UPA?</strong>
+                  <p>
+                    A demora injustificada na transferência para uma unidade hospitalar
+                    adequada pode justificar <span class="destaque">medida judicial urgente</span>
+                    para garantir a continuidade do tratamento.
+                  </p>
+                </div>
+        
+                <div class="sms-sabia-slide">
+                  <strong>Distrato de imóvel exige atenção.</strong>
+                  <p>
+                    <span class="destaque">Percentuais de retenção, forma de devolução e prazos para restituição</span>
+                    devem observar a legislação aplicável e as condições do contrato.
+                    Retenções excessivas podem ser discutidas judicialmente conforme o caso.
+                  </p>
+                </div>
+        
+                <div class="sms-sabia-slide">
+                  <strong>Foi vítima de fraude bancária?</strong>
+                  <p>
+                    Dependendo das circunstâncias e da existência de
+                    <span class="destaque">falha na prestação do serviço</span>,
+                    pode haver direito à <span class="destaque">restituição dos valores e à indenização</span>
+                    pelos danos sofridos.
+                  </p>
+                </div>
+        
+              </div>
+        
+              <div class="sms-sabia-controles">
+                <button class="sms-sabia-prev" aria-label="Informação anterior">‹</button>
+                <button class="sms-sabia-next" aria-label="Próxima informação">›</button>
+              </div>
+        
+              <div class="sms-sabia-pontos" aria-label="Navegação do carrossel"></div>
+      </div>
+    </div>
+
+    <!-- FOTO DOS SÓCIOS SEM FUNDO: substitua pelo PNG/WEBP recortado -->
+    <div class="sms-sabia-socios">
+      <img src="socios-recortados.png" alt="Sócios da SMS Advocacia" loading="lazy">
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- ==========================================
+     SMS ADVOCACIA | AVALIAÇÕES DO GOOGLE
+     CARROSSEL AUTOMÁTICO E COMPACTO
+========================================== -->
+
+<section
+  class="sms-avaliacoes"
+  id="avaliacoes-google"
+  aria-label="Avaliações do Google da SMS Advocacia"
+>
+
+  <div class="sms-avaliacoes-container">
+
+    <!-- FRASE ALINHADA À DIREITA -->
+    <header class="sms-avaliacoes-cabecalho">
+      <h2>
+        Conheça as experiências compartilhadas
+        sobre o nosso escritório.
+      </h2>
+    </header>
+
+    <!-- CARROSSEL AUTOMÁTICO SEM SETAS -->
+    <div class="sms-avaliacoes-janela">
+
+      <div class="sms-avaliacoes-trilho">
+
+        <!-- AVALIAÇÃO 01 -->
+        <article class="sms-avaliacao-card">
+
+          <div
+            class="sms-avaliacao-estrelas"
+            aria-label="5 de 5 estrelas"
+          >
+            ★★★★★
+          </div>
+
+          <p class="sms-avaliacao-comentario">
+            Insira aqui o comentário original
+            publicado na avaliação do Google.
+          </p>
+
+          <div class="sms-avaliacao-autor">
+            <strong>Nome do avaliador 01</strong>
+            <span>Google Avaliações</span>
+          </div>
+
+        </article>
+
+        <!-- AVALIAÇÃO 02 -->
+        <article class="sms-avaliacao-card">
+
+          <div
+            class="sms-avaliacao-estrelas"
+            aria-label="5 de 5 estrelas"
+          >
+            ★★★★★
+          </div>
+
+          <p class="sms-avaliacao-comentario">
+            Insira aqui a segunda avaliação
+            publicada no perfil do escritório.
+          </p>
+
+          <div class="sms-avaliacao-autor">
+            <strong>Nome do avaliador 02</strong>
+            <span>Google Avaliações</span>
+          </div>
+
+        </article>
+
+        <!-- AVALIAÇÃO 03 -->
+        <article class="sms-avaliacao-card">
+
+          <div
+            class="sms-avaliacao-estrelas"
+            aria-label="5 de 5 estrelas"
+          >
+            ★★★★★
+          </div>
+
+          <p class="sms-avaliacao-comentario">
+            Insira aqui o terceiro comentário
+            original publicado no Google.
+          </p>
+
+          <div class="sms-avaliacao-autor">
+            <strong>Nome do avaliador 03</strong>
+            <span>Google Avaliações</span>
+          </div>
+
+        </article>
+
+        <!-- AVALIAÇÃO 04 -->
+        <article class="sms-avaliacao-card">
+
+          <div
+            class="sms-avaliacao-estrelas"
+            aria-label="5 de 5 estrelas"
+          >
+            ★★★★★
+          </div>
+
+          <p class="sms-avaliacao-comentario">
+            Insira aqui a quarta avaliação.
+            Este card permite continuar o carrossel.
+          </p>
+
+          <div class="sms-avaliacao-autor">
+            <strong>Nome do avaliador 04</strong>
+            <span>Google Avaliações</span>
+          </div>
+
+        </article>
+
+      </div>
+    </div>
+
+    <!-- LINK PARA O PERFIL DO GOOGLE -->
+    <div class="sms-avaliacoes-rodape">
+
+      <a
+        href="#"
+        class="sms-avaliacoes-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        VER AVALIAÇÕES NO GOOGLE
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+<!-- ==========================================
+     SMS ADVOCACIA | CONHEÇA NOSSO BLOG
+========================================== -->
+
+<section class="sms-blog" id="blog-juridico">
+  <div class="sms-blog-container">
+
+    <!-- TÍTULO E CTA -->
+    <header class="sms-blog-cabecalho">
+      <h2>Conheça nosso blog.</h2>
+
+      <a href="casos.html#blog" class="sms-blog-cta">
+        ACESSAR BLOG
+        <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <!-- MOSAICO COM ARTIGOS REAIS -->
+    <div class="sms-blog-grid">
+
+      <!-- 01 | FAMÍLIA -->
+      <a
+        href="casos.html#artigo-1"
+        class="sms-blog-card sms-blog-card-1"
+        aria-label="Ler artigo sobre divórcio"
+      >
+        <div class="sms-blog-conteudo">
+          <span class="sms-blog-categoria">
+            01 / DIREITO DE FAMÍLIA
+          </span>
+
+          <h3>
+            Posso me divorciar mesmo sem
+            a concordância do meu cônjuge?
+          </h3>
+
+          <span class="sms-blog-indicador">
+            LER ARTIGO ↗
+          </span>
+        </div>
+      </a>
+
+      <!-- 02 | CRIMINAL -->
+      <a
+        href="casos.html#artigo-7"
+        class="sms-blog-card sms-blog-card-2"
+        aria-label="Ler artigo sobre defesa criminal"
+      >
+        <div class="sms-blog-conteudo">
+          <span class="sms-blog-categoria">
+            02 / DIREITO CRIMINAL
+          </span>
+
+          <h3>
+            A defesa criminal começa
+            na delegacia
+          </h3>
+
+          <span class="sms-blog-indicador">
+            LER ARTIGO ↗
+          </span>
+        </div>
+      </a>
+
+      <!-- 03 | SAÚDE -->
+      <a
+        href="casos.html#artigo-3"
+        class="sms-blog-card sms-blog-card-3"
+        aria-label="Ler artigo sobre medicamentos pelo SUS"
+      >
+        <div class="sms-blog-conteudo">
+          <span class="sms-blog-categoria">
+            03 / DIREITO DA SAÚDE
+          </span>
+
+          <h3>
+            Medicamento de alto custo pelo SUS
+          </h3>
+
+          <span class="sms-blog-indicador">
+            LER ARTIGO ↗
+          </span>
+        </div>
+      </a>
+
+      <!-- 04 | CONSUMIDOR -->
+      <a
+        href="casos.html#artigo-6"
+        class="sms-blog-card sms-blog-card-4"
+        aria-label="Ler artigo sobre fraude bancária"
+      >
+        <div class="sms-blog-conteudo">
+          <span class="sms-blog-categoria">
+            04 / DIREITO DO CONSUMIDOR
+          </span>
+
+          <h3>
+            Fraude bancária: o banco deve devolver?
+          </h3>
+
+          <span class="sms-blog-indicador">
+            LER ARTIGO ↗
+          </span>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<!-- ==========================================
+     SMS ADVOCACIA | REDES SOCIAIS
+     FAIXA COM POSTS EM LEQUE
+========================================== -->
+
+<section class="sms-redes" id="redes-sociais">
+
+  <div class="sms-redes-container">
+
+    <!-- CABEÇALHO CENTRALIZADO -->
+    <div class="sms-redes-cabecalho">
+
+      <span class="sms-redes-etiqueta">
+        ACOMPANHE A SMS
+      </span>
+
+      <h2>Nas redes sociais.</h2>
+
+      <p>
+        Conteúdos jurídicos, atualizações
+        e bastidores do nosso escritório.
+      </p>
+
+      <!-- ÍCONES DAS REDES -->
+      <nav class="sms-redes-links"
+           aria-label="Redes sociais da SMS Advocacia">
+
+        <!-- INSTAGRAM -->
+        <a
+          href="https://www.instagram.com/smsadvocaciaoficial/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram da SMS Advocacia"
+        >
+          <i class="fa-brands fa-instagram"
+             aria-hidden="true"></i>
+        </a>
+
+        <!-- LINKEDIN: SUBSTITUIR PELO PERFIL OFICIAL -->
+        <!--
+        <a
+          href="URL_DO_LINKEDIN"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn da SMS Advocacia"
+        >
+          <i class="fa-brands fa-linkedin-in"
+             aria-hidden="true"></i>
+        </a>
+        -->
+
+        <!-- YOUTUBE: SUBSTITUIR PELO CANAL OFICIAL -->
+        <!--
+        <a
+          href="URL_DO_YOUTUBE"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube da SMS Advocacia"
+        >
+          <i class="fa-brands fa-youtube"
+             aria-hidden="true"></i>
+        </a>
+        -->
+
+      </nav>
+
+    </div>
+
+    <!-- POSTS EM LEQUE -->
+    <div class="sms-redes-leque">
+
+      <!-- POST 01 -->
+      <a
+        href="https://www.instagram.com/smsadvocaciaoficial/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="sms-redes-post"
+        aria-label="Ver publicações sobre Direito de Família no Instagram"
+      >
+        <img
+          src="instagram-sms-advocacia-goiania (1).jpg"
+          alt="Publicação da SMS Advocacia sobre Direito de Família"
+          loading="lazy"
+        >
+      </a>
+
+      <!-- POST 02 -->
+      <a
+        href="https://www.instagram.com/smsadvocaciaoficial/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="sms-redes-post"
+        aria-label="Ver publicações sobre Direito do Consumidor no Instagram"
+      >
+        <img
+          src="instagram-sms-advocacia-goiania (2).jpg"
+          alt="Publicação da SMS Advocacia sobre Direito do Consumidor"
+          loading="lazy"
+        >
+      </a>
+
+      <!-- POST 03 -->
+      <a
+        href="https://www.instagram.com/smsadvocaciaoficial/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="sms-redes-post"
+        aria-label="Ver publicações sobre Direito Criminal no Instagram"
+      >
+        <img
+          src="instagram-sms-advocacia-goiania (3).jpg"
+          alt="Publicação da SMS Advocacia sobre Direito Criminal"
+          loading="lazy"
+        >
+      </a>
+
+      <!-- POST 04 -->
+      <a
+        href="https://www.instagram.com/smsadvocaciaoficial/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="sms-redes-post"
+        aria-label="Ver publicações sobre Direito da Saúde no Instagram"
+      >
+        <img
+          src="instagram-sms-advocacia-goiania (4).jpg"
+          alt="Publicação da SMS Advocacia sobre Direito da Saúde"
+          loading="lazy"
+        >
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+<style>
+/* ===== ATUAÇÃO JURÍDICA: MINI IMAGENS + DEGRADÊ =====
+   Isolado para não interferir no restante do site. */
+
+.atuacao-juridica-home{
+  position:relative !important;
+  overflow:hidden !important;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(241,223,199,.42) 0%,
+      rgba(232,224,212,.62) 58%,
+      rgba(220,211,198,.88) 100%
+    ),
+    url('foto equipe3.png') center/cover no-repeat !important;
+}
+
+.atuacao-juridica-home .contato-grid{
+  gap:14px !important;
+}
+
+.atuacao-juridica-home .contato-card{
+  min-height:0 !important;
+  overflow:hidden !important;
+  background:rgba(255,249,232,.72) !important;
+}
+
+.atuacao-juridica-home .contato-card > a{
+  min-height:242px !important;
+  padding:0 16px 17px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+}
+
+/* Foto pequena no lugar do símbolo */
+.atuacao-juridica-home .atuacao-mini-foto{
+  display:block !important;
+  position:relative !important;
+  width:calc(100% + 32px) !important;
+  height:72px !important;
+  min-height:72px !important;
+  margin:0 -16px 13px !important;
+  background-image:url('foto equipe3.png') !important;
+  background-size:cover !important;
+  filter:saturate(.72) contrast(.94) !important;
+}
+
+/* Degradê da foto para o próprio card */
+.atuacao-juridica-home .atuacao-mini-foto::after{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  background:linear-gradient(
+    to bottom,
+    rgba(255,249,232,0) 10%,
+    rgba(255,249,232,.16) 48%,
+    rgba(255,249,232,.94) 100%
+  ) !important;
+}
+
+.atuacao-juridica-home .atuacao-mini-equipe{background-position:15% 38% !important;}
+.atuacao-juridica-home .atuacao-mini-areas{background-position:33% 42% !important;}
+.atuacao-juridica-home .atuacao-mini-blog{background-position:50% 38% !important;}
+.atuacao-juridica-home .atuacao-mini-artigos{background-position:68% 42% !important;}
+.atuacao-juridica-home .atuacao-mini-contato{background-position:86% 38% !important;}
+
+.atuacao-juridica-home .contato-card h3{
+  margin:0 0 8px !important;
+  line-height:1.2 !important;
+}
+
+.atuacao-juridica-home .contato-card p{
+  margin:0 auto 15px !important;
+  max-width:205px !important;
+  line-height:1.42 !important;
+}
+
+.atuacao-juridica-home .atuacao-link{
+  margin-top:auto !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:8px !important;
+  padding-top:9px !important;
+  border-top:1px solid rgba(93,76,56,.16) !important;
+  font-size:.72rem !important;
+  font-weight:700 !important;
+  letter-spacing:.35px !important;
+  line-height:1 !important;
+}
+
+.atuacao-juridica-home .atuacao-assinatura{
+  margin-top:25px !important;
+}
+
+@media(max-width:720px){
+  .atuacao-juridica-home .contato-card > a{
+    min-height:215px !important;
+    padding:0 14px 15px !important;
+  }
+
+  .atuacao-juridica-home .atuacao-mini-foto{
+    width:calc(100% + 28px) !important;
+    height:64px !important;
+    min-height:64px !important;
+    margin:0 -14px 12px !important;
+  }
+}
+</style>
+
+
+
+
+
+
+
 <!-- ===== LOCALIZAÇÃO DO ESCRITÓRIO ===== -->
 <section class="sms-localizacao" aria-labelledby="sms-localizacao-titulo">
+
   <div class="sms-localizacao-cabecalho">
     <span class="sms-localizacao-etiqueta">NOSSA SEDE</span>
+
     <h2 id="sms-localizacao-titulo">Onde estamos</h2>
-    <p>
-      Escola de Aviação Aeródromo Brigadeiro Eppinghaus · GO-070, Km 3 · Lt. 192/193 ·
-      Fazenda Aeroporto · Goiânia - GO
-    </p>
+
+    <p>SMS Advocacia | Goiânia - Goiás</p>
   </div>
 
   <div class="sms-localizacao-mapa">
-<iframe
-  title="Localização do escritório Santos, Mascarenhas e Sobreira Advogados"
-  src="https://www.google.com/maps?q=-16.6235369,-49.3474647&z=17&output=embed"
-  width="100%"
-  height="450"
-  style="border:0;"
-  allowfullscreen=""
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+    <iframe
+      title="Localização da SMS Advocacia em Goiânia"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3823.064397702128!2d-49.3474647!3d-16.6235369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935e8bf335e14e8d%3A0x9bd4d84d049fe05e!2sSantos%20Mascarenhas%20e%20Sobreira%20Advocacia!5e0!3m2!1sen!2sbr!4v1793153914169!5m2!1sen!2sbr"
+      width="100%"
+      height="450"
+      style="border:0; display:block;"
+      allowfullscreen
+      loading="eager"
+      referrerpolicy="strict-origin-when-cross-origin">
+    </iframe>
   </div>
+
 </section>
 
 
 
-<!-- SEÇÃO INSTITUCIONAL -->
-<section class="ajuda-legal">
-  <div class="ajuda-conteudo">
-    <h2>
-      Por trás de cada processo existe uma
-      <span class="historia-destaque">história.</span>
-    </h2>
+<!-- ==========================================
+     SMS | FECHAMENTO INSTITUCIONAL + CONTATO + FAQ
+========================================== -->
 
-    <p class="frase-institucional">
-      E toda história merece ser defendida com técnica, estratégia e humanidade.
-    </p>
+<section class="sms-fechamento" id="fale-conosco">
 
-    <span class="assinatura-institucional">
-      SANTOS, MASCARENHAS E SOBREIRA ADVOGADOS
-    </span>
+  <div class="sms-fechamento-container">
+
+    <!-- FRASE INSTITUCIONAL -->
+    <div class="sms-fechamento-frase">
+
+      <h2>
+        Por trás de cada processo existe uma
+        <strong>história.</strong>
+      </h2>
+
+      <p>
+        E toda história merece ser defendida
+        com técnica, estratégia e humanidade.
+      </p>
+
+      <span class="sms-fechamento-assinatura">
+        SANTOS, MASCARENHAS E SOBREIRA ADVOGADOS
+      </span>
+
+    </div>
+
+    <!-- CONTATO E PERGUNTAS FREQUENTES -->
+    <div class="sms-fechamento-grid">
+
+      <!-- CARD DE CONTATO -->
+      <div class="sms-fechamento-contato">
+
+        <span class="sms-contato-etiqueta">
+          FALE COM A SMS
+        </span>
+
+        <h3>
+          Sua história merece
+          ser ouvida.
+        </h3>
+
+        <p>
+          Nossa equipe está à disposição para
+          receber seu contato e orientar sobre
+          o agendamento de uma consulta jurídica.
+        </p>
+
+        <a
+          href="https://wa.me/556282125318"
+          class="sms-contato-botao"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ENTRAR EM CONTATO
+          <span aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+
+      <!-- FAQ -->
+      <div class="sms-fechamento-faq">
+
+        <span class="sms-faq-etiqueta">
+          DÚVIDAS FREQUENTES
+        </span>
+
+        <h3>
+          Como podemos ajudar?
+        </h3>
+
+        <div class="sms-faq-lista">
+
+          <details class="sms-faq-item">
+            <summary>
+              Como agendar uma consulta?
+            </summary>
+            <p>
+              Entre em contato com a nossa equipe
+              pelo WhatsApp para solicitar informações
+              sobre disponibilidade e agendamento.
+            </p>
+          </details>
+
+          <details class="sms-faq-item">
+            <summary>
+              O escritório realiza atendimento online?
+            </summary>
+            <p>
+              Sim. Além do atendimento presencial,
+              a SMS Advocacia também realiza
+              atendimentos online.
+            </p>
+          </details>
+
+          <details class="sms-faq-item">
+            <summary>
+              Quais áreas jurídicas o escritório atende?
+            </summary>
+            <p>
+              O escritório atua em diferentes áreas,
+              incluindo Direito de Família, Criminal,
+              Saúde e Consumidor.
+            </p>
+          </details>
+
+          <details class="sms-faq-item">
+            <summary>
+              Quais documentos preciso apresentar?
+            </summary>
+            <p>
+              Os documentos variam conforme a situação.
+              Nossa equipe poderá orientar sobre as
+              informações necessárias para a consulta.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
+
   
   
 <!-- RODAPÉ PRINCIPAL -->
@@ -1194,4 +2252,69 @@ footer a {
   </span>
 </a>
 
+
+
+
+<!-- SMS ADVOCACIA | CARROSSEL AUTOMÁTICO INDEPENDENTE -->
+<script>
+(function () {
+  function prepararCarrossel() {
+    const secao = document.querySelector('.sms-sabia-editorial');
+    if (!secao) return;
+    const slides = [...secao.querySelectorAll('.sms-sabia-slide')];
+    const anterior = secao.querySelector('.sms-sabia-prev');
+    const proximo = secao.querySelector('.sms-sabia-next');
+    const pontos = secao.querySelector('.sms-sabia-pontos');
+    const indice = secao.querySelector('.sms-sabia-indice');
+    if (slides.length < 2 || !pontos || !anterior || !proximo) return;
+    if (secao.dataset.smsCarrosselIniciado === 'sim') return;
+    secao.dataset.smsCarrosselIniciado = 'sim';
+
+    let atual = 0;
+    let temporizador = null;
+    const INTERVALO = 5000; // 5 segundos entre slides
+
+    pontos.innerHTML = '';
+    const botoes = slides.map((_, i) => {
+      const botao = document.createElement('button');
+      botao.type = 'button';
+      botao.setAttribute('aria-label', 'Mostrar informação ' + (i + 1));
+      botao.addEventListener('click', () => { mostrar(i); reiniciar(); });
+      pontos.appendChild(botao);
+      return botao;
+    });
+
+    function mostrar(n) {
+      atual = (n + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === atual);
+        slide.hidden = i !== atual;
+        slide.setAttribute('aria-hidden', String(i !== atual));
+      });
+      botoes.forEach((botao, i) => {
+        botao.classList.toggle('active', i === atual);
+        if (i === atual) botao.setAttribute('aria-current','true');
+        else botao.removeAttribute('aria-current');
+      });
+      if (indice) indice.textContent = String(atual + 1).padStart(2,'0') + ' / ' + String(slides.length).padStart(2,'0');
+    }
+
+    function parar() { if (temporizador !== null) clearInterval(temporizador); temporizador = null; }
+    function iniciar() {
+      parar();
+      if (!document.hidden) temporizador = setInterval(() => mostrar(atual + 1), INTERVALO);
+    }
+    function reiniciar() { iniciar(); }
+
+    anterior.addEventListener('click', () => { mostrar(atual - 1); reiniciar(); });
+    proximo.addEventListener('click', () => { mostrar(atual + 1); reiniciar(); });
+    document.addEventListener('visibilitychange', iniciar);
+    mostrar(0);
+    iniciar();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', prepararCarrossel);
+  else prepararCarrossel();
+})();
+</script>
 </body>
+</html>
