@@ -1,309 +1,1965 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Áreas de Atuação | Santos, Mascarenhas & Sobreira Advocacia</title>
-<meta name="description" content="Conheça as áreas de atuação da SMS Advocacia em Goiânia: Direito de Família, Criminal, Saúde, Consumidor, Civil e outras especialidades. Atendimento presencial e online.">
-<link rel="canonical" href="https://santosmascarenhasesobreiro-png.github.io/sitesms/areas.html">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-:root{--grafite:#222222;--cafe:#34312e;--bege:#eae4da;--marfim:#f7f3ec;--champagne:#d8c3a5;--texto:#625a51}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bege);color:var(--cafe);-webkit-font-smoothing:antialiased}
-a{color:inherit}
-/* Menu fixo no padrão da Home */
-.sms-header{position:fixed;inset:0 0 auto;z-index:9999;background:#222;box-shadow:0 5px 22px #0002}
-.sms-header-container{max-width:1440px;min-height:74px;padding:0 48px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:35px}
-.sms-header-logo{display:flex;align-items:center;gap:14px;flex-shrink:0;text-decoration:none}
-.sms-logo-sigla{font-family:Georgia,serif;font-size:34px;font-weight:400;letter-spacing:-2px;color:#e0d0ba;line-height:1}
-.sms-logo-nome{display:flex;flex-direction:column;font-family:Georgia,serif;font-size:12px;line-height:1.45;letter-spacing:1.2px;color:white}
-.sms-logo-nome small{font-size:10px;letter-spacing:1.6px;color:#e0d0ba}
-.sms-header-nav{display:flex;align-items:center;justify-content:flex-end;gap:30px}
-.sms-header-nav a{position:relative;white-space:nowrap;padding:12px 0;font-size:12px;font-weight:500;letter-spacing:1.1px;color:#fff;text-decoration:none;transition:color .3s}
-.sms-header-nav a:not(.sms-header-contato)::after{content:"";position:absolute;bottom:5px;left:0;width:0;height:1px;background:#d8cbb7;transition:width .3s}
-.sms-header-nav a:not(.sms-header-contato):hover::after,.sms-header-nav a[aria-current="page"]::after{width:100%}
-.sms-header-nav a:hover,.sms-header-nav a[aria-current="page"]{color:#e0d0ba}
-.sms-header-nav .sms-header-contato{padding:13px 22px;border:1px solid #d8cbb7;border-radius:2px;font-size:11px;letter-spacing:1.3px}
-.sms-header-nav .sms-header-contato:hover{background:#d8cbb7;color:#222}
-.sms-menu-toggle{display:none}
-/* Voltar ao início: seta no padrão champagne e interação suave */
-.areas-back-nav{max-width:1260px;margin:0 auto 28px}
-.areas-back-link{display:inline-flex;align-items:center;gap:10px;color:#78654f;font:500 13px Arial,Helvetica,sans-serif;letter-spacing:.3px;text-decoration:none;transition:color .25s ease}
-.areas-back-link__arrow{display:inline-block;font-size:23px;line-height:1;color:#9b8061;transition:transform .25s ease,color .25s ease}
-.areas-back-link:hover,.areas-back-link:focus-visible{color:#34312e}
-.areas-back-link:hover .areas-back-link__arrow,.areas-back-link:focus-visible .areas-back-link__arrow{transform:translateX(-6px);color:#72583c}
-.areas-back-link:focus-visible{outline:2px solid #9b8061;outline-offset:6px;border-radius:2px}
-@media(max-width:600px){.areas-back-nav{margin-bottom:23px}.areas-back-link{font-size:12px}}
-/* Página sem banner: título compacto e cards imediatamente abaixo */
-.areas-page{padding:133px 24px 86px}
-.areas-container{max-width:1260px;margin:0 auto}
-.areas-heading{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:34px}
-.areas-label{display:block;color:#967a5b;font-size:10px;letter-spacing:2.2px;font-weight:700;margin-bottom:12px}
-.areas-heading h1{margin:0;font-family:Georgia,'Times New Roman',serif;font-size:clamp(33px,4vw,54px);letter-spacing:-1.2px;line-height:1.1;font-weight:400;color:#34312e}
-.areas-heading p{max-width:400px;margin:0 0 4px;font-size:14px;line-height:1.7;color:#61574d}
-.areas-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.area-card{position:relative;display:block;min-height:420px;isolation:isolate;overflow:hidden;background:#57514a;text-decoration:none;box-shadow:0 10px 24px #2a241d16;border:1px solid #6a5c4d33}
-.area-card__image,.area-card__shade{position:absolute;inset:0;z-index:-2}
-.area-card__image{background-size:cover;background-position:center;transition:transform .6s ease}
-.area-card__shade{z-index:-1;background:linear-gradient(180deg,rgba(27,24,22,.18) 0%,rgba(26,23,20,.15) 30%,rgba(29,26,23,.93) 100%)}
-.area-card__content{min-height:420px;padding:27px 27px 26px;display:flex;flex-direction:column;justify-content:space-between;color:white}
-.area-card__eyebrow{font-size:10px;letter-spacing:1.8px;color:#e4d3be;font-weight:600}
-.area-card__bottom h2{font-family:Georgia,serif;font-weight:400;line-height:1.15;font-size:clamp(26px,2.25vw,34px);margin:0 0 13px}
-.area-card__bottom p{font-size:13px;line-height:1.65;color:#eee5da;margin:0 0 12px}
-.area-card__subjects{display:block;font-size:10px;letter-spacing:.2px;color:#d8c3a5;margin-bottom:22px}
-.area-card__link{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:15px;border-top:1px solid #ffffff50;color:#fff;font-size:10px;font-weight:700;letter-spacing:1.5px}
-.area-card__link span{font-size:21px;line-height:1;color:#e2c6a2;transition:transform .25s}
-.area-card:hover .area-card__image,.area-card:focus-visible .area-card__image{transform:scale(1.06)}
-.area-card:hover .area-card__link span,.area-card:focus-visible .area-card__link span{transform:translate(3px,-3px)}
-.area-card:focus-visible{outline:3px solid #b89a73;outline-offset:3px}
-/* Imagens ilustrativas: substitua os arquivos pelos nomes reais na pasta do site.
-   Os cards mantêm gradientes de fundo caso alguma foto ainda não exista. */
-.area-card--civil .area-card__image{background-image:url('01_Direito_Civil.jpg')}
-.area-card--criminal .area-card__image{background-image:url('02_Direito_Criminal.jpg')}
-.area-card--saude .area-card__image{background-image:url('03_Direito_Medico_e_Saude.jpg')}
-.area-card--empresarial .area-card__image{background-image:url('04_Direito_Empresarial.jpg')}
-.area-card--consumidor .area-card__image{background-image:url('05_Direito_Consumidor.jpg')}
-.area-card--aeronautico .area-card__image{background-image:url('06_Direito_Aeronautico.jpg')}
-.area-card--familia .area-card__image{background-image:url('07_Direito_Familia.jpg')}
-.area-card--passageiro .area-card__image{background-image:url('08_Direito_Passageiro.jpg')}
-.area-card--tributario .area-card__image{background-image:url('09_Direito_Tributario.jpg')}
-.area-card--previdenciario .area-card__image{background-image:url('10_Direito_Previdenciario.jpg')}
-.area-card--administrativo .area-card__image{background-image:url('11_Direito_Administrativo.jpg')}
-.areas-note{margin:26px 0 0;font-size:12px;color:#766a5e;line-height:1.6}
-/* Rodapé sem mapa */
-footer.sms-rodape{background:#222;padding:48px 24px 40px;color:#d3cdc5}
-footer.sms-rodape .container-footer{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr .9fr 1.1fr;gap:clamp(28px,5vw,75px);align-items:start}
-footer.sms-rodape .logo-section{text-align:center;align-self:center;min-width:0}
-footer.sms-rodape .sms-rodape-marca{display:block;font-family:Georgia,serif;font-size:110px;letter-spacing:-6px;line-height:1;color:#d8c3a5;text-decoration:none}
-footer.sms-rodape .sms-rodape-marca span{color:inherit}
-footer.sms-rodape .sms-rodape-nome{font-size:10px;letter-spacing:1.45px;line-height:1.55;color:#ded3c6;margin:14px 0 8px}
-footer.sms-rodape .sms-rodape-apresentacao{font-size:12px;line-height:1.7;color:#afa59a;margin:0}
-footer.sms-rodape h3{font-family:Georgia,serif;font-weight:400;font-size:19px;margin:0 0 18px;padding:0 0 12px;border-bottom:1px solid #49423b;color:#d8c3a5}
-footer.sms-rodape ul{list-style:none;margin:0;padding:0}
-footer.sms-rodape li{margin-bottom:10px}
-footer.sms-rodape a:not(.sms-rodape-marca){font-size:14px;text-decoration:none;color:#d3cdc5}
-footer.sms-rodape a:hover{color:#e4c8a5}
-footer.sms-rodape .contato-section p{font-size:14px;line-height:1.7;margin:0 0 12px;color:#d3cdc5}
-footer.sms-rodape strong{font-weight:500;color:#e8dfd4}
-footer.sms-rodape .social-icons{display:flex;align-items:center;gap:18px;margin-top:14px}
-footer.sms-rodape .social-icons a{font-size:21px;color:#d8c3a5}
-.rodape-inferior{padding:18px 20px;background:#222;border-top:1px solid #403c38;color:#aaa39b;text-align:center;font-size:11px;letter-spacing:.35px}
-.whatsapp-flutuante{position:fixed;right:22px;bottom:22px;z-index:9000;display:flex;align-items:center;gap:10px;text-decoration:none}
-.whatsapp-bola{width:56px;height:56px;display:grid;place-items:center;border-radius:50%;background:#25d366;color:#fff;font-size:30px;box-shadow:0 9px 25px #0004}
-.whatsapp-texto{padding:10px 14px;background:#fff;border-radius:30px;font-size:13px;color:#34312e;box-shadow:0 5px 18px #0002;opacity:0;transition:opacity .2s}
-.whatsapp-flutuante:hover .whatsapp-texto,.whatsapp-flutuante:focus-visible .whatsapp-texto{opacity:1}
-@media(max-width:1080px){.sms-header-container{padding:0 26px;gap:16px}.sms-header-nav{gap:17px}.sms-header-nav a{font-size:10px}.areas-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:800px){.sms-header-container{min-height:72px;padding:0 20px}.sms-menu-toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;border:1px solid #d8cbb777;background:transparent;cursor:pointer;padding:9px}.sms-menu-toggle span{display:block;width:100%;height:2px;background:#e0d0ba}.sms-header-nav{display:none;position:absolute;top:100%;left:0;width:100%;background:#222;padding:18px 22px 26px;flex-direction:column;align-items:stretch;gap:6px;box-shadow:0 12px 20px #0004}.sms-header.menu-open .sms-header-nav{display:flex}.sms-header-nav a{font-size:12px;padding:13px 4px}.sms-header-nav .sms-header-contato{align-self:flex-start;margin-top:9px;padding:12px 16px}.areas-heading{display:block}.areas-heading p{margin-top:12px;max-width:640px}.areas-page{padding-top:114px}footer.sms-rodape .container-footer{grid-template-columns:repeat(2,minmax(0,1fr))}footer.sms-rodape .contato-section{grid-column:1/-1}}
-@media(max-width:600px){.sms-logo-sigla{font-size:30px}.sms-logo-nome{font-size:10px}.sms-logo-nome small{font-size:9px}.areas-page{padding:112px 16px 55px}.areas-heading{margin-bottom:26px}.areas-heading h1{font-size:36px}.areas-grid{grid-template-columns:1fr;gap:13px}.area-card,.area-card__content{min-height:365px}.area-card__content{padding:24px}.area-card__bottom h2{font-size:30px}.areas-note{font-size:11px}footer.sms-rodape{padding:40px 22px 32px}footer.sms-rodape .container-footer{grid-template-columns:1fr;gap:30px}footer.sms-rodape .contato-section{grid-column:auto}footer.sms-rodape .sms-rodape-marca{font-size:76px}.whatsapp-texto{display:none}.whatsapp-flutuante{right:14px;bottom:14px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
 
-/* SMS: somente comportamento visual do menu; LP original preservada */
-.sms-header{background:transparent!important;box-shadow:none!important;transition:background-color .4s ease,box-shadow .4s ease;}
-.sms-header.scrolled,.sms-header.menu-open{background:#222!important;box-shadow:0 5px 22px rgba(0,0,0,.18)!important;}
-.sms-header-container{min-height:94px;transition:min-height .35s ease;}
-.sms-header.scrolled .sms-header-container{min-height:74px;}
-/* Topo claro: links escuros. Ao rolar: voltam ao branco original */
-.sms-header:not(.scrolled):not(.menu-open) .sms-logo-sigla{color:#665340;}
-.sms-header:not(.scrolled):not(.menu-open) .sms-logo-nome{color:#34312e;}
-.sms-header:not(.scrolled):not(.menu-open) .sms-logo-nome small{color:#78654f;}
-.sms-header:not(.scrolled):not(.menu-open) .sms-header-nav a{color:#34312e;}
-.sms-header:not(.scrolled):not(.menu-open) .sms-header-nav a:hover,.sms-header:not(.scrolled):not(.menu-open) .sms-header-nav a[aria-current="page"]{color:#78654f;}
-.sms-header:not(.scrolled):not(.menu-open) .sms-header-nav .sms-header-contato{border-color:#9b8061;}
-.sms-header:not(.scrolled):not(.menu-open) .sms-header-nav .sms-header-contato:hover{background:#9b8061;color:#fff;}
-.sms-header:not(.scrolled):not(.menu-open) .sms-header-nav a:not(.sms-header-contato)::after{background:#9b8061;}
-.sms-header-nav a[aria-current="page"]:not(.sms-header-contato)::after{width:100%;}
-@media(max-width:800px){
- .sms-header-container{min-height:75px;}
- .sms-header.scrolled .sms-header-container{min-height:68px;}
- .sms-header:not(.scrolled):not(.menu-open) .sms-menu-toggle span{background:#78654f;}
- .sms-header:not(.scrolled):not(.menu-open) .sms-menu-toggle{border-color:#9b8061;}
- .sms-header.menu-open .sms-header-nav,.sms-header:not(.scrolled):not(.menu-open) .sms-header-nav{background:#222;}
- .sms-header.menu-open .sms-header-nav a,.sms-header:not(.scrolled):not(.menu-open) .sms-header-nav a{color:#fff;}
+<title>
+Áreas de Atuação | Santos, Mascarenhas & Sobreira Advocacia
+</title>
+
+<meta name="description" content="Conheça as áreas de atuação da SMS Advocacia em Goiânia: Direito de Família, Criminal, Saúde, Consumidor, Civil e outras especialidades. Atendimento presencial e online.">
+
+<link rel="canonical" href="https://santosmascarenhasesobreiro-png.github.io/sitesms/areas.html">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ========================================== */
+/* 01. CONFIGURAÇÕES GERAIS                    */
+/* ========================================== */
+
+:root {
+  --grafite: #222222;
+  --cafe: #34312e;
+  --bege: #eae4da;
+  --marfim: #f7f3ec;
+  --champagne: #d8c3a5;
+  --texto: #625a51;
 }
-@media(prefers-reduced-motion:reduce){.sms-header,.sms-header-container{transition:none!important;}}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bege);
+  color: var(--cafe);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* ========================================== */
+/* 02. MENU PRINCIPAL                          */
+/* ========================================== */
+
+.sms-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 9999;
+  background: #222;
+  box-shadow: 0 5px 22px #0002;
+}
+
+.sms-header-container {
+  max-width: 1440px;
+  min-height: 74px;
+  padding: 0 48px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.sms-header-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.sms-logo-sigla {
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -2px;
+  color: #e0d0ba;
+  line-height: 1;
+}
+
+.sms-logo-nome {
+  display: flex;
+  flex-direction: column;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  line-height: 1.45;
+  letter-spacing: 1.2px;
+  color: white;
+}
+
+.sms-logo-nome small {
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  color: #e0d0ba;
+}
+
+.sms-header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.sms-header-nav a {
+  position: relative;
+  white-space: nowrap;
+  padding: 12px 0;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.1px;
+  color: #fff;
+  text-decoration: none;
+  transition: color .3s;
+}
+
+.sms-header-nav a:not(.sms-header-contato)::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #d8cbb7;
+  transition: width .3s;
+}
+
+.sms-header-nav a:not(.sms-header-contato):hover::after,
+.sms-header-nav a[aria-current="page"]::after {
+  width: 100%;
+}
+
+.sms-header-nav a:hover,
+.sms-header-nav a[aria-current="page"] {
+  color: #e0d0ba;
+}
+
+.sms-header-nav .sms-header-contato {
+  padding: 13px 22px;
+  border: 1px solid #d8cbb7;
+  border-radius: 2px;
+  font-size: 11px;
+  letter-spacing: 1.3px;
+}
+
+.sms-header-nav .sms-header-contato:hover {
+  background: #d8cbb7;
+  color: #222;
+}
+
+.sms-menu-toggle {
+  display: none;
+}
+
+
+/* ========================================== */
+/* 03. VOLTAR AO INÍCIO                        */
+/* ========================================== */
+
+.areas-back-nav {
+  max-width: 1260px;
+  margin: 0 auto 28px;
+}
+
+.areas-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #78654f;
+
+  font: 500 13px Arial, Helvetica, sans-serif;
+  letter-spacing: .3px;
+  text-decoration: none;
+
+  transition: color .25s ease;
+}
+
+.areas-back-link__arrow {
+  display: inline-block;
+  font-size: 23px;
+  line-height: 1;
+  color: #9b8061;
+
+  transition:
+    transform .25s ease,
+    color .25s ease;
+}
+
+.areas-back-link:hover,
+.areas-back-link:focus-visible {
+  color: #34312e;
+}
+
+.areas-back-link:hover .areas-back-link__arrow,
+.areas-back-link:focus-visible .areas-back-link__arrow {
+  transform: translateX(-6px);
+  color: #72583c;
+}
+
+.areas-back-link:focus-visible {
+  outline: 2px solid #9b8061;
+  outline-offset: 6px;
+  border-radius: 2px;
+}
+
+
+/* ========================================== */
+/* 04. ESTRUTURA DA PÁGINA                     */
+/* ========================================== */
+
+.areas-page {
+  padding: 133px 24px 86px;
+}
+
+.areas-container {
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.areas-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 34px;
+}
+
+.areas-label {
+  display: block;
+  color: #967a5b;
+  font-size: 10px;
+  letter-spacing: 2.2px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.areas-heading h1 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(33px, 4vw, 54px);
+  letter-spacing: -1.2px;
+  line-height: 1.1;
+  font-weight: 400;
+  color: #34312e;
+}
+
+.areas-heading p {
+  max-width: 400px;
+  margin: 0 0 4px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #61574d;
+}
+
+
+/* ========================================== */
+/* 05. GRID DAS ÁREAS                          */
+/* ========================================== */
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+
+/* ========================================== */
+/* 06. CARDS - ESTRUTURA CORRIGIDA             */
+/* ========================================== */
+
+.area-card {
+  position: relative;
+  display: block;
+  min-height: 420px;
+
+  isolation: isolate;
+  overflow: hidden;
+
+  background: #57514a;
+  text-decoration: none;
+
+  box-shadow: 0 10px 24px #2a241d16;
+  border: 1px solid #6a5c4d33;
+}
+
+
+/* ========================================== */
+/* 07. IMAGENS DOS CARDS                       */
+/* CAMADA 01 - IMAGEM ORIGINAL                 */
+/* ========================================== */
+
+.area-card__image {
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: transform .6s ease;
+}
+
+
+/* ========================================== */
+/* 08. CAMADA ESCURA SOBRE AS IMAGENS           */
+/* CAMADA 02 - DEGRADÊ SUAVE                   */
+/* ========================================== */
+
+.area-card__shade {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to top,
+    rgba(22, 19, 17, 0.82) 0%,
+    rgba(22, 19, 17, 0.54) 36%,
+    rgba(22, 19, 17, 0.22) 70%,
+    rgba(22, 19, 17, 0.10) 100%
+  );
+
+  transition: background .35s ease;
+}
+
+
+/* ========================================== */
+/* 09. CONTEÚDO DOS CARDS                      */
+/* CAMADA 03 - TEXTO SOBRE A IMAGEM            */
+/* ========================================== */
+
+.area-card__content {
+  position: relative;
+  z-index: 2;
+
+  min-height: 420px;
+  padding: 27px 27px 26px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  color: white;
+}
+
+.area-card__eyebrow {
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  color: #e4d3be;
+  font-weight: 600;
+}
+
+.area-card__bottom h2 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  line-height: 1.15;
+
+  font-size: clamp(26px, 2.25vw, 34px);
+  margin: 0 0 13px;
+}
+
+.area-card__bottom p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #eee5da;
+  margin: 0 0 12px;
+}
+
+.area-card__subjects {
+  display: block;
+  font-size: 10px;
+  letter-spacing: .2px;
+  color: #d8c3a5;
+  margin-bottom: 22px;
+}
+
+.area-card__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding-top: 15px;
+  border-top: 1px solid #ffffff50;
+
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.area-card__link span {
+  font-size: 21px;
+  line-height: 1;
+  color: #e2c6a2;
+
+  transition: transform .25s;
+}
+
+
+/* ========================================== */
+/* 10. EFEITOS AO PASSAR O MOUSE               */
+/* ========================================== */
+
+.area-card:hover .area-card__image,
+.area-card:focus-visible .area-card__image {
+  transform: scale(1.06);
+}
+
+.area-card:hover .area-card__shade,
+.area-card:focus-visible .area-card__shade {
+  background: linear-gradient(
+    to top,
+    rgba(22, 19, 17, 0.86) 0%,
+    rgba(22, 19, 17, 0.58) 36%,
+    rgba(22, 19, 17, 0.27) 70%,
+    rgba(22, 19, 17, 0.14) 100%
+  );
+}
+
+.area-card:hover .area-card__link span,
+.area-card:focus-visible .area-card__link span {
+  transform: translate(3px, -3px);
+}
+
+.area-card:focus-visible {
+  outline: 3px solid #b89a73;
+  outline-offset: 3px;
+}
+
+
+/* ========================================== */
+/* 11. IMAGENS DAS ÁREAS DE ATUAÇÃO             */
+/* ALTERE SOMENTE OS NOMES AQUI                */
+/* ========================================== */
+
+/* 01. DIREITO CIVIL */
+
+.area-card--civil .area-card__image {
+  background-image: url('01_Direito_Civil.jpg');
+}
+
+/* 02. DIREITO CRIMINAL */
+
+.area-card--criminal .area-card__image {
+  background-image: url('02_Direito_Criminal.jpg');
+}
+
+/* 03. DIREITO MÉDICO E DA SAÚDE */
+
+.area-card--saude .area-card__image {
+  background-image: url('03_Direito_Medico_e_Saude.jpg');
+}
+
+/* 04. DIREITO EMPRESARIAL */
+
+.area-card--empresarial .area-card__image {
+  background-image: url('04_Direito_Empresarial.jpg');
+}
+
+/* 05. DIREITO DO CONSUMIDOR */
+
+.area-card--consumidor .area-card__image {
+  background-image: url('05_Direito_Consumidor.jpg');
+}
+
+/* 06. DIREITO AERONÁUTICO */
+
+.area-card--aeronautico .area-card__image {
+  background-image: url('06_Direito_Aeronautico.jpg');
+}
+
+/* 07. DIREITO DE FAMÍLIA */
+
+.area-card--familia .area-card__image {
+  background-image: url('07_Direito_Familia.jpg');
+}
+
+/* 08. DIREITO DO PASSAGEIRO */
+
+.area-card--passageiro .area-card__image {
+  background-image: url('08_Direito_Passageiro.jpg');
+}
+
+/* 09. DIREITO TRIBUTÁRIO */
+
+.area-card--tributario .area-card__image {
+  background-image: url('09_Direito_Tributario.jpg');
+}
+
+/* 10. DIREITO PREVIDENCIÁRIO */
+
+.area-card--previdenciario .area-card__image {
+  background-image: url('10_Direito_Previdenciario.jpg');
+}
+
+/* 11. DIREITO ADMINISTRATIVO */
+
+.area-card--administrativo .area-card__image {
+  background-image: url('11_Direito_Administrativo.jpg');
+}
+
+
+/* ========================================== */
+/* 12. OBSERVAÇÃO ABAIXO DOS CARDS             */
+/* ========================================== */
+
+.areas-note {
+  margin: 26px 0 0;
+  font-size: 12px;
+  color: #766a5e;
+  line-height: 1.6;
+}
+
+
+/* ========================================== */
+/* 13. RODAPÉ                                  */
+/* ========================================== */
+
+footer.sms-rodape {
+  background: #222;
+  padding: 48px 24px 40px;
+  color: #d3cdc5;
+}
+
+footer.sms-rodape .container-footer {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr .9fr 1.1fr;
+
+  gap: clamp(28px, 5vw, 75px);
+  align-items: start;
+}
+
+footer.sms-rodape .logo-section {
+  text-align: center;
+  align-self: center;
+  min-width: 0;
+}
+
+footer.sms-rodape .sms-rodape-marca {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 110px;
+  letter-spacing: -6px;
+  line-height: 1;
+  color: #d8c3a5;
+  text-decoration: none;
+}
+
+footer.sms-rodape .sms-rodape-marca span {
+  color: inherit;
+}
+
+footer.sms-rodape .sms-rodape-nome {
+  font-size: 10px;
+  letter-spacing: 1.45px;
+  line-height: 1.55;
+  color: #ded3c6;
+  margin: 14px 0 8px;
+}
+
+footer.sms-rodape .sms-rodape-apresentacao {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #afa59a;
+  margin: 0;
+}
+
+footer.sms-rodape h3 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 19px;
+  margin: 0 0 18px;
+  padding: 0 0 12px;
+  border-bottom: 1px solid #49423b;
+  color: #d8c3a5;
+}
+
+footer.sms-rodape ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer.sms-rodape li {
+  margin-bottom: 10px;
+}
+
+footer.sms-rodape a:not(.sms-rodape-marca) {
+  font-size: 14px;
+  text-decoration: none;
+  color: #d3cdc5;
+}
+
+footer.sms-rodape a:hover {
+  color: #e4c8a5;
+}
+
+footer.sms-rodape .contato-section p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 12px;
+  color: #d3cdc5;
+}
+
+footer.sms-rodape strong {
+  font-weight: 500;
+  color: #e8dfd4;
+}
+
+footer.sms-rodape .social-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+footer.sms-rodape .social-icons a {
+  font-size: 21px;
+  color: #d8c3a5;
+}
+
+.rodape-inferior {
+  padding: 18px 20px;
+  background: #222;
+  border-top: 1px solid #403c38;
+  color: #aaa39b;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: .35px;
+}
+
+
+/* ========================================== */
+/* 14. WHATSAPP FLUTUANTE                      */
+/* ========================================== */
+
+.whatsapp-flutuante {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9000;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.whatsapp-bola {
+  width: 56px;
+  height: 56px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  font-size: 30px;
+
+  box-shadow: 0 9px 25px #0004;
+}
+
+.whatsapp-texto {
+  padding: 10px 14px;
+  background: #fff;
+  border-radius: 30px;
+
+  font-size: 13px;
+  color: #34312e;
+  box-shadow: 0 5px 18px #0002;
+
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.whatsapp-flutuante:hover .whatsapp-texto,
+.whatsapp-flutuante:focus-visible .whatsapp-texto {
+  opacity: 1;
+}
+
+
+/* ========================================== */
+/* 15. RESPONSIVIDADE                         */
+/* ========================================== */
+
+@media (max-width: 1080px) {
+
+  .sms-header-container {
+    padding: 0 26px;
+    gap: 16px;
+  }
+
+  .sms-header-nav {
+    gap: 17px;
+  }
+
+  .sms-header-nav a {
+    font-size: 10px;
+  }
+
+  .areas-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  .sms-header-container {
+    min-height: 72px;
+    padding: 0 20px;
+  }
+
+  .sms-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    width: 42px;
+    height: 42px;
+    border: 1px solid #d8cbb777;
+
+    background: transparent;
+    cursor: pointer;
+    padding: 9px;
+  }
+
+  .sms-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #e0d0ba;
+  }
+
+  .sms-header-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    background: #222;
+    padding: 18px 22px 26px;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+
+    box-shadow: 0 12px 20px #0004;
+  }
+
+  .sms-header.menu-open .sms-header-nav {
+    display: flex;
+  }
+
+  .sms-header-nav a {
+    font-size: 12px;
+    padding: 13px 4px;
+  }
+
+  .sms-header-nav .sms-header-contato {
+    align-self: flex-start;
+    margin-top: 9px;
+    padding: 12px 16px;
+  }
+
+  .areas-heading {
+    display: block;
+  }
+
+  .areas-heading p {
+    margin-top: 12px;
+    max-width: 640px;
+  }
+
+  .areas-page {
+    padding-top: 114px;
+  }
+
+  footer.sms-rodape .container-footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  footer.sms-rodape .contato-section {
+    grid-column: 1 / -1;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .areas-back-nav {
+    margin-bottom: 23px;
+  }
+
+  .areas-back-link {
+    font-size: 12px;
+  }
+
+  .sms-logo-sigla {
+    font-size: 30px;
+  }
+
+  .sms-logo-nome {
+    font-size: 10px;
+  }
+
+  .sms-logo-nome small {
+    font-size: 9px;
+  }
+
+  .areas-page {
+    padding: 112px 16px 55px;
+  }
+
+  .areas-heading {
+    margin-bottom: 26px;
+  }
+
+  .areas-heading h1 {
+    font-size: 36px;
+  }
+
+  .areas-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .area-card,
+  .area-card__content {
+    min-height: 365px;
+  }
+
+  .area-card__content {
+    padding: 24px;
+  }
+
+  .area-card__bottom h2 {
+    font-size: 30px;
+  }
+
+  .areas-note {
+    font-size: 11px;
+  }
+
+  footer.sms-rodape {
+    padding: 40px 22px 32px;
+  }
+
+  footer.sms-rodape .container-footer {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  footer.sms-rodape .contato-section {
+    grid-column: auto;
+  }
+
+  footer.sms-rodape .sms-rodape-marca {
+    font-size: 76px;
+  }
+
+  .whatsapp-texto {
+    display: none;
+  }
+
+  .whatsapp-flutuante {
+    right: 14px;
+    bottom: 14px;
+  }
+
+}
+
+
+/* ========================================== */
+/* 16. MENU TRANSPARENTE AO TOPO               */
+/* ========================================== */
+
+.sms-header {
+  background: transparent !important;
+  box-shadow: none !important;
+
+  transition:
+    background-color .4s ease,
+    box-shadow .4s ease;
+}
+
+.sms-header.scrolled,
+.sms-header.menu-open {
+  background: #222 !important;
+
+  box-shadow:
+    0 5px 22px rgba(0,0,0,.18) !important;
+}
+
+.sms-header-container {
+  min-height: 94px;
+  transition: min-height .35s ease;
+}
+
+.sms-header.scrolled .sms-header-container {
+  min-height: 74px;
+}
+
+/* LINKS ESCUROS NO TOPO CLARO */
+
+.sms-header:not(.scrolled):not(.menu-open) .sms-logo-sigla {
+  color: #665340;
+}
+
+.sms-header:not(.scrolled):not(.menu-open) .sms-logo-nome {
+  color: #34312e;
+}
+
+.sms-header:not(.scrolled):not(.menu-open) .sms-logo-nome small {
+  color: #78654f;
+}
+
+.sms-header:not(.scrolled):not(.menu-open) .sms-header-nav a {
+  color: #34312e;
+}
+
+.sms-header:not(.scrolled):not(.menu-open) .sms-header-nav a:hover,
+.sms-header:not(.scrolled):not(.menu-open) .sms-header-nav a[aria-current="page"] {
+  color: #78654f;
+}
+
+.sms-header:not(.scrolled):not(.menu-open) .sms-header-nav .sms-header-contato {
+  border-color: #9b8061;
+}
+
+.sms-header:not(.scrolled):not(.menu-open) .sms-header-nav .sms-header-contato:hover {
+  background: #9b8061;
+  color: #fff;
+}
+
+.sms-header:not(.scrolled):not(.menu-open) .sms-header-nav a:not(.sms-header-contato)::after {
+  background: #9b8061;
+}
+
+.sms-header-nav a[aria-current="page"]:not(.sms-header-contato)::after {
+  width: 100%;
+}
+
+
+/* MENU MOBILE */
+
+@media (max-width: 800px) {
+
+  .sms-header-container {
+    min-height: 75px;
+  }
+
+  .sms-header.scrolled .sms-header-container {
+    min-height: 68px;
+  }
+
+  .sms-header:not(.scrolled):not(.menu-open) .sms-menu-toggle span {
+    background: #78654f;
+  }
+
+  .sms-header:not(.scrolled):not(.menu-open) .sms-menu-toggle {
+    border-color: #9b8061;
+  }
+
+  .sms-header.menu-open .sms-header-nav,
+  .sms-header:not(.scrolled):not(.menu-open) .sms-header-nav {
+    background: #222;
+  }
+
+  .sms-header.menu-open .sms-header-nav a,
+  .sms-header:not(.scrolled):not(.menu-open) .sms-header-nav a {
+    color: #fff;
+  }
+
+}
+
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+
+}
 
 </style>
-</head>
-<body>
-<header class="sms-header" id="sms-header">
-  <div class="sms-header-container">
-    <a href="index.html" class="sms-header-logo" aria-label="Página inicial SMS Advocacia"><span class="sms-logo-sigla">SMS</span><span class="sms-logo-nome">SANTOS MASCARENHAS<small>&amp; SOBREIRA ADVOCACIA</small></span></a>
-    <button class="sms-menu-toggle" id="sms-menu-toggle" type="button" aria-label="Abrir menu" aria-controls="sms-menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="sms-header-nav" id="sms-menu" aria-label="Menu principal"><a href="index.html">INÍCIO</a><a href="equipe.html">NOSSA EQUIPE</a><a href="areas.html" aria-current="page">ÁREAS DE ATUAÇÃO</a><a href="artigos.html">NOSSA HISTÓRIA</a><a href="contato.html" class="sms-header-contato">FALE CONOSCO</a></nav>
-  </div>
-</header>
-<main class="areas-page" id="conteudo">
-  <nav class="areas-back-nav" aria-label="Retornar à página inicial">
-    <a class="areas-back-link" href="index.html"><span class="areas-back-link__arrow" aria-hidden="true">←</span><span>Voltar ao início</span></a>
-  </nav>
-  <section class="areas-container" aria-labelledby="titulo-areas">
-    <div class="areas-heading">
-      <div><span class="areas-label">SMS ADVOCACIA / ESPECIALIDADES</span><h1 id="titulo-areas">Nossas áreas de atuação.</h1></div>
-      <p>Conheça as especialidades jurídicas do escritório e encontre informações sobre a atuação adequada à sua necessidade.</p>
-    </div>
-    <div class="areas-grid">
-<a class="area-card area-card--civil" href="direito-civil.html" aria-label="Conhecer atuação em Direito Civil">
-    <div class="area-card__image" aria-hidden="true"></div>
-    <div class="area-card__shade" aria-hidden="true"></div>
-    <div class="area-card__content">
-      <span class="area-card__eyebrow">01 / ESPECIALIDADE</span>
-      <div class="area-card__bottom"><h2>Direito Civil</h2>
-      <p>Contratos, indenizações, cobranças e conflitos patrimoniais.</p><span class="area-card__subjects">Contratos · Indenizações · Imóveis</span>
-      <span class="area-card__link">CONHECER ATUAÇÃO <span aria-hidden="true">↗</span></span></div>
-    </div>
-  </a>
-<a class="area-card area-card--criminal" href="direito-criminal.html" aria-label="Conhecer atuação em Direito Criminal">
-    <div class="area-card__image" aria-hidden="true"></div>
-    <div class="area-card__shade" aria-hidden="true"></div>
-    <div class="area-card__content">
-      <span class="area-card__eyebrow">02 / ESPECIALIDADE</span>
-      <div class="area-card__bottom"><h2>Direito Criminal</h2>
-      <p>Defesa em investigações, processos criminais, prisões e medidas cautelares.</p><span class="area-card__subjects">Inquéritos · Habeas corpus · Recursos</span>
-      <span class="area-card__link">CONHECER ATUAÇÃO <span aria-hidden="true">↗</span></span></div>
-    </div>
-  </a>
-<a class="area-card area-card--saude" href="direito-saude.html" aria-label="Conhecer atuação em Direito Médico e da Saúde">
-    <div class="area-card__image" aria-hidden="true"></div>
-    <div class="area-card__shade" aria-hidden="true"></div>
-    <div class="area-card__content">
-      <span class="area-card__eyebrow">03 / ESPECIALIDADE</span>
-      <div class="area-card__bottom"><h2>Direito Médico e da Saúde</h2>
-      <p>Direitos dos pacientes, tratamentos negados e responsabilidade médica.</p><span class="area-card__subjects">Planos de saúde · SUS · Erro médico</span>
-      <span class="area-card__link">CONHECER ATUAÇÃO <span aria-hidden="true">↗</span></span></div>
-    </div>
-  </a>
-<a class="area-card area-card--empresarial" href="direito-empresarial.html" aria-label="Conhecer atuação em Direito Empresarial">
-    <div class="area-card__image" aria-hidden="true"></div>
-    <div class="area-card__shade" aria-hidden="true"></div>
-    <div class="area-card__content">
-      <span class="area-card__eyebrow">04 / ESPECIALIDADE</span>
-      <div class="area-card__bottom"><h2>Direito Empresarial</h2>
-      <p>Assessoria para empresas, contratos, relações comerciais e conflitos societários.</p><span class="area-card__subjects">Contratos · Cobranças · Societário</span>
-      <span class="area-card__link">CONHECER ATUAÇÃO <span aria-hidden="true">↗</span></span></div>
-    </div>
-  </a>
-<a class="area-card area-card--consumidor" href="direito-consumidor.html" aria-label="Conhecer atuação em Direito do Consumidor">
-    <div class="area-card__image" aria-hidden="true"></div>
-    <div class="area-card__shade" aria-hidden="true"></div>
-    <div class="area-card__content">
-      <span class="area-card__eyebrow">05 / ESPECIALIDADE</span>
-      <div class="area-card__bottom"><h2>Direito do Consumidor</h2>
-      <p>Orientação em fraudes, cobranças indevidas e falhas em produtos e serviços.</p><span class="area-card__subjects">Fraudes · Negativação · Indenizações</span>
-      <span class="area-card__link">CONHECER ATUAÇÃO <span aria-hidden="true">↗</span></span></div>
-    </div>
-  </a>
-<a class="area-card area-card--aeronautico" href="direito-aeronautico.html" aria-label="Conhecer atuação em Direito Aeronáutico">
-    <div class="area-card__image" aria-hidden="true"></div>
-    <div class="area-card__shade" aria-hidden="true"></div>
-    <div class="area-card__content">
-      <span class="area-card__eyebrow">06 / ESPECIALIDADE</span>
-      <div class="area-card__bottom"><h2>Direito Aeronáutico</h2>
-      <p>Assessoria jurídica para operações, contratos e questões do setor aeronáutico.</p><span class="area-card__subjects">Aeronaves · Seguros · Contratos</span>
-      <span class="area-card__link">CONHECER ATUAÇÃO <span aria-hidden="true">↗</span></span></div>
-    </div>
-  </a>
-<a class="area-card area-card--familia" href="direito-familia.html" aria-label="Conhecer atuação em Direito de Família">
-    <div class="area-card__image" aria-hidden="true"></div>
-    <div class="area-card__shade" aria-hidden="true"></div>
-    <div class="area-card__content">
-      <span class="area-card__eyebrow">07 / ESPECIALIDADE</span>
-      <div class="area-card__bottom"><h2>Direito de Família</h2>
-      <p>Divórcio, guarda, pensão alimentícia, partilha e relações familiares.</p><span class="area-card__subjects">Divórcio · Guarda · Alimentos</span>
-      <span class="area-card__link">CONHECER ATUAÇÃO <span aria-hidden="true">↗</span></span></div>
-    </div>
-  </a>
-<a class="area-card area-card--passageiro" href="direito-passageiro.html" aria-label="Conhecer atuação em Direito do Passageiro">
-    <div class="area-card__image" aria-hidden="true"></div>
-    <div class="area-card__shade" aria-hidden="true"></div>
-    <div class="area-card__content">
-      <span class="area-card__eyebrow">08 / ESPECIALIDADE</span>
-      <div class="area-card__bottom"><h2>Direito do Passageiro</h2>
-      <p>Direitos em cancelamentos de voos, atrasos e problemas com bagagens.</p><span class="area-card__subjects">Voos · Bagagens · Reembolso</span>
-      <span class="area-card__link">CONHECER ATUAÇÃO <span aria-hidden="true">↗</span></span></div>
-    </div>
-  </a>
-<a class="area-card area-card--tributario" href="direito-tributario.html" aria-label="Conhecer atuação em Direito Tributário">
-    <div class="area-card__image" aria-hidden="true"></div>
-    <div class="area-card__shade" aria-hidden="true"></div>
-    <div class="area-card__content">
-      <span class="area-card__eyebrow">09 / ESPECIALIDADE</span>
-      <div class="area-card__bottom"><h2>Direito Tributário</h2>
-      <p>Defesas fiscais, execuções, cobranças tributárias e recuperação de créditos.</p><span class="area-card__subjects">Execuções fiscais · Tributos · Créditos</span>
-      <span class="area-card__link">CONHECER ATUAÇÃO <span aria-hidden="true">↗</span></span></div>
-    </div>
-  </a>
-<a class="area-card area-card--previdenciario" href="direito-previdenciario.html" aria-label="Conhecer atuação em Direito Previdenciário">
-    <div class="area-card__image" aria-hidden="true"></div>
-    <div class="area-card__shade" aria-hidden="true"></div>
-    <div class="area-card__content">
-      <span class="area-card__eyebrow">10 / ESPECIALIDADE</span>
-      <div class="area-card__bottom"><h2>Direito Previdenciário</h2>
-      <p>Aposentadorias, pensões, benefícios e demandas administrativas ou judiciais perante o INSS.</p><span class="area-card__subjects">Aposentadoria · BPC · Revisões</span>
-      <span class="area-card__link">CONHECER ATUAÇÃO <span aria-hidden="true">↗</span></span></div>
-    </div>
-  </a>
-<a class="area-card area-card--administrativo" href="direito-administrativo.html" aria-label="Conhecer atuação em Direito Administrativo">
-    <div class="area-card__image" aria-hidden="true"></div>
-    <div class="area-card__shade" aria-hidden="true"></div>
-    <div class="area-card__content">
-      <span class="area-card__eyebrow">11 / ESPECIALIDADE</span>
-      <div class="area-card__bottom"><h2>Direito Administrativo</h2>
-      <p>Defesa de servidores e demandas envolvendo concursos, contratos e órgãos públicos.</p><span class="area-card__subjects">Servidores · Concursos · Licitações</span>
-      <span class="area-card__link">CONHECER ATUAÇÃO <span aria-hidden="true">↗</span></span></div>
-    </div>
-  </a>
-    </div>
-    <p class="areas-note">O atendimento e a análise jurídica consideram as particularidades de cada caso.</p>
-  </section>
-</main>
-<!-- RODAPÉ PRINCIPAL | SMS ADVOCACIA -->
-<footer class="sms-rodape" aria-label="Informações do escritório">
-  <div class="container-footer">
-    <div class="logo-section sms-rodape-identidade">
-      <!-- Logotipo tipográfico para evitar o retângulo cinza embutido na imagem anterior. -->
-      <a class="sms-rodape-marca" href="index.html" aria-label="SMS Advocacia, início">SMS<span>.</span></a>
-      <p class="sms-rodape-nome">SANTOS, MASCARENHAS<br>&amp; SOBREIRA ADVOCACIA</p>
-      <p class="sms-rodape-apresentacao">Atuação jurídica com técnica, estratégia e humanidade.</p>
-    </div>
 
-    <nav class="info-section" aria-label="Navegação do rodapé">
-      <h3>INFORMAÇÕES</h3>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="equipe.html">Nossa equipe</a></li>
-        <li><a href="areas.html">Áreas de atuação</a></li>
-        <li><a href="casos.html">Blog jurídico</a></li>
-        <li><a href="artigos.html">Nossa história</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
+</head>
+
+<body>
+
+
+<!-- ========================================== -->
+<!-- 01. MENU PRINCIPAL                         -->
+<!-- ========================================== -->
+
+<header class="sms-header" id="sms-header">
+
+  <div class="sms-header-container">
+
+    <a
+      href="index.html"
+      class="sms-header-logo"
+      aria-label="Página inicial SMS Advocacia"
+    >
+
+      <span class="sms-logo-sigla">
+        SMS
+      </span>
+
+      <span class="sms-logo-nome">
+        SANTOS MASCARENHAS
+        <small>&amp; SOBREIRA ADVOCACIA</small>
+      </span>
+
+    </a>
+
+    <button
+      class="sms-menu-toggle"
+      id="sms-menu-toggle"
+      type="button"
+      aria-label="Abrir menu"
+      aria-controls="sms-menu"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav
+      class="sms-header-nav"
+      id="sms-menu"
+      aria-label="Menu principal"
+    >
+
+      <a href="index.html">
+        INÍCIO
+      </a>
+
+      <a href="equipe.html">
+        NOSSA EQUIPE
+      </a>
+
+      <a href="areas.html" aria-current="page">
+        ÁREAS DE ATUAÇÃO
+      </a>
+
+      <a href="artigos.html">
+        NOSSA HISTÓRIA
+      </a>
+
+      <a href="contato.html" class="sms-header-contato">
+        FALE CONOSCO
+      </a>
+
     </nav>
 
-    <div class="contato-section">
-      <h3>CONTATO</h3>
-      <p><strong>Atendimento em Goiânia e online</strong></p>
-      <p>Para informações sobre consultas e agendamentos, entre em contato com nossa equipe.</p>
-      <p><a href="https://wa.me/556282125318" target="_blank" rel="noopener noreferrer">WhatsApp: (62) 8212-5318</a></p>
-      <p><a href="mailto:santosmacarenhasesobreiro@gmail.com">santosmacarenhasesobreiro@gmail.com</a></p>
-      <div class="social-icons" aria-label="Redes sociais">
-        <a href="https://www.instagram.com/smsadvocaciaoficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram SMS Advocacia"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-        <a href="https://wa.me/556282125318" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp SMS Advocacia"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
-      </div>
-    </div>
   </div>
+
+</header>
+
+
+<!-- ========================================== -->
+<!-- 02. CONTEÚDO PRINCIPAL                     -->
+<!-- ========================================== -->
+
+<main class="areas-page" id="conteudo">
+
+  <nav
+    class="areas-back-nav"
+    aria-label="Retornar à página inicial"
+  >
+
+    <a class="areas-back-link" href="index.html">
+
+      <span
+        class="areas-back-link__arrow"
+        aria-hidden="true"
+      >
+        ←
+      </span>
+
+      <span>
+        Voltar ao início
+      </span>
+
+    </a>
+
+  </nav>
+
+
+  <section
+    class="areas-container"
+    aria-labelledby="titulo-areas"
+  >
+
+    <div class="areas-heading">
+
+      <div>
+
+        <span class="areas-label">
+          SMS ADVOCACIA / ESPECIALIDADES
+        </span>
+
+        <h1 id="titulo-areas">
+          Nossas áreas de atuação.
+        </h1>
+
+      </div>
+
+      <p>
+        Conheça as especialidades jurídicas
+        do escritório e encontre informações
+        sobre a atuação adequada à sua necessidade.
+      </p>
+
+    </div>
+
+
+    <!-- ======================================== -->
+    <!-- 03. GRID DAS ÁREAS                       -->
+    <!-- ======================================== -->
+
+    <div class="areas-grid">
+
+
+      <!-- ====================================== -->
+      <!-- 01. DIREITO CIVIL                      -->
+      <!-- ====================================== -->
+
+      <a
+        class="area-card area-card--civil"
+        href="direito-civil.html"
+        aria-label="Conhecer atuação em Direito Civil"
+      >
+
+        <div class="area-card__image" aria-hidden="true"></div>
+
+        <div class="area-card__shade" aria-hidden="true"></div>
+
+        <div class="area-card__content">
+
+          <span class="area-card__eyebrow">
+            01 / ESPECIALIDADE
+          </span>
+
+          <div class="area-card__bottom">
+
+            <h2>Direito Civil</h2>
+
+            <p>
+              Contratos, indenizações, cobranças
+              e conflitos patrimoniais.
+            </p>
+
+            <span class="area-card__subjects">
+              Contratos · Indenizações · Imóveis
+            </span>
+
+            <span class="area-card__link">
+              CONHECER ATUAÇÃO
+              <span aria-hidden="true">↗</span>
+            </span>
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- ====================================== -->
+      <!-- 02. DIREITO CRIMINAL                   -->
+      <!-- ====================================== -->
+
+      <a
+        class="area-card area-card--criminal"
+        href="direito-criminal.html"
+        aria-label="Conhecer atuação em Direito Criminal"
+      >
+
+        <div class="area-card__image" aria-hidden="true"></div>
+
+        <div class="area-card__shade" aria-hidden="true"></div>
+
+        <div class="area-card__content">
+
+          <span class="area-card__eyebrow">
+            02 / ESPECIALIDADE
+          </span>
+
+          <div class="area-card__bottom">
+
+            <h2>Direito Criminal</h2>
+
+            <p>
+              Defesa em investigações, processos
+              criminais, prisões e medidas cautelares.
+            </p>
+
+            <span class="area-card__subjects">
+              Inquéritos · Habeas corpus · Recursos
+            </span>
+
+            <span class="area-card__link">
+              CONHECER ATUAÇÃO
+              <span aria-hidden="true">↗</span>
+            </span>
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- ====================================== -->
+      <!-- 03. DIREITO MÉDICO E DA SAÚDE           -->
+      <!-- ====================================== -->
+
+      <a
+        class="area-card area-card--saude"
+        href="direito-saude.html"
+        aria-label="Conhecer atuação em Direito Médico e da Saúde"
+      >
+
+        <div class="area-card__image" aria-hidden="true"></div>
+
+        <div class="area-card__shade" aria-hidden="true"></div>
+
+        <div class="area-card__content">
+
+          <span class="area-card__eyebrow">
+            03 / ESPECIALIDADE
+          </span>
+
+          <div class="area-card__bottom">
+
+            <h2>Direito Médico e da Saúde</h2>
+
+            <p>
+              Direitos dos pacientes, tratamentos
+              negados e responsabilidade médica.
+            </p>
+
+            <span class="area-card__subjects">
+              Planos de saúde · SUS · Erro médico
+            </span>
+
+            <span class="area-card__link">
+              CONHECER ATUAÇÃO
+              <span aria-hidden="true">↗</span>
+            </span>
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- ====================================== -->
+      <!-- 04. DIREITO EMPRESARIAL                 -->
+      <!-- ====================================== -->
+
+      <a
+        class="area-card area-card--empresarial"
+        href="direito-empresarial.html"
+        aria-label="Conhecer atuação em Direito Empresarial"
+      >
+
+        <div class="area-card__image" aria-hidden="true"></div>
+
+        <div class="area-card__shade" aria-hidden="true"></div>
+
+        <div class="area-card__content">
+
+          <span class="area-card__eyebrow">
+            04 / ESPECIALIDADE
+          </span>
+
+          <div class="area-card__bottom">
+
+            <h2>Direito Empresarial</h2>
+
+            <p>
+              Assessoria para empresas, contratos,
+              relações comerciais e conflitos societários.
+            </p>
+
+            <span class="area-card__subjects">
+              Contratos · Cobranças · Societário
+            </span>
+
+            <span class="area-card__link">
+              CONHECER ATUAÇÃO
+              <span aria-hidden="true">↗</span>
+            </span>
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- ====================================== -->
+      <!-- 05. DIREITO DO CONSUMIDOR               -->
+      <!-- ====================================== -->
+
+      <a
+        class="area-card area-card--consumidor"
+        href="direito-consumidor.html"
+        aria-label="Conhecer atuação em Direito do Consumidor"
+      >
+
+        <div class="area-card__image" aria-hidden="true"></div>
+
+        <div class="area-card__shade" aria-hidden="true"></div>
+
+        <div class="area-card__content">
+
+          <span class="area-card__eyebrow">
+            05 / ESPECIALIDADE
+          </span>
+
+          <div class="area-card__bottom">
+
+            <h2>Direito do Consumidor</h2>
+
+            <p>
+              Orientação em fraudes, cobranças indevidas
+              e falhas em produtos e serviços.
+            </p>
+
+            <span class="area-card__subjects">
+              Fraudes · Negativação · Indenizações
+            </span>
+
+            <span class="area-card__link">
+              CONHECER ATUAÇÃO
+              <span aria-hidden="true">↗</span>
+            </span>
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- ====================================== -->
+      <!-- 06. DIREITO AERONÁUTICO                 -->
+      <!-- ====================================== -->
+
+      <a
+        class="area-card area-card--aeronautico"
+        href="direito-aeronautico.html"
+        aria-label="Conhecer atuação em Direito Aeronáutico"
+      >
+
+        <div class="area-card__image" aria-hidden="true"></div>
+
+        <div class="area-card__shade" aria-hidden="true"></div>
+
+        <div class="area-card__content">
+
+          <span class="area-card__eyebrow">
+            06 / ESPECIALIDADE
+          </span>
+
+          <div class="area-card__bottom">
+
+            <h2>Direito Aeronáutico</h2>
+
+            <p>
+              Assessoria jurídica para operações,
+              contratos e questões do setor aeronáutico.
+            </p>
+
+            <span class="area-card__subjects">
+              Aeronaves · Seguros · Contratos
+            </span>
+
+            <span class="area-card__link">
+              CONHECER ATUAÇÃO
+              <span aria-hidden="true">↗</span>
+            </span>
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- ====================================== -->
+      <!-- 07. DIREITO DE FAMÍLIA                  -->
+      <!-- ====================================== -->
+
+      <a
+        class="area-card area-card--familia"
+        href="direito-familia.html"
+        aria-label="Conhecer atuação em Direito de Família"
+      >
+
+        <div class="area-card__image" aria-hidden="true"></div>
+
+        <div class="area-card__shade" aria-hidden="true"></div>
+
+        <div class="area-card__content">
+
+          <span class="area-card__eyebrow">
+            07 / ESPECIALIDADE
+          </span>
+
+          <div class="area-card__bottom">
+
+            <h2>Direito de Família</h2>
+
+            <p>
+              Divórcio, guarda, pensão alimentícia,
+              partilha e relações familiares.
+            </p>
+
+            <span class="area-card__subjects">
+              Divórcio · Guarda · Alimentos
+            </span>
+
+            <span class="area-card__link">
+              CONHECER ATUAÇÃO
+              <span aria-hidden="true">↗</span>
+            </span>
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- ====================================== -->
+      <!-- 08. DIREITO DO PASSAGEIRO               -->
+      <!-- ====================================== -->
+
+      <a
+        class="area-card area-card--passageiro"
+        href="direito-passageiro.html"
+        aria-label="Conhecer atuação em Direito do Passageiro"
+      >
+
+        <div class="area-card__image" aria-hidden="true"></div>
+
+        <div class="area-card__shade" aria-hidden="true"></div>
+
+        <div class="area-card__content">
+
+          <span class="area-card__eyebrow">
+            08 / ESPECIALIDADE
+          </span>
+
+          <div class="area-card__bottom">
+
+            <h2>Direito do Passageiro</h2>
+
+            <p>
+              Direitos em cancelamentos de voos,
+              atrasos e problemas com bagagens.
+            </p>
+
+            <span class="area-card__subjects">
+              Voos · Bagagens · Reembolso
+            </span>
+
+            <span class="area-card__link">
+              CONHECER ATUAÇÃO
+              <span aria-hidden="true">↗</span>
+            </span>
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- ====================================== -->
+      <!-- 09. DIREITO TRIBUTÁRIO                  -->
+      <!-- ====================================== -->
+
+      <a
+        class="area-card area-card--tributario"
+        href="direito-tributario.html"
+        aria-label="Conhecer atuação em Direito Tributário"
+      >
+
+        <div class="area-card__image" aria-hidden="true"></div>
+
+        <div class="area-card__shade" aria-hidden="true"></div>
+
+        <div class="area-card__content">
+
+          <span class="area-card__eyebrow">
+            09 / ESPECIALIDADE
+          </span>
+
+          <div class="area-card__bottom">
+
+            <h2>Direito Tributário</h2>
+
+            <p>
+              Defesas fiscais, execuções, cobranças
+              tributárias e recuperação de créditos.
+            </p>
+
+            <span class="area-card__subjects">
+              Execuções fiscais · Tributos · Créditos
+            </span>
+
+            <span class="area-card__link">
+              CONHECER ATUAÇÃO
+              <span aria-hidden="true">↗</span>
+            </span>
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- ====================================== -->
+      <!-- 10. DIREITO PREVIDENCIÁRIO              -->
+      <!-- ====================================== -->
+
+      <a
+        class="area-card area-card--previdenciario"
+        href="direito-previdenciario.html"
+        aria-label="Conhecer atuação em Direito Previdenciário"
+      >
+
+        <div class="area-card__image" aria-hidden="true"></div>
+
+        <div class="area-card__shade" aria-hidden="true"></div>
+
+        <div class="area-card__content">
+
+          <span class="area-card__eyebrow">
+            10 / ESPECIALIDADE
+          </span>
+
+          <div class="area-card__bottom">
+
+            <h2>Direito Previdenciário</h2>
+
+            <p>
+              Aposentadorias, pensões, benefícios
+              e demandas administrativas ou judiciais
+              perante o INSS.
+            </p>
+
+            <span class="area-card__subjects">
+              Aposentadoria · BPC · Revisões
+            </span>
+
+            <span class="area-card__link">
+              CONHECER ATUAÇÃO
+              <span aria-hidden="true">↗</span>
+            </span>
+
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <!-- ====================================== -->
+      <!-- 11. DIREITO ADMINISTRATIVO              -->
+      <!-- ====================================== -->
+
+      <a
+        class="area-card area-card--administrativo"
+        href="direito-administrativo.html"
+        aria-label="Conhecer atuação em Direito Administrativo"
+      >
+
+        <div class="area-card__image" aria-hidden="true"></div>
+
+        <div class="area-card__shade" aria-hidden="true"></div>
+
+        <div class="area-card__content">
+
+          <span class="area-card__eyebrow">
+            11 / ESPECIALIDADE
+          </span>
+
+          <div class="area-card__bottom">
+
+            <h2>Direito Administrativo</h2>
+
+            <p>
+              Defesa de servidores e demandas
+              envolvendo concursos, contratos
+              e órgãos públicos.
+            </p>
+
+            <span class="area-card__subjects">
+              Servidores · Concursos · Licitações
+            </span>
+
+            <span class="area-card__link">
+              CONHECER ATUAÇÃO
+              <span aria-hidden="true">↗</span>
+            </span>
+
+          </div>
+
+        </div>
+
+      </a>
+
+    </div>
+
+
+    <p class="areas-note">
+      O atendimento e a análise jurídica consideram
+      as particularidades de cada caso.
+    </p>
+
+  </section>
+
+</main>
+
+
+<!-- ========================================== -->
+<!-- 04. RODAPÉ PRINCIPAL                       -->
+<!-- ========================================== -->
+
+<footer
+  class="sms-rodape"
+  aria-label="Informações do escritório"
+>
+
+  <div class="container-footer">
+
+
+    <!-- IDENTIDADE -->
+
+    <div class="logo-section sms-rodape-identidade">
+
+      <a
+        class="sms-rodape-marca"
+        href="index.html"
+        aria-label="SMS Advocacia, início"
+      >
+        SMS<span>.</span>
+      </a>
+
+      <p class="sms-rodape-nome">
+        SANTOS, MASCARENHAS<br>
+        &amp; SOBREIRA ADVOCACIA
+      </p>
+
+      <p class="sms-rodape-apresentacao">
+        Atuação jurídica com técnica,
+        estratégia e humanidade.
+      </p>
+
+    </div>
+
+
+    <!-- NAVEGAÇÃO -->
+
+    <nav
+      class="info-section"
+      aria-label="Navegação do rodapé"
+    >
+
+      <h3>INFORMAÇÕES</h3>
+
+      <ul>
+
+        <li>
+          <a href="index.html">Início</a>
+        </li>
+
+        <li>
+          <a href="equipe.html">Nossa equipe</a>
+        </li>
+
+        <li>
+          <a href="areas.html">Áreas de atuação</a>
+        </li>
+
+        <li>
+          <a href="casos.html">Blog jurídico</a>
+        </li>
+
+        <li>
+          <a href="artigos.html">Nossa história</a>
+        </li>
+
+        <li>
+          <a href="contato.html">Contato</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <!-- CONTATO -->
+
+    <div class="contato-section">
+
+      <h3>CONTATO</h3>
+
+      <p>
+        <strong>
+          Atendimento em Goiânia e online
+        </strong>
+      </p>
+
+      <p>
+        Para informações sobre consultas
+        e agendamentos, entre em contato
+        com nossa equipe.
+      </p>
+
+      <p>
+
+        <a
+          href="https://wa.me/556282125318"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp: (62) 8212-5318
+        </a>
+
+      </p>
+
+      <p>
+
+        <a
+          href="mailto:santosmacarenhasesobreiro@gmail.com"
+        >
+          santosmacarenhasesobreiro@gmail.com
+        </a>
+
+      </p>
+
+      <div
+        class="social-icons"
+        aria-label="Redes sociais"
+      >
+
+        <a
+          href="https://www.instagram.com/smsadvocaciaoficial/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram SMS Advocacia"
+        >
+          <i
+            class="fa-brands fa-instagram"
+            aria-hidden="true"
+          ></i>
+        </a>
+
+        <a
+          href="https://wa.me/556282125318"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp SMS Advocacia"
+        >
+          <i
+            class="fa-brands fa-whatsapp"
+            aria-hidden="true"
+          ></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </footer>
-<div class="rodape-inferior">SANTOS MASCARENHAS E SOBREIRA ADVOCACIA &nbsp;·&nbsp; CNPJ: 52.846.343/0001-75 &nbsp;·&nbsp; © 2026</div>
 
 
-<a href="https://wa.me/556282125318?text=Ol%C3%A1%21%20Preciso%20de%20informa%C3%A7%C3%B5es%20jur%C3%ADdicas." class="whatsapp-flutuante" target="_blank" rel="noopener noreferrer" aria-label="Falar pelo WhatsApp"><span class="whatsapp-texto">Fale com nossa equipe</span><span class="whatsapp-bola" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></span></a>
+<!-- ========================================== -->
+<!-- 05. RODAPÉ INFERIOR                        -->
+<!-- ========================================== -->
+
+<div class="rodape-inferior">
+  SANTOS MASCARENHAS E SOBREIRA ADVOCACIA
+  &nbsp;·&nbsp;
+  CNPJ: 52.846.343/0001-75
+  &nbsp;·&nbsp;
+  © 2026
+</div>
+
+
+<!-- ========================================== -->
+<!-- 06. WHATSAPP FLUTUANTE                     -->
+<!-- ========================================== -->
+
+<a
+  href="https://wa.me/556282125318?text=Ol%C3%A1%21%20Preciso%20de%20informa%C3%A7%C3%B5es%20jur%C3%ADdicas."
+  class="whatsapp-flutuante"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Falar pelo WhatsApp"
+>
+
+  <span class="whatsapp-texto">
+    Fale com nossa equipe
+  </span>
+
+  <span class="whatsapp-bola" aria-hidden="true">
+    <i class="fa-brands fa-whatsapp"></i>
+  </span>
+
+</a>
+
+
+<!-- ========================================== -->
+<!-- 07. JAVASCRIPT DO MENU                     -->
+<!-- ========================================== -->
+
 <script>
+
 const toggle = document.getElementById('sms-menu-toggle');
+
 const header = document.getElementById('sms-header');
+
 const nav = document.getElementById('sms-menu');
-toggle.addEventListener('click', () => { const opened = header.classList.toggle('menu-open'); toggle.setAttribute('aria-expanded', String(opened)); toggle.setAttribute('aria-label', opened ? 'Fechar menu' : 'Abrir menu'); });
-nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {header.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');}));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){header.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');}});
+
+
+toggle.addEventListener('click', () => {
+
+  const opened = header.classList.toggle('menu-open');
+
+  toggle.setAttribute(
+    'aria-expanded',
+    String(opened)
+  );
+
+  toggle.setAttribute(
+    'aria-label',
+    opened ? 'Fechar menu' : 'Abrir menu'
+  );
+
+});
+
+
+nav.querySelectorAll('a').forEach(a => {
+
+  a.addEventListener('click', () => {
+
+    header.classList.remove('menu-open');
+
+    toggle.setAttribute('aria-expanded', 'false');
+
+  });
+
+});
+
+
+document.addEventListener('keydown', e => {
+
+  if (e.key === 'Escape') {
+
+    header.classList.remove('menu-open');
+
+    toggle.setAttribute('aria-expanded', 'false');
+
+  }
+
+});
+
 </script>
-<script>document.addEventListener('DOMContentLoaded',function(){const h=document.getElementById('sms-header');if(!h)return;function atualizar(){h.classList.toggle('scrolled',window.scrollY>30)}atualizar();window.addEventListener('scroll',atualizar,{passive:true});window.addEventListener('resize',function(){if(window.innerWidth>900){h.classList.remove('menu-open');const t=document.getElementById('sms-menu-toggle');if(t)t.setAttribute('aria-expanded','false')}});});</script>
-</body></html>
+
+
+<!-- ========================================== -->
+<!-- 08. MENU AO ROLAR A PÁGINA                 -->
+<!-- ========================================== -->
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  const h = document.getElementById('sms-header');
+
+  if (!h) return;
+
+  function atualizar() {
+
+    h.classList.toggle(
+      'scrolled',
+      window.scrollY > 30
+    );
+
+  }
+
+  atualizar();
+
+  window.addEventListener(
+    'scroll',
+    atualizar,
+    { passive: true }
+  );
+
+  window.addEventListener('resize', function() {
+
+    if (window.innerWidth > 800) {
+
+      h.classList.remove('menu-open');
+
+      const t = document.getElementById('sms-menu-toggle');
+
+      if (t) {
+        t.setAttribute('aria-expanded', 'false');
+      }
+
+    }
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>
